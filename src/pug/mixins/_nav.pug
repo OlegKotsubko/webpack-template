@@ -1,0 +1,26 @@
+-
+  var nav = [
+    {
+      path: '/',
+      text: 'why us'
+    },
+    {
+      path: '/pricing.html',
+      text: 'price'
+    },
+    {
+      path: '/blog.html',
+      text: 'blog'
+    },
+    {
+      path: '/contacts.html',
+      text: 'contacts'
+    }
+  ]
+
+mixin nav(mod)
+  nav(class=(`${mod ? `nav--${mod}` : 'nav'}`))
+    ul.nav__list
+      each link in nav
+        li.nav__item
+          a.nav__link.js-pages(href=link.path)= link.text
