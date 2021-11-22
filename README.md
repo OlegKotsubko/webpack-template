@@ -26,7 +26,7 @@ Clone the repo
 Run yarn to install dependencies
 Run commands in terminal:
 
-Install dependencies 
+Install dependencies
 ```
 yarn
 ```
@@ -38,7 +38,12 @@ Production Build
 ```
 yarn build
 ```
-Development mode
+Build sprite
 ```
-yarn dev
+gulp sprite
+```
+
+Convert png to webp format to same dir
+```
+gulp webp
 ```

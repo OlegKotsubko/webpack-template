@@ -8,7 +8,7 @@ const through2 = require('through2');
 const consolidate = require('gulp-consolidate');
 const webp = require('gulp-webp');
 
-function convertWebP() {
+function convertWebp() {
   return src('src/images/**/*.png')
     .pipe(webp())
     .pipe(dest('src/images/'))
@@ -27,7 +27,7 @@ function sprite() {
             w = $svg.attr('width').replace(/\D/g,'');
             h = $svg.attr('height').replace(/\D/g,'');
           } else {
-            size = $svg.attr('viewbox').split(' ').splice(2);
+            size = $svg.attr('viewBox').split(' ').splice(2);
             w = size[0];
             h = size[1];
             $svg.attr('width', parseInt(w));
@@ -85,5 +85,5 @@ function sprite() {
     .pipe(dest('src/pug/sprite'))
 }
 
-exports.default = parallel(sprite);
-exports.webp = parallel(convertWebP)
+exports.sprite = sprite;
+exports.webp = convertWebp;
