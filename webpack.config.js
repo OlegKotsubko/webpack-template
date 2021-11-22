@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const fs = require('fs');
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
@@ -7,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 console.log(mode)
 
-module.exports = {
+const config = {
   mode: mode,
   target: mode === 'development' ? 'web' : 'node',
   entry: {
@@ -27,17 +28,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: "src/index.pug",
-      chunks: ['common', 'index']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'user.html',
-      template: "src/user.pug",
-      chunks: ['common', 'user']
-    }),
+    })
   ],
   module: {
     rules: [
@@ -93,3 +84,20 @@ module.exports = {
     ]
   },
 }
+
+fs.readdirSync('src', {withFileTypes: true})
+  .filter(item => !item.isDirectory())
+  .map(item => item.name)
+  .map(page => {
+    const base = page.replace('.pug', '')
+    const ifJsfFleExist = fs.existsSync(`src/js/${base}.js`)
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        filename: `${base}.html`,
+        template: `src/${page}`,
+        chunks: ['common', ifJsfFleExist ? base : null]
+      })
+    );
+  })
+
+module.exports = config

@@ -4,8 +4,13 @@ block content
   main
     .container
       .u-mw-530
-        img(src=require("./images/angular.png") alt="Angular picture" width=225 height=225 style="aspect-ratio: 1/1").u-img-responsive
-        img(src=require("./images/webpack.png") alt="Webpack picture" width=360 height=140 style="aspect-ratio: 100/39").u-img-responsive
+        picture
+          source(srcset=require("./images/angular.webp") type="image/webp")
+          img(src=require("./images/angular.png") alt="Angular picture" width=225 height=225 style="aspect-ratio: 1/1").u-img-responsive
+        picture
+          source(srcset=require("./images/webpack.webp") type="image/webp")
+          img(src=require("./images/webpack.png") alt="Webpack picture" width=360 height=140 style="aspect-ratio: 100/39").u-img-responsive
+
         +icon('twitter')
         +icon('instagram')
         +icon('arrow')

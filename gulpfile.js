@@ -1,18 +1,23 @@
 const { src, dest, parallel } = require('gulp');
-const svgmin = require('gulp-svgmin');
+const svgMin = require('gulp-svgmin');
 const svgStore = require('gulp-svgstore');
 const rename = require('gulp-rename');
 const cheerio = require('cheerio');
-const gulpcheerio = require('gulp-cheerio');
+const gulpCheerio = require('gulp-cheerio');
 const through2 = require('through2');
 const consolidate = require('gulp-consolidate');
-const fs = require('fs')
-const ladash = require('lodash')
+const webp = require('gulp-webp');
+
+function convertWebP() {
+  return src('src/images/**/*.png')
+    .pipe(webp())
+    .pipe(dest('src/images/'))
+}
 
 function sprite() {
   return src('src/icons/*.svg')
     .pipe(
-      gulpcheerio({
+      gulpCheerio({
         run($) {
           $('[fill]:not([fill="currentColor"])').removeAttr('fill');
           $('[stroke]').removeAttr('stroke');
@@ -33,7 +38,7 @@ function sprite() {
         parserOptions: { xmlMode: true }
       })
     )
-    .pipe(svgmin({
+    .pipe(svgMin({
       js2svg: {
         pretty: true
       },
@@ -81,3 +86,4 @@ function sprite() {
 }
 
 exports.default = parallel(sprite);
+exports.webp = parallel(convertWebP)
