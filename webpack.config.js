@@ -11,11 +11,7 @@ console.log(mode)
 const config = {
   mode: mode,
   target: mode === 'development' ? 'web' : 'node',
-  entry: {
-    common: './src/js/common.js',
-    index: './src/js/index.js',
-    user: './src/js/user.js'
-  },
+  entry: {},
   output: {
     filename: 'js/[name].[contenthash].js',
     assetModuleFilename: "assets/[hash][ext][query]",
@@ -85,17 +81,25 @@ const config = {
   },
 }
 
+// TODO remove hardcoded common javascript if it necessary
+Object.assign(config.entry, {'common' :`./src/js/common.js`})
+
 fs.readdirSync('src', {withFileTypes: true})
   .filter(item => !item.isDirectory())
   .map(item => item.name)
   .map(page => {
     const base = page.replace('.pug', '')
     const ifJsfFleExist = fs.existsSync(`src/js/${base}.js`)
+
+    if(ifJsfFleExist) {
+      Object.assign(config.entry, {[base]:`./src/js/${base}.js`})
+    }
+
     config.plugins.push(
       new HtmlWebpackPlugin({
         filename: `${base}.html`,
         template: `src/${page}`,
-        chunks: ['common', ifJsfFleExist ? base : null]
+        chunks: ['common', ifJsfFleExist ? base : null] // TODO remove hardcoded common dependency
       })
     );
   })
