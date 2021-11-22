@@ -19,7 +19,7 @@
   ]
 
 mixin nav(mod)
-  nav(class=(`${mod ? `nav--${mod}` : 'nav'}`))
+  nav(class=(`${mod ? `nav--${mod}` : 'nav'}`) aria-label="main menu")
     ul.nav__list
       each link in nav
         li.nav__item

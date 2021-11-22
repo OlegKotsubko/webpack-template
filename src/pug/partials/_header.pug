@@ -1,8 +1,7 @@
-header.header
+header.header(aria-label="header")
   .header__logo
-    a(href="/" class="header__link" id="logo")
-      img(src=require("./images/webpack.png")).u-img-responsive.header__image
-
+    a(href="/" class="header__link" id="logo" aria-label="main_logo")
+      img(src=require("./images/webpack.png") width="360" height="140" alt="Main logo" aria-labelledby="logo").u-img-responsive.header__image
 
   .header__container
     .header__nav
@@ -14,12 +13,12 @@ header.header
 
   .header__controls
 
-    button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger")
+    button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger" aria-label="Open menu")
       span(class="hamburger-box")
         span(class="hamburger-inner")
 
     .language.header__language.js-dropdown-container
-      button(class="language__trigger js-dropdown" type="button")
+      button(class="language__trigger js-dropdown" type="button" aria-label="Open lang menu")
         span.language__label RU
         +icon('arrow', 'language__arrow')
       ul.language__list.js-dropdown-menu
