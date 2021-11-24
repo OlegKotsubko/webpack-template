@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require('fs');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const env = process.env.NODE_ENV
 const isDevelopment = env !== 'production'
@@ -23,7 +24,15 @@ const config = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/favicons",
+          to: "favicons"
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -45,7 +54,7 @@ const config = {
         ],
       },
       {
-        test: /\.(ico|png|svg|jpg|jpeg|gif|webp)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         dependency: {
           not: 'src/icons'
         },
