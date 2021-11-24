@@ -1,5 +1,10 @@
 @use '../config' as *;
 
+@font-face {
+  font-family: 'Prompt';
+  src: url('../fonts/Prompt-Regular.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }

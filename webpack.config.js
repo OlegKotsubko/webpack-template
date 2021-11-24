@@ -2,19 +2,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require('fs');
 
-let mode = 'development'
-if (process.env.NODE_ENV === 'production') {
-  mode = 'production'
-}
-console.log(mode)
+const env = process.env.NODE_ENV
+const isDevelopment = env !== 'production'
+const pathToImageSource = isDevelopment ? "dist/assets/[name][ext][query]" : "assets/[name][ext][query]"
+
+console.log(env)
 
 const config = {
-  mode: mode,
-  target: mode === 'development' ? 'web' : 'node',
+  target: isDevelopment ? 'web' : 'node',
   entry: {},
   output: {
     filename: 'js/[name].[contenthash].js',
-    assetModuleFilename: "assets/[hash][ext][query]",
+    assetModuleFilename: pathToImageSource,
     clean: true,
   },
   devtool: 'source-map',
@@ -31,24 +30,22 @@ const config = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === 'development')
-            ? "style-loader"
-            : MiniCssExtractPlugin.loader,
+          (isDevelopment) ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           {
             loader: "sass-loader",
             options: {
-              sourceMap:  mode === 'development',
+              sourceMap:  isDevelopment,
               sassOptions: {
-                outputStyle:  (mode === 'development') ? null : "compressed",
+                outputStyle:  isDevelopment ? null : "compressed",
               },
             },
           }
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        test: /\.(ico|png|svg|jpg|jpeg|gif|webp)$/i,
         dependency: {
           not: 'src/icons'
         },
@@ -56,7 +53,7 @@ const config = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: 'asset/inline',
       },
       {
         test: /\.pug$/,
@@ -89,9 +86,9 @@ fs.readdirSync('src', {withFileTypes: true})
   .map(item => item.name)
   .map(page => {
     const base = page.replace('.pug', '')
-    const ifJsfFleExist = fs.existsSync(`src/js/${base}.js`)
+    const ifJsFleExist = fs.existsSync(`src/js/${base}.js`)
 
-    if(ifJsfFleExist) {
+    if(ifJsFleExist) {
       Object.assign(config.entry, {[base]:`./src/js/${base}.js`})
     }
 
@@ -99,7 +96,7 @@ fs.readdirSync('src', {withFileTypes: true})
       new HtmlWebpackPlugin({
         filename: `${base}.html`,
         template: `src/${page}`,
-        chunks: ['common', ifJsfFleExist ? base : null] // TODO remove hardcoded common dependency
+        chunks: ['common', ifJsFleExist ? base : null] // TODO remove hardcoded common dependency
       })
     );
   })
