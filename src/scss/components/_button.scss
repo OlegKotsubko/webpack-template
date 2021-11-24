@@ -60,6 +60,8 @@
     color: var(--white);
 
     &:hover {
+      border-color: var(--black);
+      background-color: var(--black);
       color: var(--white);
     }
   }

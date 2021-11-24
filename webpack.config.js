@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const fs = require('fs');
 const CopyPlugin = require("copy-webpack-plugin");
+const fs = require('fs');
 
 const env = process.env.NODE_ENV
 const isDevelopment = env !== 'production'
@@ -77,10 +77,7 @@ const config = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
