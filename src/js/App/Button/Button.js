@@ -10,7 +10,7 @@ const Button = () => {
       onClick={clickHandler}
       className={`button  ${active ? "button--secondary": "button--white"}`}
     >
-      {active ? "React button active" : "React button not active"}
+      {active ? "Click me again" : "Click me"}
     </button>
   )
 }
