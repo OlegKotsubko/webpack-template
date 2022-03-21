@@ -3,31 +3,11 @@ extends pug/layouts/_layout
 block content
   main
     .container
-      .u-mw-530
-        picture
-          source(srcset=require("./images/angular.webp") type="image/webp")
-          img(src=require("./images/angular.png") alt="Angular picture" width=225 height=225 style="aspect-ratio: 1/1").u-img-responsive
-        picture
-          source(srcset=require("./images/webpack.webp") type="image/webp")
-          img(src=require("./images/webpack.png") alt="Webpack picture" width=360 height=500 style="aspect-ratio: 18/7").u-img-responsive
-        +icon('twitter')
-        +icon('instagram')
-        +icon('arrow')
-        +icon('circle')
-        span  text text text
-      .swiper-container
-        .swiper-wrapper
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 1
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 2
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 3
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 4
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 5
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 6
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 7
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 8
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 9
-          .swiper-slide(style="display: flex; justify-content: center; align-items: center; height: 300px") Slide 10
-        .swiper-pagination
-        .swiper-button-prev
-        .swiper-button-next
-        .swiper-scrollbar
+      picture
+        source(srcset=require("./images/top.webp") type="image/webp")
+        img(src=require("./images/top.png") alt="hero picture").u-img-responsive
+
+      h1 великая страна с мощной экономикой
+      p война на украине
+      include ./images/svg/site.svg
+      include ./images/svg/phone.svg

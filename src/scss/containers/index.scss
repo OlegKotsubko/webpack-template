@@ -1,4 +1,15 @@
+@use '../config' as *;
+
 .container {
-  max-width: 90%;
+  width: 100%;
+  max-width: 1148px;
   margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    padding: 0 48px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 0 16px;
+  }
 }

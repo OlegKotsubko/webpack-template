@@ -1,8 +1,13 @@
 @use '../config' as *;
 
 @font-face {
-  font-family: 'Prompt';
-  src: url('../fonts/Prompt-Regular.ttf') format('truetype');
+  font-family: 'DrukCyr';
+  src: url('../fonts/DrukCyr-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DrukCyr';
+  src: url('../fonts/DrukCyr-Bold.ttf') format('truetype');
 }
 
 * {
@@ -32,31 +37,9 @@ body {
 // Headings
 //
 
-@include make-all-type($tag-types);
-
-@for $i from 1 through 6 {
-
-  h#{$i},
-  .h#{$i} {
-    @include make-spacer(mx, 0);
-    @include make-spacer(mt, 0);
-    @include make-spacer(mb, 3);
-
-    line-height: var(--headings-line-height);
-    color: var(--black);
-    font-family: var(--headings-font-family);
-    font-weight: var(--bold);
-  }
-}
-
 p {
-  @include make-spacer(mx, 0);
-  @include make-spacer(mt, 0);
-  @include make-spacer(mb, 3);
-
-  &:last-child {
-    @include make-spacer(mb, 0);
-  }
+  font-family: 'DrukCyr', sans-serif;
+  font-weight: 700;
 }
 
 button {
