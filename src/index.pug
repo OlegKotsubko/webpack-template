@@ -3,9 +3,12 @@ extends pug/layouts/_layout
 block content
   main
     .container
-      picture
-        source(srcset=require("./images/top.webp") type="image/webp")
-        img(src=require("./images/top.png") alt="hero picture").u-img-responsive
+      .top-banner
+        picture
+          source(srcset=require("./images/top.webp") type="image/webp")
+          img(src=require("./images/top.png") alt="hero picture").u-img-responsive
+
+      include ./pug/includes/hero-section
 
       h1 великая страна с мощной экономикой
       p война на украине
