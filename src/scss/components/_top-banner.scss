@@ -3,4 +3,8 @@
 .top-banner {
   padding-top: 66px;
   max-height: 940px;
+
+  @include media-breakpoint-down(xs) {
+    padding-top: 24px;
+  }
 }

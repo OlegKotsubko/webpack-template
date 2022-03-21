@@ -1,12 +1,17 @@
 @use '../config' as *;
 
 @font-face {
-  font-family: 'DrukCyr';
+  font-family: 'DrukCyrMedium';
   src: url('../fonts/DrukCyr-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'DrukCyr';
+  font-family: 'DrukCyrHeavy';
+  src: url('../fonts/DrukCyr-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DrukCyrBold';
   src: url('../fonts/DrukCyr-Bold.ttf') format('truetype');
 }
 

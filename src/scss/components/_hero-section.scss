@@ -26,6 +26,10 @@
     @include media-breakpoint-down(sm) {
       padding: 24px;
     }
+
+    @include media-breakpoint-down(xs) {
+      padding: 16px;
+    }
   }
 
   &__title,
