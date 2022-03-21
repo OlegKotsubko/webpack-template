@@ -6,34 +6,56 @@
 
   &__title,
   &__label {
-    font-family: 'DrukCyr', sans-serif;
+    text-transform: uppercase;
     margin: 0;
   }
 
   &__title {
     @include font-size(37px);
 
-    padding: 0 24px;
-    text-transform: uppercase;
-    font-weight: 900;
+    font-family: 'DrukCyrHeavy', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+
+    @include media-breakpoint-down(lg) {
+      @include font-size(32px);
+    }
   }
 
   &__label {
     @include font-size(20px, 30px);
 
-    padding: 0 24px;
     background-color: var(--red);
     color: var(--white);
+    font-family: 'DrukCyrBold', sans-serif;
+    letter-spacing: 2px;
+    padding: 10px;
 
     > b {
       @include font-size(30px);
+
+      @include media-breakpoint-down(lg) {
+        @include font-size(20px);
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      @include font-size(20px);
     }
   }
 
   &__top {
     @include size(100%, 220px);
 
-    margin-bottom: 32px;
+    @include media-breakpoint-down(md) {
+      @include size(320px, 100%);
+
+      flex-shrink: 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include size(auto);
+    }
   }
 
   &__image {
@@ -41,11 +63,36 @@
 
     display: block;
     object-fit: cover;
+
+    @include media-breakpoint-down(xs) {
+      aspect-ratio: 16/9;
+    }
   }
 
   &__text {
     @include font-size(20px, 25px);
 
-    padding: 0 24px;
+    margin: 20px 0 0;
+
+    @include media-breakpoint-down(lg) {
+      @include font-size(16px, 24px);
+    }
+  }
+
+  &__body {
+    padding: 36px 36px 30px;
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      padding: 24px 24px 20px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    @include flex;
+  }
+
+  @include media-breakpoint-down(xs) {
+   display: block;
   }
 }
