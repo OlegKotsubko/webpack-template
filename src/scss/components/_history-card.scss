@@ -1,0 +1,51 @@
+@use '../config' as *;
+
+.history-card {
+  text-align: center;
+  border: 1px solid var(--black);
+
+  &__title,
+  &__label {
+    font-family: 'DrukCyr', sans-serif;
+    margin: 0;
+  }
+
+  &__title {
+    @include font-size(37px);
+
+    padding: 0 24px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  &__label {
+    @include font-size(20px, 30px);
+
+    padding: 0 24px;
+    background-color: var(--red);
+    color: var(--white);
+
+    > b {
+      @include font-size(30px);
+    }
+  }
+
+  &__top {
+    @include size(100%, 220px);
+
+    margin-bottom: 32px;
+  }
+
+  &__image {
+    @include size(100%);
+
+    display: block;
+    object-fit: cover;
+  }
+
+  &__text {
+    @include font-size(20px, 25px);
+
+    padding: 0 24px;
+  }
+}
