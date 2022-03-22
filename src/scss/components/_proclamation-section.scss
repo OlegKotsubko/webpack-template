@@ -1,0 +1,96 @@
+@use '../config' as *;
+
+.proclamation-section {
+
+  &__top {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    background-color: var(--red);
+    color: var(--white);
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 300px 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__body {
+    padding: 50px 60px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 25px 30px;
+    }
+  }
+
+  &__image {
+    @include size(100%);
+
+    display: block;
+    object-fit: cover;
+  }
+
+  &__title {
+    @include font-size(30px, 40px);
+
+    font-family: var(--headings-font-family);
+    margin: 0 0 45px;
+
+    &--bold {
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(24px, 32px);
+    }
+  }
+
+  &__mark {
+    @include font-size(30px);
+
+    font-family: 'DrukCyrBold', sans-serif;
+    text-align: right;
+    letter-spacing: 4px;
+    margin: 22px 0 0;
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(18px, 24px);
+    }
+}
+
+  &__text {
+    @include font-size(20px, 29px);
+
+    margin: 0 0 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > b {
+      @include font-size(25px, 29px);
+
+      @include media-breakpoint-down(sm) {
+        @include font-size(16px, 24px);
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(16px, 24px);
+    }
+  }
+
+  &__bottom {
+    padding: 40px 50px;
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+
+    @include media-breakpoint-down(sm) {
+      padding: 25px 30px;
+    }
+  }
+}
