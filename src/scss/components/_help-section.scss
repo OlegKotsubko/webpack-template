@@ -29,6 +29,8 @@
         max-width: 560px;
         font-family: var(--regular-font);
         padding-bottom: 25px;
+        display: flex;
+        flex-direction: column;
         @include media-breakpoint-down(md) {
             margin: 0 auto;
           }
@@ -49,6 +51,7 @@
             border: 1px solid #000;
             border-top: none;
             margin-top: 0;
+            height: 100%;
             @include media-breakpoint-down(xs) {
                 padding: 15px;
               }
@@ -56,7 +59,7 @@
         &-link {
             display: flex;
             align-items: center;
-            &:not(:last-child) { 
+            &:not(:last-child) {
                 margin-bottom: 25px;
             }
             svg {
