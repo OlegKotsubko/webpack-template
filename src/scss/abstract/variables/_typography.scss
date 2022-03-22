@@ -4,8 +4,8 @@
 // Fonts
 //
 
-$regular-font: 'Prompt';
-$heading-font: 'Monserat';
+$regular-font: 'Roboto';
+$heading-font: 'Playfair Display';
 $fallback-fonts-list: ('Helvetica', 'Arial', sans-serif);
 $regular-fonts-list: prepend($fallback-fonts-list, $regular-font);
 $heading-fonts-list: prepend($fallback-fonts-list, $heading-font);
@@ -16,13 +16,16 @@ $heading-fonts-list: prepend($fallback-fonts-list, $heading-font);
 
 $fw-light: 300;
 $fw-base: 400;
+$fw-medium: 500;
 $fw-headings: 700;
+$fw-bold-headings: 800;
+$fw-black-headings: 900;
 
 //
 // Line Height
 //
 
-$lh-base: 1.5;
+$lh-base: 1;
 $lh-headings: 1.2;
 
 //
