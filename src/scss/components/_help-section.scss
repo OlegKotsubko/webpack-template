@@ -48,6 +48,7 @@
             padding: 35px;
             border: 1px solid #000;
             border-top: none;
+            margin-top: 0;
             @include media-breakpoint-down(xs) {
                 padding: 15px;
               }

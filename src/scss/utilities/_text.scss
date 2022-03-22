@@ -9,7 +9,7 @@
     margin-bottom: 0;
   }
 
-  > b {
+  b {
     @include font-size(25px, 29px);
 
     @include media-breakpoint-down(md) {
@@ -20,4 +20,12 @@
   @include media-breakpoint-down(md) {
     @include font-size(16px, 24px);
   }
+}
+
+.u-text-white {
+  color: var(--white);
+}
+
+.u-text-center {
+  text-align: center;
 }
