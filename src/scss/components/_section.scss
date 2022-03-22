@@ -32,6 +32,10 @@
     text-transform: uppercase;
     margin-bottom: 10px;
 
+    b {
+      color: #000;
+    }
+
     @include media-breakpoint-down(lg) {
       @include font-size(65px);
     }
