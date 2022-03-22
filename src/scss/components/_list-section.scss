@@ -1,0 +1,64 @@
+@use '../config' as *;
+
+.list-section {
+  max-width: 1013px;
+  margin: 0 auto;
+  display: grid;
+  grid-row-gap: 65px;
+
+  @include media-breakpoint-down(sm) {
+    grid-row-gap: 32px;
+  }
+
+  &__header {
+    @include font-size(45px);
+
+    background-color: var(--red);
+    font-family: 'DrukCyrMedium', sans-serif;
+    letter-spacing: 4px;
+    position: relative;
+    padding: 16px 24px 26px 100px;
+
+
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(24px);
+
+      padding: 8px 16px 16px 48px;
+    }
+  }
+
+  &__title {
+    color: var(--white);
+  }
+
+  &__number {
+    @include size(81px);
+
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      @include size(40px);
+
+      top: -5px;
+      left: -5px;
+    }
+  }
+
+  &__body {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 30px 46px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 16px;
+    }
+  }
+}
