@@ -6,5 +6,11 @@ html(lang="ru")
     include _head
 
   body
+    include ../partials/_header
+    .u-hidden
+      include ../sprite/sprite.svg
+
     block content
 
+    include ../partials/_mobile-navigation
+    include ../partials/_footer
