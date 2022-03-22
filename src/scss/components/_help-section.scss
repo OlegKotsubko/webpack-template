@@ -1,0 +1,90 @@
+@use '../config' as *;
+
+.help {
+    &__desc {
+        @include font-size(25px);
+        font-weight: 400;
+        max-width: 628px;
+        margin: 0 auto;
+        b {
+            font-weight: 700;
+        }
+        @include media-breakpoint-down(xs) {
+            @include font-size(18px);
+          }
+    }
+    &__title-wrap {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 660px;
+    }
+    &__contacts {
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__contact {
+        width: 100%;
+        max-width: 560px;
+        font-family: var(--regular-font);
+        padding-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-down(md) {
+            margin: 0 auto;
+          }
+        &-title {
+            padding: 20px 35px;
+            background-color: var(--red);
+            color: #fff;
+            font-size: 30px;
+            @include media-breakpoint-down(xs) {
+                font-size: 20px;
+              }
+            b {
+                font-weight: 700;
+            }
+        }
+        &-links {
+            padding: 35px;
+            border: 1px solid #000;
+            border-top: none;
+            margin-top: 0;
+            height: 100%;
+            @include media-breakpoint-down(xs) {
+                padding: 15px;
+              }
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+            svg {
+                margin-right: 20px;
+            }
+            a {
+                @include font-size(20px);
+                text-decoration: none;
+                color: #000;
+                &:hover {
+                    text-decoration: underline;
+                }
+                @include media-breakpoint-down(xs) {
+                    font-size: 16px;
+                  }
+            }
+            &__contact-a-wrap {
+                display: flex;
+            }
+        }
+        .flex-start {
+            align-items: flex-start;
+            svg {
+                min-width: 26px;
+            }
+        }
+    }
+}
