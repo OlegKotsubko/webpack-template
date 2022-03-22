@@ -1,0 +1,10 @@
+@use '../config' as *;
+
+.icon {
+  @include size(16px);
+
+  display: inline-block;
+  flex-shrink: 0;
+  user-select: none;
+  fill: currentColor;
+}
