@@ -9,10 +9,15 @@ block content
           img(src=require("./images/top.png") alt="hero picture").u-img-responsive
 
       include ./pug/includes/hero-section
-      include ./pug/includes/cards-grid
-      include ./pug/includes/short-sections
-      include ./pug/includes/proclamation-section
-    include ./pug/includes/_first-black-section
+      section.section
+        .section__header
+          p.section__subtitle Сейчас на пороге
+          h2.section__title война с Украиной
+
+        include ./pug/includes/cards-grid
+        include ./pug/includes/short-sections
+        include ./pug/includes/proclamation-section
+    include ./pug/includes/first-black-section
 
 
     h1 великая страна с мощной экономикой

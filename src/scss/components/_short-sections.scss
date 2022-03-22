@@ -1,6 +1,11 @@
 @use '../config' as *;
 
 .short-sections {
+  padding: 80px 0 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0 0;
+  }
 
   &__item {
     margin-bottom: 76px;
@@ -12,6 +17,7 @@
 
     @include media-breakpoint-down(sm) {
       max-width: 100%;
+      margin-bottom: 40px;
     }
   }
 
