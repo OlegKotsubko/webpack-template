@@ -1,0 +1,80 @@
+@use '../config' as *;
+
+.info {
+
+  &__grid {
+    display: grid;
+    grid-row-gap: 40px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 289px;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__image {
+    @include size(100%);
+
+    display: block;
+    object-fit: cover;
+
+    @include media-breakpoint-down(sm) {
+      height: 300px;
+    }
+  }
+
+  &__header {
+    background-color: var(--red);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 34px;
+    align-items: center;
+    height: 79px;
+    padding: 10px 36px;
+    text-transform: uppercase;
+    font-family: 'DrukCyrMedium', sans-serif;
+    letter-spacing: 4px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 16px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    @include font-size(45px);
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(24px);
+    }
+  }
+
+  &__date {
+    @include font-size(30px);
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(16px);
+    }
+  }
+
+  &__content {
+    border-top: 1px solid var(--black);
+    border-left: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+
+    padding: 32px 36px;
+
+    @include media-breakpoint-down(sm) {
+      border-top: 0;
+      border-right: 1px solid var(--black);
+      padding: 16px;
+    }
+  }
+
+}
