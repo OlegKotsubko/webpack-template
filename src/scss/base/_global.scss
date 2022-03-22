@@ -38,14 +38,18 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  color: var(--red);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 //
 // Headings
 //
 
 button {
   @include reset-button;
-}
-
-ul {
-  @include reset-list;
 }
