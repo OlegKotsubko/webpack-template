@@ -30,6 +30,7 @@
     font-weight: 800;
     color: var(--red);
     text-transform: uppercase;
+    margin-bottom: 10px;
 
     @include media-breakpoint-down(lg) {
       @include font-size(65px);
@@ -60,6 +61,6 @@
   }
 
   &__header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 }

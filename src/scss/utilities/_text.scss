@@ -1,37 +1,23 @@
 @use '../config' as *;
 
-// Colors
+.u-text {
+  @include font-size(20px, 29px);
 
-.u-color-white {
-  color: #fff;
-}
+  margin: 0 0 24px;
 
-.u-color-senet-red {
-  color: var(--red-darken);
-}
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-// Text Align
+  > b {
+    @include font-size(25px, 29px);
 
-.u-text-center {
-  text-align: center;
-
-  &-sm {
-    @include media-breakpoint-up(sm) {
-      text-align: center;
+    @include media-breakpoint-down(md) {
+      @include font-size(16px, 24px);
     }
   }
-}
 
-.u-text-left {
-  text-align: left;
-}
-
-// Font Weight
-
-.u-text-bold {
-  font-weight: var(--bold);
-}
-
-.u-text-light {
-  font-weight: var(--light);
+  @include media-breakpoint-down(md) {
+    @include font-size(16px, 24px);
+  }
 }
