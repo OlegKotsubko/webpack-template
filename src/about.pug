@@ -1,0 +1,80 @@
+extends pug/layouts/_layout
+
+block content
+  header#header.header.is-transparent
+    .container
+      .header__container
+        a(href="/").header__logo
+          include ./images/svg/Logo.svg
+
+        nav.header__nav
+          span.header__link About Us
+
+        .header__button
+          a.button(href="#")
+            include ./images/svg/button.svg
+
+        .header__trigger
+          button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger")
+            span(class="hamburger-box")
+              span(class="hamburger-inner")
+  main
+    section.hero-section
+      img.hero-section__image(src=require("./images/flag.jpeg") alt="")
+      .container
+        p.u-text.
+          1Future began taking shape within days of the first russian rockets
+          striking Ukrainian cities. Our founding team comprises Ukrainians
+          remaining inside the country, and a passionate group of people across
+           Eastern Europe and the UK. Some of us have already been made
+           refugees by the 2014 invasion of Crimea and the Donbass region,
+           and have been involved humanitarian efforts since. Others simply
+           cannot stand on the sidelines.
+    section.section.section--white
+      .container
+        h2.section__heading Strategy
+        p.u-text.
+          The scale of destruction already inflicted dictates that there can be no quick
+           solution to this crisis. The millions of refugees that crossed Ukraine’s
+           border, and many more who stayed, will need continued support to rebuild their lives.
+        p.u-text.
+          With 1Future, our goal is to create a lasting institution that can provide aid on a large scale
+          and with maximum reach. To that end, we are focusing our efforts on establishing direct relationships
+          with manufacturers of items that are certain to play a critical role in this crisis, such as medical
+           supplies and […]. In order to streamline distribution, we are continuously expanding our partner
+            network among local volunteer groups with proven capability to serve their communities
+
+    section.section.section--white
+      .container
+        h2.section__heading Work with Us
+        p.u-text.
+          The immense global response to the Ukraine crisis has spawned thousands of
+           grassroots humanitarian efforts. Yet, many of them are encountering similar
+            fundraising and procurement hurdles. We have already addressed some of
+            these challenges, and
+        .two-column-grid
+          .two-column-grid__item
+            p.two-column-grid__title Are you a donor network struggling with fundraising and procurement friction?
+            p.two-column-grid__text Talk to us about the possibility of  co-funding bulk orders of critical items.
+          .two-column-grid__item
+            p.two-column-grid__title Are you a volunteer network in Ukraine?
+            p.two-column-grid__text Tell us about your most urgent needs,  and we will try to help.
+
+  footer.footer
+    .container
+      .footer__container
+        a(href="/").footer__logo
+          include ./images/svg/Logo.svg
+        a(href="mailto:email@gmail.com").footer__mail email@gmail.com
+        ul.footer__social
+          li.footer__item
+            a.footer__link(href="#")
+              include ./images/svg/fb.svg
+          li.footer__item
+            a.footer__link(href="#")
+              include ./images/svg/tv.svg
+
+  .mobile-navigation#mobile-navigation
+    .mobile-navigation__content
+      nav.mobile-navigation__nav
+        a(href="./about.html").mobile-navigation__link About Us

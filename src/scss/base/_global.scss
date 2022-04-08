@@ -10,17 +10,25 @@ body {
   @include make-spacer(my, 0);
   @include flex(flex-start, $direction: column);
 
-  background-color: var(--white);
+  background-color: var(--black);
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: var(--line-height);
-  color: var(--black);
+  color: var(--white);
   font-family: var(--font-family);
   font-weight: var(--regular);
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
+
+  &.is-overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+main {
+  flex-grow: 1;
 }
 
 //
@@ -33,4 +41,14 @@ button {
 
 ul {
   @include reset-list;
+}
+
+.u-text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 160%;
+
+  @include media-breakpoint-up(md) {
+    font-size: 25px;
+  }
 }

@@ -1,15 +1,95 @@
 extends pug/layouts/_layout
 
 block content
+  header#header.header.is-transparent
+    .container
+      .header__container
+        .header__logo
+          include ./images/svg/Logo.svg
+
+        nav.header__nav
+          a(href="./about.html").header__link About Us
+
+        .header__button
+          a.button(href="#")
+            include ./images/svg/button.svg
+
+        .header__trigger
+          button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger")
+            span(class="hamburger-box")
+              span(class="hamburger-inner")
   main
     section.hero-section
-      img.hero-section__image(src="./images/bg.jpeg" alt="")
-      h1.hero-section__title Alleviating human hardship brought about by the war in Ukraine
+      img.hero-section__image(src=require("./images/bg.jpeg") alt="")
+      .container
+        h1.hero-section__title Alleviating human hardship brought about by the war in Ukraine
+    section.section
+      .container
+        ul.news
+          li.news__item
+            .news__text.
+              Systematic destruction of civilian infrastructure by the russian
+              forces has left millions of Ukrainians without access to basic necessities.
+            img(src=require("./images/img1.jpeg") alt="war").news__image
+          li.news__item
+            .news__text.
+              Leveraging our connections with volunteer networks on the ground, we
+              gather and aggregate information about the most acutely lacking items,
+               and source them in the shortest possible time.
+            img(src=require("./images/img2.jpeg") alt="war").news__image
+          li.news__item
+            .news__text.
+              We work closely with local volunteers to quickly and efficiently
+              distribute the aid across all accessible areas of the country.
+            img(src=require("./images/img3.jpeg") alt="war").news__image
+
+    section.section.section--white
+      .container
+        .initiatives
+          h2.section__heading.initiatives__heading Initiatives
+          ul.initiatives__grid
+            li.initiatives__item
+              img(src=require("./images/img4.png") alt="medical").initiatives__image
+              .initiatives__body
+                p.initiatives__title.
+                  A glucose support supplement
+                a(href="www.glocuse.com").initiatives__link www.glocuse.com
+            li.initiatives__item
+              img(src=require("./images/img4.png") alt="medical").initiatives__image
+              .initiatives__body
+                p.initiatives__title.
+                  A glucose support supplement
+                a(href="www.glocuse.com").initiatives__link www.glocuse.com
+            li.initiatives__item
+              img(src=require("./images/img4.png") alt="medical").initiatives__image
+              .initiatives__body
+                p.initiatives__title.
+                  A glucose support supplement
+                a(href="www.glocuse.com").initiatives__link www.glocuse.com
+          p.initiatives__text.
+            1Future is currently undergoing registration and will be able to
+            accept donations in a matter of days. In the meantime, you can either
+             leave your email address to be notified as soon as the process
+             is complete, or write to us at contact@1future.org to find out
+              how you can already help today. Thank you!
+
+
+
+  footer.footer
     .container
+      .footer__container
+        .footer__logo
+          include ./images/svg/Logo.svg
+        a(href="mailto:email@gmail.com").footer__mail email@gmail.com
+        ul.footer__social
+          li.footer__item
+            a.footer__link(href="#")
+              include ./images/svg/fb.svg
+          li.footer__item
+            a.footer__link(href="#")
+              include ./images/svg/tv.svg
 
-      a.button(href="#") button
-
-      h1 великая страна с мощной экономикой
-      p война на украине
-      include ./images/svg/site.svg
-      include ./images/svg/phone.svg
+  .mobile-navigation#mobile-navigation
+    .mobile-navigation__content
+      nav.mobile-navigation__nav
+        a(href="./about.html").mobile-navigation__link About Us

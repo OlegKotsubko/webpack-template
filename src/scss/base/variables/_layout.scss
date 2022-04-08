@@ -1,7 +1,7 @@
 @use '../../abstract/helpers/index' as *;
 
 :root {
-  --header-height: #{rem(80px)};
+  --header-height: #{rem(70px)};
   --container-width: 100%;
 
   @include media-breakpoint-up(sm) {
@@ -9,7 +9,7 @@
   }
 
   @include media-breakpoint-up(md) {
-    --header-height: #{rem(95px)};
+    --header-height: #{rem(90px)};
   }
 
   @include media-breakpoint-up(lg) {

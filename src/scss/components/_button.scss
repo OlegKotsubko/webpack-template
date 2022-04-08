@@ -2,16 +2,5 @@
 
 .button {
   display: inline-block;
-  border-radius: 100rem;
-  text-align: center;
-  min-width: 200px;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #000;
-  border: solid 3px transparent;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(30deg, #F6C54B 40%, #1179E7 65%);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px #fff inset;
-  text-decoration: none;
+  width: 100%;
 }

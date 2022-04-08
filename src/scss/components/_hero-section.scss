@@ -1,0 +1,42 @@
+@use '../config' as *;
+
+.hero-section {
+  min-height: 100vh;
+  padding: calc(20px + var(--header-height)) 0 calc(20px + var(--header-height)) 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    padding: calc(60px + var(--header-height)) 0 calc(60px + var(--header-height)) 0;
+  }
+
+  &__image {
+    @include size(100%);
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    max-width: 309px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: 60px;
+      max-width: none;
+    }
+  }
+}
