@@ -2763,6 +2763,18 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
+custom-event-polyfill@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/custom-event-polyfill/-/custom-event-polyfill-0.3.0.tgz#99807839be62edb446b645832e0d80ead6fa1888"
+  integrity sha1-mYB4Ob5i7bRGtkWDLg2A6tb6GIg=
+
+custom-select@^1.1.15:
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/custom-select/-/custom-select-1.1.15.tgz#4f342a405afa00c043afd753f0a578b2862d0b91"
+  integrity sha512-hkxx4atVZ6sj0auhgtPPHa8tKuGGkhwrgBZatxOMSLUAVbljQklMzPAqs/H+t8SYPHRL2AFwUJuRiKtq4MltSA==
+  dependencies:
+    custom-event-polyfill "^0.3.0"
+
 cwebp-bin@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cwebp-bin/-/cwebp-bin-5.1.0.tgz#d5bea87c127358558e7bf7a90a6d440d42dcb074"

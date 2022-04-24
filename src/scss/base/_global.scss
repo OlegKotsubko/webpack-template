@@ -49,3 +49,21 @@ button {
 ul {
   @include reset-list;
 }
+
+//@include make-all-type($tag-types);
+
+.custom-select-panel {
+  transition: none;
+}
+
+.custom-select-option.is-selected::before {
+  content: none;
+}
+
+.custom-select-option.is-selected {
+  background-color: darkgreen;
+}
+
+.custom-select-option.has-focus {
+  background-color: #007aff;
+}
