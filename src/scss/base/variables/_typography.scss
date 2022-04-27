@@ -2,7 +2,7 @@
 
 :root {
   --font-family: #{$regular-fonts-list};
-  --headings-font-family: #{$heading-fonts-list};
+  --headings-font-family: #{$regular-fonts-list};
   --regular-font: #{$regular-font};
   --light: #{$fw-light};
   --regular: #{$fw-base};

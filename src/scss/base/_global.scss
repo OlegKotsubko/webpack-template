@@ -1,18 +1,31 @@
 @use '../config' as *;
 
 @font-face {
-  font-family: 'DrukCyrMedium';
-  src: url('../fonts/DrukCyr-Medium.ttf') format('truetype');
+  font-family: WePlayType;
+  src: url('../fonts/WePlayTypeTextLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'DrukCyrHeavy';
-  src: url('../fonts/DrukCyr-Heavy.ttf') format('truetype');
+  font-family: WePlayType;
+  src: url('../fonts/WePlayTypeTextRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'DrukCyrBold';
-  src: url('../fonts/DrukCyr-Bold.ttf') format('truetype');
+  font-family: WePlayType;
+  src: url('../fonts/WePlayTypeTextBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: WePlayType;
+  src: url('../fonts/WePlayTypeTextExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
 }
 
 * {
@@ -23,7 +36,7 @@ body {
   @include smooth-font;
   @include make-spacer(mx, auto);
   @include make-spacer(my, 0);
-  @include flex(flex-start, $direction: column);
+  @include flex(space-between, $direction: column);
 
   background-color: var(--white);
   min-width: 320px;
@@ -36,6 +49,12 @@ body {
   font-weight: var(--regular);
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
+}
+
+.main {
+  display: block;
+  margin-bottom: auto;
+  min-width: 0;
 }
 
 //

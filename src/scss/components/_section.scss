@@ -1,0 +1,33 @@
+@use '../config' as *;
+
+.section {
+  @include make-spacer(my, 4);
+  @include make-spacer(my, 8, sm);
+
+  &__heading {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mb, 2);
+    @include make-spacer(mb, 3, sm);
+    @include font-size(32px, 40px);
+
+    font-weight: 800;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(48px, 56px);
+    }
+  }
+
+  &__subtitle {
+    @include make-spacer(m, 0);
+
+    color: var(--black);
+    opacity: 0.8;
+    text-align: center;
+  }
+
+  &__header {
+    @include make-spacer(mb, 3);
+    @include make-spacer(mb, 6, sm);
+  }
+}

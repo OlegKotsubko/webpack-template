@@ -4,8 +4,8 @@
 // Fonts
 //
 
-$regular-font: 'Roboto';
-$heading-font: 'Playfair Display';
+$regular-font: 'WePlayType';
+$heading-font: '';
 $fallback-fonts-list: ('Helvetica', 'Arial', sans-serif);
 $regular-fonts-list: prepend($fallback-fonts-list, $regular-font);
 $heading-fonts-list: prepend($fallback-fonts-list, $heading-font);

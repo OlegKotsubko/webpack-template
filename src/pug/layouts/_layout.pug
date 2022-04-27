@@ -1,5 +1,19 @@
 include ../mixins/all
 
+-
+  var users = [
+    {
+      "title": "WePlay Esports Business Contact",
+      "name": "Valentyn Shevchenko",
+      "position": "Head of Business Development Department"
+    },
+    {
+      "title": "Esports Event Marketing Department",
+      "name": "Iryna Chugai",
+      "position": "Head of Tournament Marketing Department"
+    }
+  ];
+
 doctype html
 html(lang="ru")
   head
@@ -9,4 +23,4 @@ html(lang="ru")
     .u-hidden
       include ../sprite/sprite.svg
     block content
-
+    footer(style="background-color: #010E28; height: 467px")
