@@ -1,9 +1,17 @@
-header.header
+header#header.header.is-transparent
   .container
-    .header__wrapper
-      a(href="/").header__logo LOGO
+    .header__container
+      .header__logo
+        include ../../images/svg/logo.svg
+
       nav.header__nav
-        a(href="#").header__link Home
-        a(href="#").header__link Contact uz
+        a(href="/").header__link About Us
+        a(href="/").header__link Some text
+
       .header__button
-        a(href="#").button Button
+        a.button.button--empty-white(href="#") Sign in
+
+      .header__trigger
+        button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger")
+          span(class="hamburger-box")
+            span(class="hamburger-inner")

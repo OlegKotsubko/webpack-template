@@ -4,10 +4,15 @@ doctype html
 html(lang="ru")
   head
     include _head
-
   body
     include ../components/hedaer
     block content
     include ../components/footer
+
+    .mobile-navigation#mobile-navigation
+      .mobile-navigation__content
+        nav.mobile-navigation__nav
+          a(href="#").mobile-navigation__link About Us
+          a(href="#").mobile-navigation__link Some text
 
 

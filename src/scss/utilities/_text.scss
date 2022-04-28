@@ -3,19 +3,13 @@
 // Colors
 
 .u-color-white {
-  color: #fff;
+  color: var(--white);
 }
 
 // Text Align
 
 .u-text-center {
   text-align: center;
-
-  &-sm {
-    @include media-breakpoint-up(sm) {
-      text-align: center;
-    }
-  }
 }
 
 .u-text-left {
@@ -26,8 +20,4 @@
 
 .u-text-bold {
   font-weight: var(--bold);
-}
-
-.u-text-light {
-  font-weight: var(--light);
 }

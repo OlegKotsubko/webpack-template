@@ -1,7 +1,20 @@
 extends pug/layouts/_layout
 
 block content
-  main
-    .container
-      include ./images/svg/site.svg
-      include ./images/svg/phone.svg
+  main.main-content
+    section.hero-section
+      picture
+        source(srcset=require('./images/hero.webp') type="image/webp")
+        img(src=require('./images/hero.png') alt="decor").hero-section__decor
+      .hero-section__content
+        .container
+          h1.hero-section__title Hero section
+          p.hero-section__subtitle Some descriptions
+          ul.social
+            li.social__item
+              a(href="/").social__link
+                include ./images/svg/site.svg
+            li.social__item
+              a(href="/").social__link
+                include ./images/svg/phone.svg
+

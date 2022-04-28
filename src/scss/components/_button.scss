@@ -1,0 +1,53 @@
+@use '../config' as *;
+
+.button {
+  @include flex(center, center, $display: inline-flex);
+  @include font-size(20px);
+  @include make-spacer(m, 0);
+  @include make-spacer(px, 2);
+  @include transition(#{background-color, color});
+
+  position: relative;
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--black);
+  cursor: pointer;
+  min-height: rem(50px);
+  overflow: hidden;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+  user-select: none;
+  -webkit-appearance: none; // stylelint-disable-line
+  -webkit-tap-highlight-color: transparent;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: var(--bold);
+
+  &:disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &--white {
+    background-color: var(--white);
+    color: var(--black);
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--black);
+    }
+  }
+
+  &--empty-white {
+    background-color: transparent;
+    border: 1px solid var(--white);
+
+    &:hover {
+      color: var(--black);
+      background-color: var(--white);
+    }
+  }
+}

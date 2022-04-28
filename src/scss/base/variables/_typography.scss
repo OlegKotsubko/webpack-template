@@ -2,12 +2,9 @@
 
 :root {
   --font-family: #{$regular-fonts-list};
-  --headings-font-family: #{$heading-fonts-list};
-  --regular-font: #{$regular-font};
-  --light: #{$fw-light};
   --regular: #{$fw-base};
-  --bold: #{$fw-headings};
+  --medium: #{$fw-medium};
+  --bold: #{$fw-bold};
   --font-size: #{$fs-base};
   --line-height: #{$lh-base};
-  --headings-line-height: #{$lh-headings};
 }
