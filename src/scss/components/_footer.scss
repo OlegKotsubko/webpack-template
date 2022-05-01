@@ -1,7 +1,104 @@
 @use '../config' as *;
 
 .footer {
-  height: 600px;
   background-color: var(--black);
   color: var(--white);
+  position: relative;
+  overflow: hidden;
+
+  &__logo {
+    width: 500px;
+    display: block;
+    max-width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    padding: rem(142px) 0 rem(259px);
+
+    @include media-breakpoint-down(md) {
+      padding: rem(100px) 0 rem(140px);
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: rem(1440px);
+  }
+
+  &__grid {
+    @include make-spacer(mt, 3);
+
+    display: grid;
+    grid-template-columns: rem(400px) repeat(2, rem(220px));
+    grid-column-gap: rem(120px);
+
+    @include media-breakpoint-down(lg) {
+      @include make-spacer(mt, 8);
+
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: rem(56px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      grid-gap: rem(24px);
+    }
+  }
+
+  &__copyright {
+    padding-right: rem(64px);
+
+    > * {
+      margin: 0 0 rem(8px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 0;
+      grid-column: 1/4;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-column: 1/2;
+    }
+  }
+
+  &__title {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mb, 3);
+    @include font-size(20px, 23px);
+
+    font-weight: var(--bold);
+  }
+
+  &__link {
+    @include font-size(20px, 23px);
+
+    color: var(--white);
+    opacity: 0.6;
+    text-decoration: none;
+    font-weight: var(--bold);
+  }
+
+  &__item {
+    @include make-spacer(mb, 2);
+  }
+
+  &__socials {
+    position: absolute;
+    top: 40%;
+    right: 0;
+
+    @include media-breakpoint-down(sm) {
+      @include make-spacer(mt, 4);
+      @include make-spacer(mx, auto);
+
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+  }
 }

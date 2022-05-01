@@ -1,0 +1,48 @@
+@use '../config' as *;
+
+.social {
+  display: inline-block;
+  vertical-align: center;
+
+  &__title {
+    @include make-spacer(m, 0);
+    @include font-size(16px, 20px);
+
+    font-weight: var(--medium);
+  }
+
+  &__list {
+    display: grid;
+    grid-row-gap: rem(16px);
+  }
+
+  &--adaptive {
+
+    @include media-breakpoint-down(sm) {
+      @include flex(center);
+
+      gap: rem(16px);
+    }
+
+    .social {
+
+      &__title {
+        @include make-spacer(mb, 2);
+
+        writing-mode: vertical-rl;
+
+        @include media-breakpoint-down(sm) {
+          writing-mode: horizontal-tb;
+        }
+      }
+
+      &__list {
+        @include media-breakpoint-down(sm) {
+          @include flex;
+
+          gap: rem(16px);
+        }
+      }
+    }
+  }
+}

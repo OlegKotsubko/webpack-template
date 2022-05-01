@@ -11,8 +11,15 @@ html(lang="ru")
 
     .mobile-navigation#mobile-navigation
       .mobile-navigation__content
-        nav.mobile-navigation__nav
-          a(href="#").mobile-navigation__link About Us
-          a(href="#").mobile-navigation__link Some text
+        ul.mobile-navigation__nav
+          li.mobile-navigation__item
+            a(href="#").mobile-navigation__link Products
+            ul.mobile-navigation__sublist
+              li.mobile-navigation__subitem
+                a(href="#").mobile-navigation__sublink Work for migrants
+              li.mobile-navigation__subitem
+                a(href="#").mobile-navigation__sublink Competenzlab.io
+          li.mobile-navigation__item
+            a(href="#").mobile-navigation__link For partners
 
 

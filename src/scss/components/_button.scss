@@ -5,20 +5,20 @@
   @include font-size(20px);
   @include make-spacer(m, 0);
   @include make-spacer(px, 2);
-  @include transition(#{background-color, color});
+  @include transition(#{color, border-color});
 
   position: relative;
   outline: none;
   border: 0;
   border-radius: 0;
-  background-color: var(--black);
+  background-color: transparent;
   cursor: pointer;
   min-height: rem(50px);
   overflow: hidden;
   vertical-align: middle;
   text-decoration: none;
   white-space: nowrap;
-  color: var(--white);
+  color: var(--black);
   user-select: none;
   -webkit-appearance: none; // stylelint-disable-line
   -webkit-tap-highlight-color: transparent;
@@ -31,23 +31,51 @@
     pointer-events: none;
   }
 
-  &--white {
+  &--secondary {
     background-color: var(--white);
-    color: var(--black);
 
     &:hover {
-      color: var(--white);
-      background-color: var(--black);
+      color: var(--pink);
+    }
+
+    &:active {
+      background-color: var(--gray-100);
     }
   }
 
-  &--empty-white {
-    background-color: transparent;
+  &--default {
     border: 1px solid var(--white);
+    color: var(--white);
 
     &:hover {
-      color: var(--black);
-      background-color: var(--white);
+      color: var(--pink);
+      border-color: var(--pink);
     }
+
+    &:active {
+      background-color: var(--pink-03);
+    }
+
+    @include media-breakpoint-down(md) {
+      @include make-spacer(px, 1);
+      @include font-size(16px);
+    }
+  }
+
+  &--lg {
+    @include make-spacer(px, 5);
+    @include font-size(30px);
+
+    min-height: rem(80px);
+
+    @include media-breakpoint-down(md) {
+      @include make-spacer(px, 3);
+      @include font-size(20px);
+      min-height: rem(60px);
+    }
+  }
+
+  &--fluid {
+    width: 100%;
   }
 }

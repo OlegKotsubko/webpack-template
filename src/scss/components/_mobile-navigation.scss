@@ -30,16 +30,29 @@
   }
 
   &__nav {
-    @include flex(center, center, column);
+    @include flex($direction: column);
 
     gap: 24px;
   }
 
-  &__link {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+  &__link,
+  &__sublink {
     color: var(--white);
     text-decoration: none;
+  }
+
+  &__link {
+    @include font-size(18px, 24px);
+  }
+
+  &__subitem {
+    @include make-spacer(mt, 3);
+  }
+
+  &__sublink {
+    @include make-spacer(ml, 2);
+    @include font-size(16px, 24px);
+
+    display: inline-block;
   }
 }

@@ -1,26 +1,14 @@
 @use '../../abstract/helpers/index' as *;
 
 :root {
-  --header-height: #{rem(80px)};
-  --container-width: 100%;
+  --header-height: #{rem(106px)};
+  --container-width: #{rem(1120px)};
 
-  @include media-breakpoint-up(sm) {
-    --container-width: #{rem(720px)};
+  @include media-breakpoint-down(md) {
+    --header-height: #{rem(82px)};
   }
 
-  @include media-breakpoint-up(md) {
-    --header-height: #{rem(95px)};
-  }
-
-  @include media-breakpoint-up(lg) {
-    --container-width: #{rem(1120px)};
-  }
-
-  @include media-breakpoint-up(xl) {
-    --container-width: #{rem(1380px)};
-  }
-
-  @include media-breakpoint-up(xxl) {
-    --container-width: #{rem(1648px)};
+  @include media-breakpoint-down(lg) {
+    --container-width: 100%;
   }
 }

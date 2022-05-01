@@ -1,3 +1,48 @@
 footer.footer
-  .container
-    h2 Footer
+  .container.container--md
+    .footer__content
+
+      a(href="/").footer__logo
+        include ../../images/svg/logo.svg
+      .footer__grid
+        .footer__copyright
+          p © 2021 CompetenzLab.
+          p All rights reserved.
+          address Bräuhasgasse 40/10, 1050 Vienna, Austria
+        .footer__column
+          h3.footer__title Products
+          ul.footer__list
+            li.footer__item
+              a(href="#").footer__link Competenzlab.io
+            li.footer__item
+              a(href="#").footer__link For coaches
+            li.footer__item
+              a(href="#").footer__link Work for migrants
+        .footer__column
+          h3.footer__title Resources
+          ul.footer__list
+            li.footer__item
+              a(href="#").footer__link Clients
+            li.footer__item
+              a(href="#").footer__link FAQ
+            li.footer__item
+              a(href="#").footer__link Privacy Police
+            li.footer__item
+              a(href="#").footer__link Terms of Service
+
+      .social.social--adaptive.footer__socials
+        p.social__title Social
+        ul.social__list
+          li.social__item
+            a(href="/").social__link
+              include ../../images/svg/facebook.svg
+          li.social__item
+            a(href="/").social__link
+              include ../../images/svg/instagram.svg
+          li.social__item
+            a(href="/").social__link
+              include ../../images/svg/linkedIn.svg
+    picture
+      source(srcset=require('../../images/footer.webp') type="image/webp")
+      img(src=require('../../images/footer.png') alt="decor").footer__decor
+

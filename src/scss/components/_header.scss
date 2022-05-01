@@ -19,60 +19,74 @@
   &__container {
     color: var(--white);
     display: grid;
-    grid-template-columns: 80px 1fr 80px;
+    grid-template-columns: rem(208px) 1fr rem(166px);
     justify-content: space-between;
     align-items: center;
     gap: 8px;
-    padding: 16px 0;
+    padding: 24px 0;
 
-    @include media-breakpoint-up(md) {
-      grid-template-columns: 114px 1fr 107px;
-      padding: 24px 0;
+    @include media-breakpoint-down(md) {
+      grid-template-columns: rem(100px) 1fr rem(100px);
+      grid-column-gap: rem(24px);
+      padding: 16px 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+      grid-template-columns: rem(40px) 1fr rem(100px);
     }
   }
 
   &__logo {
-    display: inline-block;
+    display: block;
+    position: relative;
     z-index: 1;
 
     svg {
-      width: 100%;
+      max-width: 100%;
+
+      @include media-breakpoint-down(md) {
+        @include absolute-center;
+
+        width: 150px;
+      }
     }
   }
 
   &__trigger {
-    margin-left: auto;
+    display: none;
 
-    @include media-breakpoint-up(md) {
-      display: none;
+    @include media-breakpoint-down(md) {
+      display: block;
     }
   }
 
   &__button {
-    margin: 0 auto;
-    width: 96px;
+    width: 100%;
 
-    @include media-breakpoint-up(md) {
-      width: 100%;
+    @include media-breakpoint-down(md) {
+      margin: 0 auto;
+      width: rem(96px);
     }
   }
 
   &__nav {
-    display: none;
+    display: flex;
+    justify-content: flex-end;
 
-    @include media-breakpoint-up(md) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    @include media-breakpoint-down(md) {
+      display: none;
     }
   }
 
   &__link {
-    margin: 0 16px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    @include font-size(20px, 24px);
+
+    font-weight: var(--medium);
     color: var(--white);
     text-decoration: none;
+  }
+
+  &__menu {
+    margin-right: rem(90px);
   }
 }
