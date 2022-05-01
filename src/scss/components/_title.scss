@@ -38,5 +38,7 @@
 
   @include media-breakpoint-down(xs) {
     @include font-size(40px, 48px);
+
+    word-break: break-word;
   }
 }

@@ -1,0 +1,95 @@
+@use '../config' as *;
+
+.recommendations-section {
+  background-color: var(--black);
+  color: var(--white);
+  padding: rem(100px) 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(50px) 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(54px);
+    margin-top: rem(35px);
+
+    @include media-breakpoint-down(md) {
+     flex-direction: column;
+    }
+  }
+
+  &__button {
+    @include media-breakpoint-down(md) {
+      max-width: rem(300px);
+      margin-left: auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+      max-width: 100%;
+    }
+  }
+
+  &__heading {
+    @include make-spacer(m, 0);
+    @include font-size(20px, 30px);
+
+    max-width: rem(710px);
+  }
+
+  &__title {
+    @include font-size(20px, 30px);
+
+    font-weight: var(--bold);
+    margin: 0 0 rem(10px);
+  }
+
+  &__subtitle {
+    @include font-size(16px, 23px);
+
+    a {
+      text-decoration: none;
+      color: var(--pink-light);
+      font-weight: var(--bold);
+    }
+  }
+
+  &__tip {
+    margin-top: rem(20px);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr rem(727px);
+    grid-column-gap: rem(100px);
+    align-items: baseline;
+
+    &:not(:last-child) {
+      margin-bottom: rem(60px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: rem(300px) 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      grid-row-gap: rem(40px);
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding: rem(8px) 0 rem(8px) rem(32px);
+    border-left: 7px solid var(--pink-light);
+  }
+
+  &__body {
+    margin-top: rem(60px);
+  }
+}

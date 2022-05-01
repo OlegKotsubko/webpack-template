@@ -1,0 +1,60 @@
+section.section.recommendations-section
+  .container.container--md
+    h3.title cv recommendations
+      .title__icon
+        include ../../images/svg/star-4.svg
+    .recommendations-section__header
+      p.recommendations-section__heading.
+        Step-by-step guide on how to write a resume that stands out to recruiters and adequately
+        communicates your skills and experience.
+      form.recommendations-section__form
+        .recommendations-section__button
+          input(type="file" accept=".pdf" id="file-upload").u-hidden
+          label(for="file-upload").button.button--secondary.button--fluid Upload CV
+          .recommendations-section__tip
+            .tip
+              .tip__icon
+                include ../../images/svg/star-pink.svg
+              | upload only PDF file
+    .recommendations-section__body
+      .recommendations-section__item
+        .recommendations-section__text
+          h4.recommendations-section__title Name, address and contact details
+          p.recommendations-section__subtitle.
+            Write your name, current job, place of residence,
+            postal address, phone number and social networks.
+        .recommendations-section__image
+          picture
+            source(srcset=require('../../images/f4.webp') type="image/webp")
+            img(src=require('../../images/f4.png') alt="decor").u-img-responsive
+      .recommendations-section__item
+        .recommendations-section__text
+          h4.recommendations-section__title Work Experience
+          p.recommendations-section__subtitle.
+            Company name, position, years of work in this position.
+             Be sure to list the main achievements (up to 5 per position).
+        .recommendations-section__image
+          picture
+            source(srcset=require('../../images/f1.webp') type="image/webp")
+            img(src=require('../../images/f1.png') alt="decor").u-img-responsive
+      .recommendations-section__item
+        .recommendations-section__text
+          h4.recommendations-section__title Education and courses
+          p.recommendations-section__subtitle.
+            Provide information about training and professions and certification courses under relevant headings.
+        .recommendations-section__image
+          picture
+            source(srcset=require('../../images/f2.webp') type="image/webp")
+            img(src=require('../../images/f2.png') alt="decor").u-img-responsive
+      .recommendations-section__item
+        .recommendations-section__text
+          h4.recommendations-section__title List of Skills
+          p.recommendations-section__subtitle.
+            When filling out information about your skills, please indicate the exact number of years
+             you have mastered that skill. For example, Product development is 5 years.
+          p.recommendations-section__subtitle.
+            You can fill this information in your <a href="/">personal profile</a>.
+        .recommendations-section__image
+          picture
+            source(srcset=require('../../images/f3.webp') type="image/webp")
+            img(src=require('../../images/f3.png') alt="decor").u-img-responsive

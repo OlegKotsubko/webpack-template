@@ -1,0 +1,21 @@
+@use '../config' as *;
+
+.tip {
+  @include font-size(18px, 20px);
+  @include flex($align-items: center);
+
+  font-weight: var(--bold);
+  color: var(--pink-light);
+  min-height: rem(24px);
+
+  &__icon {
+    @include flex(center, center);
+    @include make-spacer(mr, 1);
+
+    width: rem(24px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    min-height: inherit;
+  }
+}
