@@ -4,6 +4,7 @@
   @include flex;
 
   overflow: hidden;
+  position: relative;
   background-color: var(--black);
 
   &__content {

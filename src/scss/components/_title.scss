@@ -1,0 +1,42 @@
+@use '../config' as *;
+
+.title {
+  @include font-size(70px, 75px);
+  @include make-spacer(m, 0);
+
+  font-weight: var(--bold);
+  letter-spacing: -2px;
+  text-transform: lowercase;
+
+  &__icon {
+    @include make-spacer(ml, 2);
+
+    display: inline-block;
+    vertical-align: bottom;
+    width: rem(48px);
+
+    @include media-breakpoint-down(lg) {
+      width: rem(40px);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(32px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: rem(24px);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    @include font-size(60px, 66px);
+  }
+
+  @include media-breakpoint-down(md) {
+    @include font-size(50px, 56px);
+  }
+
+  @include media-breakpoint-down(xs) {
+    @include font-size(40px, 48px);
+  }
+}

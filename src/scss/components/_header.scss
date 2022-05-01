@@ -22,13 +22,13 @@
     grid-template-columns: rem(208px) 1fr rem(166px);
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 24px 0;
+    gap: rem(8px);
+    padding: rem(16px) 0;
 
     @include media-breakpoint-down(md) {
       grid-template-columns: rem(100px) 1fr rem(100px);
       grid-column-gap: rem(24px);
-      padding: 16px 0;
+      padding: rem(8px) 0;
     }
 
     @include media-breakpoint-down(xs) {

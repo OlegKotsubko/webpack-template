@@ -1,0 +1,58 @@
+section.section.hiw-section
+  .container
+    h3.title How the platform works
+      .title__icon
+        include ../../images/svg/star-2.svg
+    .hiw-section__content
+      .tab.js-tab
+        .tab__header
+          button(type="button" data-target="tab-1").tab__trigger.js-tab-trigger.is-active Onboarding
+          button(type="button" data-target="tab-2").tab__trigger.js-tab-trigger Profile informations
+          button(type="button" data-target="tab-3").tab__trigger.js-tab-trigger Career Matches
+          button(type="button" data-target="tab-4").tab__trigger.js-tab-trigger Silver package
+            .tab__icon
+              include ../../images/svg/star-3.svg
+
+        .hiw-section__body
+          .tab__item
+            button(type="button" data-target="tab-1").tab__title.js-tab-trigger.is-active Onboarding
+              .tab__shevron
+                include ../../images/svg/shewron.svg
+            .tab__content.js-tab-item#tab-1.is-active.hiw-section__item
+              p.hiw-section__title.
+                Choose a career goal, upload your CV in PDF format and determine the period
+                in which you want to achieve your goal.
+              img(src=require("../../images/Onboarding.jpg")).u-img-responsive
+
+          .tab__item
+            button(type="button" data-target="tab-2").tab__title.js-tab-trigger Profile informations
+              .tab__shevron
+                include ../../images/svg/shewron.svg
+            .tab__content.js-tab-item#tab-2.hiw-section__item
+              p.hiw-section__title.
+                Fill in personal information which helps the system to find the most
+                 relevant career development options.
+              img(src=require("../../images/Profile.jpg")).u-img-responsive
+
+          .tab__item
+            button(type="button" data-target="tab-3").tab__title.js-tab-trigger.is-active Career Matches
+              .tab__shevron
+                include ../../images/svg/shewron.svg
+            .tab__content.js-tab-item#tab-3.hiw-section__item
+              p.hiw-section__title.
+                Get a description of 3 free careers based on <br> your resume and current skills.
+              img(src=require("../../images/Matches.jpg")).u-img-responsive
+
+          .tab__item
+            button(type="button" data-target="tab-4").tab__title.js-tab-trigger Silver package
+              .tab__icon
+                include ../../images/svg/star-3.svg
+              .tab__shevron
+                include ../../images/svg/shewron.svg
+            .tab__content.js-tab-item#tab-4.hiw-section__item
+              p.hiw-section__title.
+                What is included: Unlimited career <br> matches and Courses base
+              img(src=require("../../images/Silverpackage.jpg")).u-img-responsive
+              .hiw-section__footer
+                a(href="#").button.button--primary.button--md.button--fluid.hiw-section__button 79.99€/month
+

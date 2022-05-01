@@ -1,0 +1,164 @@
+@use '../config' as *;
+
+.possibility-section {
+
+  &__body {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gray);
+    border-radius: rem(24px);
+    padding: rem(60px) rem(100px);
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(30px) rem(40px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: rem(24px) rem(16px) rem(48px);
+    }
+  }
+
+  &__icon {
+    width: rem(24px);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+  }
+
+  &__indicator {
+    @include font-size(18px, 20px);
+    @include flex($align-items: center);
+
+    font-weight: var(--bold);
+    color: var(--pink-light);
+    min-height: rem(24px);
+
+    svg {
+      @include make-spacer(mr, 1);
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-height: inherit;
+    }
+  }
+
+  &__title {
+    @include font-size(30px, 35px);
+    @include make-spacer(mt, 4);
+    @include make-spacer(mb, 0);
+
+    letter-spacing: -1px;
+    text-transform: lowercase;
+    font-weight: var(--bold);
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(24px, 32px);
+    }
+  }
+
+  &__list {
+    @include make-spacer(pl, 3);
+    @include make-spacer(mt, 2);
+
+    list-style: initial;
+  }
+
+  &__text:not(:last-child) {
+    @include make-spacer(mb, 2);
+  }
+
+  &__link {
+    @include font-size(16px, 20px);
+    @include make-spacer(mt, 3);
+
+    display: inline-block;
+    font-weight: var(--bold);
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  &__text {
+    @include font-size(16px, 24px);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: rem(216px);
+    grid-row-gap: rem(72px);
+    margin-top: rem(72px);
+
+    @include media-breakpoint-down(lg) {
+      grid-column-gap: rem(50px);
+      grid-row-gap: rem(40px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:nth-child(2n) {
+
+      &::before {
+        @include size(1px, 100%);
+
+        position: absolute;
+        top: 0;
+        left: rem(-106px);
+        display: block;
+        background-color: var(--gray);
+        content: "";
+
+
+        @include media-breakpoint-down(lg) {
+          left: rem(-25px);
+        }
+
+        @include media-breakpoint-down(sm) {
+          content: none;
+        }
+      }
+    }
+
+    &:nth-child(n+3) {
+
+      &::after {
+        @include size(100%, 1px);
+
+        position: absolute;
+        top: rem(-34px);
+        left: 0;
+        display: block;
+        background-color: var(--gray);
+        content: "";
+
+        @include media-breakpoint-down(lg) {
+          top: rem(-20px);
+        }
+
+        @include media-breakpoint-down(sm) {
+          content: none;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &:not(:nth-child) {
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--gray);
+      }
+    }
+  }
+}

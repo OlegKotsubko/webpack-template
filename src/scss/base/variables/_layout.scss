@@ -1,14 +1,9 @@
 @use '../../abstract/helpers/index' as *;
 
 :root {
-  --header-height: #{rem(106px)};
-  --container-width: #{rem(1120px)};
+  --header-height: #{rem(90px)};
 
   @include media-breakpoint-down(md) {
-    --header-height: #{rem(82px)};
-  }
-
-  @include media-breakpoint-down(lg) {
-    --container-width: 100%;
+    --header-height: #{rem(66px)};
   }
 }

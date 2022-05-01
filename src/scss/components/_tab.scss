@@ -1,0 +1,89 @@
+@use '../config' as *;
+
+.tab {
+
+  &__header {
+    @include flex;
+
+    border-bottom: 1px solid var(--gray-200);
+    justify-content: space-between;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  &__trigger {
+    @include transition(color);
+    @include flex($align-items:center);
+    @include font-size(18px, 20px);
+
+    position: relative;
+    color: var(--gray-400);
+    font-weight: var(--bold);
+    height: rem(60px);
+    padding: 0 rem(30px);
+
+    &::before {
+      @include size(100%, rem(4px));
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      content: "";
+    }
+
+    &.is-active {
+      color: var(--purple);
+
+      &::before {
+        background-color: var(--purple);
+      }
+    }
+  }
+
+  &__icon {
+    @include make-spacer(ml, 2);
+    @include make-spacer(mt, half);
+  }
+
+  &__content {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  &__title {
+    display: none;
+    height: rem(50px);
+    position: relative;
+    border-bottom: 1px solid var(--black);
+    width: 100%;
+    padding-right: rem(56px);
+
+    &.is-active {
+      color: var(--purple);
+
+      .tab {
+
+        &__shevron {
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include flex($align-items: center);
+    }
+  }
+
+  &__shevron {
+    position: absolute;
+    top: rem(14px);
+    right: rem(14px);
+    transform-origin: center;
+  }
+}
