@@ -1,0 +1,21 @@
+@use '../config' as *;
+
+.options-section {
+  position: relative;
+  overflow: hidden;
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(437px);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__grid {
+    @include make-spacer(mt, 8);
+  }
+}

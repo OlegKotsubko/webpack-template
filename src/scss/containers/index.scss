@@ -6,7 +6,7 @@
   margin: 0 auto;
 
   @include media-breakpoint-down(md) {
-    padding: 0 rem(48px);
+    padding: 0 rem(24px);
   }
 
   @include media-breakpoint-down(xs) {

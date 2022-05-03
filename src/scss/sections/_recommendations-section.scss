@@ -9,6 +9,14 @@
     padding: rem(50px) 0;
   }
 
+  &__form {
+    margin-top: rem(-40px);
+
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+    }
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -90,6 +98,10 @@
   }
 
   &__body {
-    margin-top: rem(60px);
+    margin-top: rem(95px);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(40px);
+    }
   }
 }

@@ -1,0 +1,61 @@
+@use '../config' as *;
+
+.options {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: rem(300px) rem(350px) rem(300px);
+    justify-content: space-between;
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: rem(280px) rem(330px) rem(280px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      grid-row-gap: rem(50px);
+    }
+  }
+
+  &__item {
+    @include flex($direction: column);
+
+    border-radius: rem(16px);
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+    min-height: rem(541px);
+
+    &.active {
+      padding-left: rem(25px);
+      padding-right: rem(25px);
+      background: var(--gradient);
+      color: var(--white);
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(350px);
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: rem(300px);
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    @include font-size(40px, 45px);
+    @include make-spacer(mt, 0);
+    @include make-spacer(mb, 1);
+
+    margin-bottom: rem(20px);
+    font-weight: var(--bold);
+  }
+
+  &__button {
+    @include make-spacer(mt, auto);
+  }
+
+  &__accordion {
+    margin-bottom: rem(50px);
+  }
+}

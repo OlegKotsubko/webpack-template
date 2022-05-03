@@ -1,0 +1,79 @@
+@use '../config' as *;
+
+.accordion {
+  width: 100%;
+
+  &__item {
+    @include make-spacer(mb, 2);
+  }
+
+  &__arrow {
+    @include transition(transform);
+    @include flex(center, center);
+    @include size(rem(24px));
+
+    position: absolute;
+    top: rem(12px);
+    right: 0;
+    font-size: rem(16px);
+  }
+
+  &__wrapper {
+    @include make-spacer(pt, 1)
+  }
+
+  &__trigger {
+    @include reset-button;
+    @include flex(center, $direction:column);
+    @include make-spacer(pr, 4);
+
+    position: relative;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    min-height: rem(44px);
+    color: inherit;
+
+    &.active {
+      + .accordion__body {
+        height: auto;
+      }
+
+      .accordion__arrow {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+
+  &__body {
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__title {
+    @include font-size(20px);
+
+    font-weight: var(--bold);
+  }
+
+  &__subtitle {
+    @include flex($align-items: center);
+    @include make-spacer(mt, 1);
+    @include font-size(13px);
+
+    > svg {
+      margin-right: 4px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include make-spacer(mb, 1);
+    }
+  }
+
+  &__divider {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mb, 1);
+  }
+}

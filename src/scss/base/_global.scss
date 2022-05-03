@@ -11,7 +11,7 @@ body {
   @include flex(flex-start, $direction: column);
 
   background-color: var(--white);
-  min-width: 320px;
+  min-width: rem(375px);
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;

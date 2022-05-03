@@ -3,7 +3,11 @@
 .hiw-section {
 
   &__content {
-    margin-top: rem(35px);
+    margin-top: rem(60px);
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(30px);
+    }
   }
 
   &__title {
