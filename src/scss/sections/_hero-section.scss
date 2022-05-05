@@ -88,7 +88,7 @@
 
     @include media-breakpoint-down(sm) {
       @include make-spacer(mt, 4);
-      @include make-spacer(mx, auto);
+      @include make-spacer(mr, auto);
 
       position: relative;
       top: 0;
@@ -97,6 +97,10 @@
   }
 
   &__button {
-    @include make-spacer(mt, 7)
+    @include make-spacer(mt, 7);
+
+    @include media-breakpoint-down(sm) {
+      max-width: rem(397px);
+    }
   }
 }

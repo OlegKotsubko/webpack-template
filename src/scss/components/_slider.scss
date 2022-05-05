@@ -1,0 +1,25 @@
+@use '../config' as *;
+
+.slider {
+  --swiper-navigation-size: #{rem(24px)};
+  --swiper-pagination-color: var(--purple);
+  --swiper-navigation-color: var(--purple);
+  --swiper-pagination-bullet-horizontal-gap: #{rem(12px)};
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-width: #{rem(12px)};
+  --swiper-pagination-bullet-height: #{rem(12px)};
+
+  position: relative;
+
+  .swiper-button-next {
+    right: -50px;
+  }
+
+  .swiper-button-prev {
+    left: -50px;
+  }
+
+  &--pagination {
+    padding-bottom: rem(84px);
+  }
+}

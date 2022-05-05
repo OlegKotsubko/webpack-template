@@ -1,0 +1,59 @@
+@use '../config' as *;
+
+.client {
+
+  &__header {
+    display: grid;
+    grid-template-columns: rem(98px) 1fr;
+    grid-column-gap: rem(30px);
+    margin-bottom: rem(30px);
+  }
+
+  &__avatar {
+    @include size(rem(98px));
+
+    position: relative;
+    background-color: var(--gray);
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__name {
+    @include flex(center, $direction: column);
+    @include font-size(20px, 24px);
+
+    font-weight: var(--bold);
+
+    > p {
+      @include make-spacer(mb, 0);
+    }
+  }
+
+  &__button {
+    @include font-size(13px);
+    @include make-spacer(px, 2);
+    @include make-spacer(py, 1);
+
+    display: inline-block;
+    border: 1px solid var(--black);
+    font-weight: var(--bold);
+
+    &--fill {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+
+  &__footer {
+    @include make-spacer(mt, 5);
+    @include flex($align-items: center);
+
+    gap: rem(16px);
+  }
+
+  &__text {
+    @include font-size(16px, 24px);
+    @include make-spacer(mb, 0)
+  }
+}

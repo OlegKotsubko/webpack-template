@@ -1,0 +1,61 @@
+@use '../config' as *;
+
+.clients {
+  @include make-spacer(mx, auto);
+
+  position: relative;
+  padding-top: rem(310px);
+  margin-top: rem(120px);
+
+  @include media-breakpoint-down(md) {
+    max-width: rem(757px);
+  }
+
+  &__banner {
+    @include size(rem(492px));
+    @include flex(center, flex-end, column);
+
+    position: absolute;
+    right: rem(-105px);
+    top: 0;
+
+    @include media-breakpoint-down(sm) {
+      right: 0;
+      top: rem(-130px);
+    }
+  }
+
+  &__decor {
+    @include size(492px);
+
+    position: absolute;
+    top: 0;
+    left: rem(-75px);
+    object-fit: contain;
+  }
+
+  &__count {
+    @include font-size(120px, 80px);
+
+    position: relative;
+    font-weight: var(--extra-bold);
+    margin-bottom: rem(40px);
+    letter-spacing: -5px;
+  }
+
+  &__subtitle {
+    @include font-size(20px, 30px);
+
+    position: relative;
+    font-weight: var(--bold);
+    max-width: rem(335px);
+  }
+
+  &__title {
+    max-width: rem(400px);
+  }
+
+  &__slider {
+    @include make-spacer(mt, 10)
+  }
+}

@@ -44,3 +44,20 @@ button {
 ul {
   @include reset-list;
 }
+
+p {
+  margin-top: 0;
+}
+
+.img {
+  @include size(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  &--contain {
+    object-fit: contain;
+  }
+}

@@ -76,4 +76,8 @@
     @include make-spacer(mt, 0);
     @include make-spacer(mb, 1);
   }
+
+  &__content {
+    @include make-spacer(py, half);
+  }
 }

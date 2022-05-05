@@ -1,14 +1,14 @@
 @use '../config' as *;
 
 .options-section {
-  position: relative;
   overflow: hidden;
 
   &__decor {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: rem(140px);
+    left: rem(-90px);
     width: rem(437px);
+    z-index: -1;
   }
 
   &__content {
@@ -17,5 +17,7 @@
 
   &__grid {
     @include make-spacer(mt, 8);
+
+    position: relative;
   }
 }

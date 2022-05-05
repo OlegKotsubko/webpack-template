@@ -11,6 +11,7 @@
     padding: rem(25px) rem(30px);
     border-radius: rem(16px);
     min-width: rem(250px);
+    border: 1px solid var(--gray);
     display: none;
 
     &.dropdown-active {
