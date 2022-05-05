@@ -3,11 +3,7 @@
 .section {
   margin: rem(150px) 0;
 
-  @include media-breakpoint-down(md) {
-    margin: rem(100px) 0;
-  }
-
   @include media-breakpoint-down(sm) {
-    margin: rem(50px) 0;
+    margin: rem(90px) 0;
   }
 }

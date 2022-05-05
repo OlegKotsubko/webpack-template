@@ -80,4 +80,34 @@
   &__content {
     @include make-spacer(py, half);
   }
+
+  &--accent {
+
+    .accordion {
+
+      &__arrow {
+        top: rem(24px);
+      }
+
+      &__divider {
+        @include make-spacer(mb, 2);
+      }
+
+      &__item {
+        &:not(:last-child) {
+          @include make-spacer(mb, 2);
+        }
+      }
+
+      &__trigger {
+        padding-left: rem(28px);
+        border-left: 7px solid var(--pink);
+        min-height: rem(60px);
+      }
+
+      &__title {
+        font-weight: var(--medium);
+      }
+    }
+  }
 }

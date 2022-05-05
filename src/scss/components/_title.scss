@@ -28,6 +28,10 @@
     }
   }
 
+  &--sm {
+    @include font-size(60px, 65px);
+  }
+
   @include media-breakpoint-down(sm) {
     @include font-size(60px, 70px);
   }

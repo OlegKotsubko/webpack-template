@@ -30,7 +30,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 300px;
+    width: rem(300px);
+
+    @include media-breakpoint-down(xs) {
+      width: rem(150px);
+    }
   }
 
   &__indicator {
