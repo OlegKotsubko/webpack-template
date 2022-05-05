@@ -1,8 +1,13 @@
 @use '../config' as *;
 
+:root {
+  --container-width: #{rem(1048px)};
+  --container-width-md: #{rem(1260px)};
+}
+
 .container {
   width: 100%;
-  max-width: rem(1048px);
+  max-width: var(--container-width);
   margin: 0 auto;
 
   @include media-breakpoint-down(md) {
@@ -14,6 +19,6 @@
   }
 
   &--md {
-    max-width: rem(1260px);
+    max-width: var(--container-width-md);
   }
 }
