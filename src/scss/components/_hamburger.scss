@@ -91,7 +91,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
   &::after {
     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
-    width: $hamburger-layer-width / 2;
+    width: math.div($hamburger-layer-width, 2);
   }
 
   &,
