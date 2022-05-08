@@ -8,6 +8,10 @@
   --swiper-pagination-bullet-inactive-opacity: 0.2;
   --swiper-pagination-bullet-width: #{rem(12px)};
   --swiper-pagination-bullet-height: #{rem(12px)};
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-vertical-gap: 6px;
 
   position: relative;
 
