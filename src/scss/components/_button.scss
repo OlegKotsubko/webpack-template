@@ -5,7 +5,7 @@
   @include font-size(20px);
   @include make-spacer(m, 0);
   @include make-spacer(px, 2);
-  @include transition(#{color, border-color});
+  @include transition(#{color, border-color, background-color});
 
   position: relative;
   outline: none;
@@ -31,6 +31,20 @@
     pointer-events: none;
   }
 
+  &--outline {
+    border: 1px solid var(--black);
+    color: var(--black);
+
+    &:hover {
+      color: var(--pink);
+      border-color: var(--pink);
+    }
+
+    &:active {
+      background-color: var(--pink-03);
+    }
+  }
+
   &--secondary {
     background-color: var(--white);
 
@@ -40,6 +54,19 @@
 
     &:active {
       background-color: var(--gray-100);
+    }
+  }
+
+  &--dark {
+    background-color: var(--black);
+    color: var(--white);
+
+    &:hover {
+      color: var(--pink);
+    }
+
+    &:active {
+      background-color: var(--black-900);
     }
   }
 
@@ -54,11 +81,6 @@
 
     &:active {
       background-color: var(--pink-03);
-    }
-
-    @include media-breakpoint-down(md) {
-      @include make-spacer(px, 1);
-      @include font-size(16px);
     }
   }
 

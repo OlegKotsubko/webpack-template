@@ -12,10 +12,6 @@
   background-color: var(--black);
   z-index: 101;
 
-  &.is-transparent {
-    background-color: transparent;
-  }
-
   &__container {
     color: var(--white);
     display: grid;
@@ -38,8 +34,11 @@
   }
 
   &__logo {
+    @include transition(color);
+
     display: block;
     position: relative;
+    color: var(--white);
     z-index: 1;
 
     svg {
@@ -62,6 +61,18 @@
   }
 
   &__button {
+    border: 1px solid var(--white);
+    color: var(--white);
+
+    &:hover {
+      color: var(--pink);
+      border-color: var(--pink);
+    }
+
+    &:active {
+      background-color: var(--pink-03);
+    }
+
     @include media-breakpoint-down(sm) {
       width: rem(96px);
     }
@@ -91,5 +102,74 @@
 
   &__menu {
     margin-right: rem(90px);
+  }
+
+  &--white {
+
+    .header {
+
+      &__button {
+        border: 1px solid var(--white);
+        color: var(--white);
+
+        &:hover {
+          color: var(--pink);
+          border-color: var(--pink);
+        }
+
+        &:active {
+          background-color: var(--pink-03);
+        }
+      }
+    }
+
+    &.is-transparent {
+
+      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        background-color: var(--black);
+      }
+
+      &.is-opened {
+
+        .header {
+
+          &__logo {
+            color: var(--white);
+          }
+        }
+      }
+
+      .header {
+
+        &__button {
+          background-color: var(--black);
+          color: var(--white);
+
+          &:hover {
+            color: var(--pink);
+          }
+
+          &:active {
+            background-color: var(--black-900);
+          }
+        }
+
+        &__logo {
+          color: var(--black);
+        }
+
+        &__link {
+          color: var(--black);
+
+          &:hover {
+            color: var(--pink);
+          }
+        }
+      }
+    }
+  }
+
+  &.is-transparent {
+    background-color: transparent;
   }
 }

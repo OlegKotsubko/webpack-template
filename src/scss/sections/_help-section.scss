@@ -1,7 +1,9 @@
 @use '../config' as *;
 
 .help-section {
+  position: relative;
   display: grid;
+  overflow: hidden;
   grid-template-columns: 1fr minmax(rem(375px), rem(1124px)) .6fr;
 
   @include media-breakpoint-up(md) {
@@ -38,6 +40,7 @@
   }
 
   &__header {
+    position: relative;
     display: grid;
     grid-template-columns: rem(575px) rem(274px);
     justify-content: space-between;
@@ -60,6 +63,53 @@
   }
 
   &__list {
+    position: relative;
     margin-top: rem(90px);
+  }
+
+  &__image {
+    width: 322px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &--left {
+
+    .help-section {
+
+      &__decor {
+        &:last-child {
+          background-color: transparent;
+        }
+
+        &:first-child {
+          background-color: var(--black);
+        }
+      }
+
+      &__container {
+        border-radius: 0 rem(24px) rem(24px) 0;
+        padding-left: 0;
+        padding-right: rem(104px);
+
+        @include media-breakpoint-down(md) {
+          margin-left: 0;
+          margin-right: rem(24px);
+          padding-right:0;
+          padding-left: rem(24px);
+        }
+
+        @include media-breakpoint-down(sm) {
+          padding-right: rem(50px);
+        }
+
+        @include media-breakpoint-down(xs) {
+          margin-left:0;
+          margin-right: rem(16px);
+          padding-right: rem(16px);
+        }
+      }
+    }
   }
 }

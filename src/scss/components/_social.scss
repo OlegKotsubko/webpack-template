@@ -16,25 +16,28 @@
   }
 
   &__link {
+    @include flex(center, center);
     @include transition(color);
 
+    color: var(--white);
+
     &:hover {
-      color: red;
+      color: var(--purple);
     }
   }
 
   &--adaptive {
+    @include flex(center, $direction: column);
+
+    gap: rem(16px);
 
     @include media-breakpoint-down(sm) {
-      @include flex(center);
-
-      gap: rem(16px);
+      flex-direction: row;
     }
 
     .social {
 
       &__title {
-        @include make-spacer(mb, 2);
 
         writing-mode: vertical-rl;
 
@@ -48,6 +51,21 @@
           @include flex;
 
           gap: rem(16px);
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &--black {
+
+    .social {
+
+      &__link {
+        color: var(--black);
+
+        &:hover {
+          color: var(--purple);
         }
       }
     }
