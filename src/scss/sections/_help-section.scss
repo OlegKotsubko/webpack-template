@@ -26,7 +26,7 @@
 
     @include media-breakpoint-down(xs) {
       margin-left: rem(16px);
-      padding: rem(43px) 0 rem(32px) rem(32px);
+      padding: rem(43px) rem(32px) rem(32px) rem(32px);
     }
   }
 

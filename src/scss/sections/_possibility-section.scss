@@ -159,8 +159,8 @@
     }
 
     @include media-breakpoint-down(sm) {
-      &:not(:nth-child) {
-        padding-bottom: 40px;
+      &:not(:last-child) {
+        padding-bottom: rem(40px);
         border-bottom: 1px solid var(--gray);
       }
     }

@@ -7,9 +7,9 @@
 // ==================================================
 $hamburger-padding-x: 0 !default;
 $hamburger-padding-y: 0 !default;
-$hamburger-layer-width: 22px !default;
+$hamburger-layer-width: 30px !default;
 $hamburger-layer-height: 2px !default;
-$hamburger-layer-spacing: 4px !default;
+$hamburger-layer-spacing: 8px !default;
 $hamburger-layer-color: #fff !default;
 $hamburger-layer-border-radius: 0 !default;
 $hamburger-hover-opacity: 0.8 !default;
@@ -82,13 +82,16 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   display: block;
   top: 50%;
   margin-top: math.div($hamburger-layer-height, -2);
+  width: $hamburger-layer-width;
 
   &::before {
     top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    width: $hamburger-layer-width;
   }
 
   &::after {
     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    width: $hamburger-layer-width / 2;
   }
 
   &,
@@ -100,7 +103,6 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
     transition-timing-function: ease;
     border-radius: $hamburger-layer-border-radius;
     background-color: $hamburger-layer-color;
-    width: $hamburger-layer-width;
     height: $hamburger-layer-height;
   }
 
@@ -142,6 +144,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
       &::after {
         transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
+        width: $hamburger-layer-width;
       }
     }
   }

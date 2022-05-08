@@ -26,4 +26,13 @@
 
     margin-top: rem(80px);
   }
+
+  &__content {
+    @include font-size(20px, 30px);
+    @include make-spacer(pl, 4);
+
+    @include media-breakpoint-down(sm) {
+      @include font-size(16px, 24px);
+    }
+  }
 }

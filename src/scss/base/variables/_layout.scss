@@ -4,6 +4,10 @@
   --header-height: #{rem(90px)};
 
   @include media-breakpoint-down(sm) {
+    --header-height: #{rem(100px)};
+  }
+
+  @include media-breakpoint-down(xs) {
     --header-height: #{rem(66px)};
   }
 }

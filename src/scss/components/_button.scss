@@ -80,12 +80,6 @@
     @include font-size(30px);
 
     min-height: rem(80px);
-
-    @include media-breakpoint-down(md) {
-      @include make-spacer(px, 3);
-      @include font-size(20px);
-      min-height: rem(60px);
-    }
   }
 
   &--md {
@@ -93,12 +87,6 @@
     @include font-size(20px);
 
     min-height: rem(65px);
-
-    @include media-breakpoint-down(md) {
-      @include make-spacer(px, 2);
-      @include font-size(20px);
-      min-height: rem(50px);
-    }
   }
 
   &--fluid {
