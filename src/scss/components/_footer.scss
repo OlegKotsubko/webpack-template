@@ -74,12 +74,18 @@
   }
 
   &__link {
+    @include transition(#{opacity,color});
     @include font-size(20px, 23px);
 
     color: var(--white);
     opacity: 0.6;
     text-decoration: none;
     font-weight: var(--bold);
+
+    &:hover {
+      opacity: 1;
+      color: var(--pink-light);
+    }
   }
 
   &__item {

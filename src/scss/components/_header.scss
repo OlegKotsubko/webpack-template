@@ -77,11 +77,16 @@
   }
 
   &__link {
+    @include transition(color);
     @include font-size(20px, 24px);
 
     font-weight: var(--medium);
     color: var(--white);
     text-decoration: none;
+
+    &:hover {
+      color: var(--pink);
+    }
   }
 
   &__menu {
