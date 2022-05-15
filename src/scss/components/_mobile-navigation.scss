@@ -10,8 +10,7 @@
   bottom: 0;
   left: -100vw;
   z-index: 100;
-  background: rgba(8, 8, 8, 0.75);
-  backdrop-filter: blur(6px);
+  background: var(--black);
 
   &.is-opened {
     transform: translateX(100%);
@@ -20,29 +19,38 @@
   &__content {
     @include flex(center, center, column, $display: grid);
 
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height) - #{rem(64px)});
     overflow-y: auto;
     padding: 20px;
     position: absolute;
+    top: var(--header-height);
     right: 0;
     bottom: 0;
     left: 0;
   }
 
+  &__item {
+    margin-bottom: 60px;
+  }
+
   &__nav {
     @include flex($direction: column);
 
-    gap: 24px;
+    text-align: center;
   }
 
   &__link,
   &__sublink {
     color: var(--white);
     text-decoration: none;
+    display: inline-block;
   }
 
   &__link {
-    @include font-size(18px, 24px);
+    @include font-size(30px, 24px);
+
+    font-weight: var(--medium);
+    margin-bottom: rem(24px);
   }
 
   &__subitem {
@@ -50,9 +58,13 @@
   }
 
   &__sublink {
-    @include make-spacer(ml, 2);
-    @include font-size(16px, 24px);
+    @include font-size(20px, 24px);
+  }
 
-    display: inline-block;
+  &__socials {
+    position: absolute;
+    left: rem(16px);
+    bottom: rem(24px);
+    color: var(--white);
   }
 }

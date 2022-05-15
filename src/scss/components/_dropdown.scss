@@ -7,31 +7,10 @@
     position: absolute;
     top: calc(100% + #{rem(32px)});
     left: 0;
-    background-color: var(--white);
-    padding: rem(25px) rem(30px);
-    border-radius: rem(16px);
-    min-width: rem(250px);
-    border: 1px solid var(--gray);
     display: none;
 
     &.dropdown-active {
       display: block;
     }
-  }
-
-  &__link {
-    @include font-size(20px, 24px);
-
-    color: var(--black);
-    text-decoration: none;
-    font-weight: 600;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__item:not(:last-child) {
-    @include make-spacer(mb, 3);
   }
 }

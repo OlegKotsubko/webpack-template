@@ -27,25 +27,29 @@
 
   &__decor {
     position: absolute;
-    top: -1285px;
-    left: -1161px;
+    top: rem(-1285px);
+    left: rem(-1161px);
 
+    @include media-breakpoint-up(xl) {
+      top: rem(-1274px);
+      left: rem(-1015px);
+    }
 
     @include media-breakpoint-down(md) {
-      width: 1460px;
-      top: -610px;
-      left: -540px;
+      width: rem(1460px);
+      top: rem(-610px);
+      left: rem(-540px);
     }
 
     @include media-breakpoint-down(sm) {
-      top: -634px;
-      left: -695px;
+      top: rem(-634px);
+      left: rem(-695px);
     }
 
     @include media-breakpoint-down(xs) {
-      width: 1090px;
-      top: -455px;
-      left: -614px;
+      width: rem(1090px);
+      top: rem(-455px);
+      left: rem(-627px);
     }
   }
 
@@ -61,10 +65,11 @@
 
     @include media-breakpoint-down(md) {
       padding-top: rem(100px);
+      grid-row-gap: 48px;
     }
 
     @include media-breakpoint-down(sm) {
-      padding-top: rem(350px);
+      padding-top: rem(300px);
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       grid-row-gap: 0;
@@ -77,7 +82,7 @@
 
   &__title {
     @include make-spacer(m, 0);
-    @include font-size(80px);
+    @include font-size(80px, 85px);
 
     font-weight: var(--medium);
     text-transform: lowercase;
@@ -91,11 +96,11 @@
     }
 
     @include media-breakpoint-down(sm) {
-      @include font-size(70px);
+      @include font-size(70px, 80px);
     }
 
     @include media-breakpoint-down(xs) {
-      @include font-size(50px);
+      @include font-size(50px, 55px);
     }
   }
 
@@ -116,6 +121,7 @@
     @include media-breakpoint-down(sm) {
       grid-row: auto;
       grid-column: 1 / 3;
+      margin-top: rem(90px);
     }
 
     @include media-breakpoint-down(xs) {
@@ -130,6 +136,8 @@
     grid-row: 2;
 
     @include media-breakpoint-down(md) {
+      @include make-spacer(mt, 0);
+
       grid-row: 2;
     }
 
@@ -222,7 +230,7 @@
         @include media-breakpoint-down(xs) {
           width: 1090px;
           top: -455px;
-          left: -614px;
+          left: -627px;
         }
       }
     }

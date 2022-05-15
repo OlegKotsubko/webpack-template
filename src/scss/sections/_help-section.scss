@@ -6,8 +6,8 @@
   overflow: hidden;
   grid-template-columns: 1fr minmax(rem(375px), rem(1124px)) .6fr;
 
-  @include media-breakpoint-up(md) {
-    grid-template-columns: 1fr minmax(rem(375px), var(--container-width)) 1fr;
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr minmax(rem(1200px), var(--container-width)) 1fr;
   }
 
   &__container {
@@ -20,6 +20,7 @@
     @include media-breakpoint-down(md) {
       margin-left: rem(24px);
       padding-right: rem(24px);
+      padding-bottom: rem(105px);
     }
 
     @include media-breakpoint-down(sm) {
@@ -28,7 +29,7 @@
 
     @include media-breakpoint-down(xs) {
       margin-left: rem(16px);
-      padding: rem(43px) rem(32px) rem(32px) rem(32px);
+      padding: rem(43px) rem(32px) rem(52px) rem(32px);
     }
   }
 
@@ -65,6 +66,14 @@
   &__list {
     position: relative;
     margin-top: rem(90px);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(70px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(80px);
+    }
   }
 
   &__image {

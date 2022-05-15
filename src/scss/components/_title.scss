@@ -9,22 +9,22 @@
   text-transform: lowercase;
 
   &__icon {
-    @include make-spacer(ml, 2);
-
     display: inline-block;
     vertical-align: bottom;
     width: rem(48px);
+    margin-left: rem(28px);
 
     @include media-breakpoint-down(lg) {
       width: rem(40px);
     }
 
-    @include media-breakpoint-down(md) {
-      width: rem(32px);
+    @include media-breakpoint-down(sm) {
+      margin-left: rem(28px);
     }
 
     @include media-breakpoint-down(xs) {
-      width: rem(24px);
+      width: rem(26px);
+      margin-left: rem(18px);
     }
   }
 

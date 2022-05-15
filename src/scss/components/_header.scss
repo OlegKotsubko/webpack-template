@@ -8,7 +8,6 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: var(--header-height);
   background-color: var(--black);
   z-index: 101;
 
@@ -20,6 +19,7 @@
     align-items: center;
     gap: rem(8px);
     padding: rem(16px) 0;
+    height: var(--header-height);
 
     @include media-breakpoint-down(sm) {
       grid-template-columns: rem(166px) 1fr rem(166px);
@@ -50,6 +50,10 @@
         width: rem(210px);
       }
     }
+
+    @include media-breakpoint-down(xs) {
+      max-width: rem(130px);
+    }
   }
 
   &__trigger {
@@ -79,8 +83,9 @@
   }
 
   &__nav {
-    display: flex;
-    justify-content: flex-end;
+    @include flex(flex-end, center);
+
+    height: 100%;
 
     @include media-breakpoint-down(sm) {
       display: none;
@@ -88,20 +93,47 @@
   }
 
   &__link {
+    @include make-spacer(p, 4);
+    @include flex(center, center);
     @include transition(color);
     @include font-size(20px, 24px);
 
     font-weight: var(--medium);
-    color: var(--white);
+    color: currentColor;
     text-decoration: none;
-
-    &:hover {
-      color: var(--pink);
-    }
+    height: 100%;
   }
 
   &__menu {
-    margin-right: rem(90px);
+    @include flex(center, center);
+
+    cursor: pointer;
+    position: relative;
+    color: var(--white);
+    height: 100%;
+    margin-right: rem(32px);
+
+    &:hover {
+      color: var(--pink);
+
+      .header__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: rem(32px);
+    display: none;
+  }
+
+  &__hamburger {
+
+    @include media-breakpoint-down(xs) {
+      transform: scale(0.6);
+    }
   }
 
   &--white {

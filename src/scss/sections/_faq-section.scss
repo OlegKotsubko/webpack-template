@@ -5,14 +5,14 @@
   grid-template-columns: 1fr rem(620px);
   grid-column-gap: rem(24px);
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     grid-template-columns: 1fr;
   }
 
   &__body {
     @include make-spacer(mt, 3);
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-top: rem(80px);
     }
 
@@ -28,11 +28,7 @@
   }
 
   &__content {
-    @include font-size(20px, 30px);
+    @include font-size(16px, 20px);
     @include make-spacer(pl, 4);
-
-    @include media-breakpoint-down(sm) {
-      @include font-size(16px, 24px);
-    }
   }
 }

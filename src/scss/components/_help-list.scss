@@ -33,7 +33,7 @@
   }
 
   &__button {
-    @include make-spacer(mt, 5);
+    @include make-spacer(mt, 2);
 
     max-width: rem(251px);
   }

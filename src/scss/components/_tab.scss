@@ -24,6 +24,14 @@
     height: rem(60px);
     padding: 0 rem(30px);
 
+    &:hover {
+      color: var(--purple-light);
+    }
+
+    &:active {
+      color: var(--purple-dark);
+    }
+
     &::before {
       @include size(100%, rem(4px));
 
@@ -44,8 +52,13 @@
   }
 
   &__icon {
+    @include size(rem(24px));
     @include make-spacer(ml, 2);
     @include make-spacer(mt, half);
+
+    svg {
+      @include size(100%);
+    }
   }
 
   &__content {
@@ -60,30 +73,22 @@
     display: none;
     height: rem(50px);
     position: relative;
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--gray-200);
     width: 100%;
     padding-right: rem(56px);
 
     &.is-active {
       color: var(--purple);
-
-      .tab {
-
-        &__shevron {
-          transform: rotateZ(180deg);
-        }
-      }
     }
 
     @include media-breakpoint-down(sm) {
-      @include flex($align-items: center);
-    }
-  }
+      @include font-size(18px, 20px);
+      @include flex(center, center);
 
-  &__shevron {
-    position: absolute;
-    top: rem(14px);
-    right: rem(14px);
-    transform-origin: center;
+      color: var(--gray-400);
+      font-weight: var(--bold);
+      min-height: rem(74px);
+      padding-right: 0;
+    }
   }
 }

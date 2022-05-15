@@ -13,9 +13,11 @@
   &__list {
     display: grid;
     grid-row-gap: rem(16px);
+    justify-content: center;
   }
 
   &__link {
+    @include size(rem(18px));
     @include flex(center, center);
     @include transition(color);
 
@@ -23,6 +25,14 @@
 
     &:hover {
       color: var(--purple);
+    }
+
+    svg {
+      @include size(100%);
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include size(rem(26px));
     }
   }
 
@@ -32,7 +42,9 @@
     gap: rem(16px);
 
     @include media-breakpoint-down(sm) {
+      gap: rem(50px);
       flex-direction: row;
+      align-items: center;
     }
 
     .social {
@@ -50,7 +62,7 @@
         @include media-breakpoint-down(sm) {
           @include flex;
 
-          gap: rem(16px);
+          gap: rem(36px);
           align-items: center;
         }
       }

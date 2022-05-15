@@ -3,7 +3,9 @@ footer.footer
     .footer__content
 
       a(href="/").footer__logo
-        include ../../images/svg/logo.svg
+        picture
+          source(srcset=require('../../images/footer-logo.webp') type="image/webp")
+          img(src=require('../../images/footer-logo.png') alt="decor").u-img-responsive
       .footer__grid
         .footer__copyright
           p © 2021 CompetenzLab.

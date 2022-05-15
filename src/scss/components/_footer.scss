@@ -30,20 +30,17 @@
   }
 
   &__grid {
-    @include make-spacer(mt, 3);
+    @include make-spacer(mt, 10);
 
     display: grid;
     grid-template-columns: rem(400px) repeat(2, rem(220px));
     grid-column-gap: rem(120px);
 
-    @include media-breakpoint-down(lg) {
-      @include make-spacer(mt, 8);
-
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: rem(56px);
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       grid-template-columns: 1fr;
       grid-gap: rem(24px);
     }
@@ -52,17 +49,12 @@
   &__copyright {
     padding-right: rem(64px);
 
+    @include media-breakpoint-down(sm) {
+      padding-right: 0;
+    }
+
     > * {
       margin: 0 0 rem(8px);
-    }
-
-    @include media-breakpoint-down(lg) {
-      padding-right: 0;
-      grid-column: 1/4;
-    }
-
-    @include media-breakpoint-down(sm) {
-      grid-column: 1/2;
     }
   }
 

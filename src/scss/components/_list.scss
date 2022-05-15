@@ -1,0 +1,26 @@
+@use '../config' as *;
+
+.list {
+
+  &__item {
+    @include font-size(15px, 20px);
+
+    position: relative;
+    padding-left: rem(14px);
+
+    &:not(:last-child) {
+      @include make-spacer(mb, 2);
+    }
+
+    &::before {
+      @include size(rem(4px));
+
+      position: absolute;
+      top: rem(8px);
+      left: 0;
+      border-radius: 50%;
+      background-color: currentColor;
+      content: '';
+    }
+  }
+}

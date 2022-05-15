@@ -1,20 +1,22 @@
 @use '../config' as *;
 
 :root {
-  --container-width: #{rem(1048px)};
-  --container-width-md: #{rem(1260px)};
+  --container-width: #{rem(1096px)};
+  --container-width-md: #{rem(1308px)};
 }
 
 .container {
   width: 100%;
   max-width: var(--container-width);
+  padding: 0 rem(24px);
   margin: 0 auto;
 
-  @include media-breakpoint-down(md) {
-    padding: 0 rem(24px);
+  @include media-breakpoint-up(xl) {
+    --container-width: #{rem(1248px)};
+    --container-width-md: #{rem(1628px)};
   }
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 0 rem(16px);
   }
 

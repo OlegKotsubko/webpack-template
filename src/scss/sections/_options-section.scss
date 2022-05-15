@@ -20,4 +20,8 @@
 
     position: relative;
   }
+
+  &__text {
+    @include font-size(15px, 20px);
+  }
 }

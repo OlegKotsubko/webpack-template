@@ -3,21 +3,22 @@ const menu = () => {
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-navigation');
   const header = document.getElementById('header');
-
-  function toggleMenu() {
-    hamburger.classList.toggle('is-active');
-    mobileNav.classList.toggle('is-opened');
-    header.classList.toggle('is-opened');
-    hamburger.classList.toggle('is-disabled');
-    body.classList.toggle('is-overflow-hidden');
-  }
+  const mediaQueryList = window.matchMedia('(max-width: 1024px)')
 
   const closeMenu = () => {
-    toggleMenu()
+    hamburger.classList.remove('is-active');
+    mobileNav.classList.remove('is-opened');
+    header.classList.remove('is-opened');
+    hamburger.classList.remove('is-disabled');
+    body.classList.remove('is-overflow-hidden');
   };
 
   const openMenu = () => {
-    toggleMenu()
+    hamburger.classList.add('is-active');
+    mobileNav.classList.add('is-opened');
+    header.classList.add('is-opened');
+    hamburger.classList.add('is-disabled');
+    body.classList.add('is-overflow-hidden');
   };
 
   hamburger.addEventListener('click', () => {
@@ -29,6 +30,10 @@ const menu = () => {
       openMenu();
     }
   });
+
+  mediaQueryList.addEventListener('change', () => {
+    closeMenu();
+  })
 };
 
 export default menu;

@@ -9,8 +9,12 @@
     border-radius: rem(24px);
     padding: rem(60px) rem(100px);
 
+    @include media-breakpoint-down(md) {
+      padding: rem(50px) rem(70px);
+    }
+
     @include media-breakpoint-down(sm) {
-      padding: rem(30px) rem(40px);
+      padding: rem(50px);
     }
 
     @include media-breakpoint-down(xs) {
@@ -30,10 +34,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: rem(300px);
+    width: rem(236px);
+
+    @include media-breakpoint-down(sm) {
+      width: rem(150px);
+    }
 
     @include media-breakpoint-down(xs) {
-      width: rem(150px);
+      width: rem(100px);
     }
   }
 
@@ -56,32 +64,38 @@
 
   &__title {
     @include font-size(30px, 35px);
-    @include make-spacer(mt, 4);
+    @include make-spacer(mt, 3);
     @include make-spacer(mb, 0);
 
     letter-spacing: -1px;
     text-transform: lowercase;
     font-weight: var(--bold);
+    max-width: rem(244px);
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       @include font-size(24px, 32px);
     }
   }
 
-  &__list {
-    @include make-spacer(pl, 3);
-    @include make-spacer(mt, 2);
+  &__heading {
+    padding-right: rem(100px);
 
-    list-style: initial;
+    @include media-breakpoint-down(md) {
+      padding-right: rem(75px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-right: rem(40px);
+    }
   }
 
-  &__text:not(:last-child) {
-    @include make-spacer(mb, 2);
+  &__list {
+    @include make-spacer(mt, 4);
   }
 
   &__link {
     @include font-size(16px, 20px);
-    @include make-spacer(mt, 3);
+    @include make-spacer(mt, 5);
 
     display: inline-block;
     font-weight: var(--bold);
@@ -97,23 +111,43 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: rem(216px);
-    grid-row-gap: rem(72px);
+    grid-row-gap: rem(130px);
     margin-top: rem(72px);
 
     @include media-breakpoint-down(lg) {
       grid-column-gap: rem(50px);
-      grid-row-gap: rem(40px);
     }
 
     @include media-breakpoint-down(sm) {
+      margin-top: rem(90px);
+    }
+
+    @include media-breakpoint-down(xs) {
       grid-template-columns: 1fr;
+      grid-row-gap: rem(32px);
     }
   }
 
   &__item {
     position: relative;
+    padding-right: rem(90px);
 
     &:nth-child(2n) {
+      padding-left: rem(90px);
+      padding-right: 0;
+
+      @include media-breakpoint-up(xl) {
+        padding-left: rem(30px);
+        padding-right: 0;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding-left: rem(30px);
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding-left: 0;
+      }
 
       &::before {
         @include size(1px, 100%);
@@ -130,7 +164,7 @@
           left: rem(-25px);
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(xs) {
           content: none;
         }
       }
@@ -142,23 +176,30 @@
         @include size(100%, 1px);
 
         position: absolute;
-        top: rem(-34px);
+        top: rem(-70px);
         left: 0;
         display: block;
         background-color: var(--gray);
         content: "";
 
-        @include media-breakpoint-down(lg) {
-          top: rem(-20px);
-        }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(xs) {
           content: none;
         }
       }
     }
 
+    @include media-breakpoint-up(xl) {
+      padding-right: rem(30px);
+    }
+
     @include media-breakpoint-down(sm) {
+      padding-right: rem(30px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-right: 0;
+
       &:not(:last-child) {
         padding-bottom: rem(40px);
         border-bottom: 1px solid var(--gray);

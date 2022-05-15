@@ -11,8 +11,11 @@
   &__icon {
     @include flex(center, center);
     @include make-spacer(mr, 1);
+    @include size(rem(24px));
 
-    width: rem(24px);
+    svg {
+      @include size(100%);
+    }
   }
 
   @include media-breakpoint-down(sm) {

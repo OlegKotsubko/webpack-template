@@ -8,7 +8,7 @@
   margin-top: rem(120px);
 
   @include media-breakpoint-down(md) {
-    max-width: rem(757px);
+    max-width: rem(723px);
   }
 
   &__banner {
@@ -18,6 +18,10 @@
     position: absolute;
     right: rem(-105px);
     top: 0;
+
+    @include media-breakpoint-down(md) {
+      right: rem(-90px);
+    }
 
     @include media-breakpoint-down(sm) {
       right: 0;
@@ -30,7 +34,7 @@
 
     position: absolute;
     top: 0;
-    left: rem(-75px);
+    right: rem(80px);
     object-fit: contain;
   }
 
@@ -53,6 +57,14 @@
 
   &__title {
     max-width: rem(400px);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(190px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(56px);
+    }
   }
 
   &__slider {
