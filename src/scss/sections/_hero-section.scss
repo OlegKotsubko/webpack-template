@@ -76,7 +76,7 @@
     }
 
     @include media-breakpoint-down(xs) {
-      padding-top: rem(212px);
+      padding-top: rem(170px);
     }
   }
 
@@ -126,6 +126,8 @@
 
     @include media-breakpoint-down(xs) {
       @include font-size(18px, 25px);
+
+      margin-top: rem(58px);
     }
   }
 

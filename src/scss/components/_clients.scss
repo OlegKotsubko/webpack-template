@@ -11,6 +11,11 @@
     max-width: rem(723px);
   }
 
+  @include media-breakpoint-down(xs) {
+    padding-top: rem(141px);
+    margin-top: rem(230px);
+  }
+
   &__banner {
     @include size(rem(492px));
     @include flex(center, flex-end, column);
@@ -27,15 +32,26 @@
       right: 0;
       top: rem(-130px);
     }
+
+    @include media-breakpoint-down(xs) {
+      @include size(rem(252px));
+    }
   }
 
   &__decor {
-    @include size(492px);
+    @include size(rem(492px));
 
     position: absolute;
     top: 0;
     right: rem(80px);
     object-fit: contain;
+
+    @include media-breakpoint-down(xs) {
+      @include size(rem(380px));
+
+      right: rem(44px);
+      top: rem(-70px);
+    }
   }
 
   &__count {
@@ -45,6 +61,10 @@
     font-weight: var(--extra-bold);
     margin-bottom: rem(40px);
     letter-spacing: -5px;
+
+    @include media-breakpoint-down(xs) {
+      @include font-size(80px);
+    }
   }
 
   &__subtitle {
@@ -53,6 +73,10 @@
     position: relative;
     font-weight: var(--bold);
     max-width: rem(335px);
+
+    @include media-breakpoint-down(xs) {
+      @include font-size(18px, 24px);
+    }
   }
 
   &__title {

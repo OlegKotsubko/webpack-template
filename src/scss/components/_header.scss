@@ -28,7 +28,7 @@
     }
 
     @include media-breakpoint-down(xs) {
-      grid-template-columns: rem(40px) 1fr rem(100px);
+      grid-template-columns: rem(40px) 1fr rem(90px);
       padding: rem(8px) 0;
     }
   }
@@ -53,6 +53,7 @@
 
     @include media-breakpoint-down(xs) {
       max-width: rem(130px);
+      margin-left: rem(24px);
     }
   }
 
@@ -79,6 +80,12 @@
 
     @include media-breakpoint-down(sm) {
       width: rem(96px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include font-size(16px, 20px);
+
+      width: rem(90px);
     }
   }
 
@@ -132,7 +139,9 @@
   &__hamburger {
 
     @include media-breakpoint-down(xs) {
-      transform: scale(0.6);
+      transform: scale(0.7);
+      position: relative;
+      right: rem(8px);
     }
   }
 

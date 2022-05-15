@@ -26,6 +26,12 @@
     @include media-breakpoint-down(md) {
       margin-top: rem(60px);
     }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: rem(24px);
+      flex-direction: column;
+      gap: rem(42px);
+    }
   }
 
   &__button {
@@ -51,6 +57,10 @@
 
     @include media-breakpoint-down(md) {
       max-width: rem(420px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include font-size(18px, 25px);
     }
   }
 

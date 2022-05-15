@@ -19,6 +19,10 @@
     @include make-spacer(mt, 8);
 
     position: relative;
+
+    @include media-breakpoint-down(xs) {
+      @include make-spacer(mt, 3);
+    }
   }
 
   &__text {
