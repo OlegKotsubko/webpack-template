@@ -1,0 +1,72 @@
+@use '../config' as *;
+
+.checkbox {
+  height: auto;
+
+  &.has-error {
+
+    .checkbox__label {
+
+      &::before {
+        border-color: var(--error);
+      }
+    }
+  }
+
+  &__item:checked + &__label::after {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+  }
+
+  &__item:checked + &__label::before {
+    border-color: var(--purple);
+    background-color: var(--purple);
+  }
+
+  &__item {
+    display: none;
+  }
+
+  &__label {
+    @include flex;
+
+    position: relative;
+
+    &::before {
+      @include size(rem(18px));
+      @include make-spacer(mr, 1);
+      @include transition(background-color);
+
+      display: inline-block;
+      position: relative;
+      flex-shrink: 0;
+      border: 1px solid var(--black);
+      border-radius: 2px;
+      background-color: var(--white);
+      cursor: pointer;
+      content: '';
+    }
+
+    &::after {
+      @include size(rem(6px), rem(10px));
+      @include transition(#{opacity, transform});
+
+      position: absolute;
+      top: rem(2px);
+      left: rem(6px);
+      transform: rotate(45deg) scale(0.2);
+      opacity: 0;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      content: '';
+    }
+  }
+
+  &__text {
+    @include font-size(16px, 22px);
+  }
+
+  &__link {
+    color: currentColor;
+  }
+}

@@ -1,0 +1,74 @@
+@use '../config' as *;
+
+.input {
+
+  &__label {
+    @include make-spacer(mb, 2);
+    @include font-size(20px, 27px);
+
+    display: block;
+    font-weight: var(--bold);
+
+    @include media-breakpoint-down(xs) {
+      @include font-size(16px, 23px);
+    }
+  }
+
+  &__item {
+    @include make-spacer(px, 2);
+    @include make-spacer(py, 0);
+    @include font-size(20px, 70px);
+    @include transition(border-color);
+
+    display: block;
+    outline: none;
+    border: 1px solid var(--black);
+    border-radius: 16px;
+    background-color: var(--white);
+    width: 100%;
+    height: rem(70px);
+    text-align: left;
+    color: var(--black);
+    font-weight: var(--regular);
+
+    &::placeholder {
+      @include transition(#{opacity, text-indent});
+      @include font-size(20px, 27px);
+
+      color: #c7c7c7;
+      font-weight: var(--bold);
+    }
+
+    &:placeholder-shown {
+
+      ~ .input__icon.reset {
+        opacity: 0;
+      }
+    }
+
+    &:focus {
+
+      &::placeholder {
+        opacity: 0;
+        text-indent: rem(16px);
+      }
+    }
+  }
+
+  &__error {
+    @include make-spacer(mt, half);
+    @include font-size(12px);
+
+    display: block;
+    min-height: rem(16px);
+    color: var(--error);
+  }
+
+  &__wrapper {
+    position: relative;
+
+    .input__item {
+      @include make-spacer(pr, 5);
+    }
+  }
+}

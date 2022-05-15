@@ -77,10 +77,42 @@
   }
 
   &__image {
-    width: 322px;
+    width: rem(700px);
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: rem(-590px);
+    bottom: rem(-310px);
+
+    @include media-breakpoint-down(md) {
+      left: rem(-414px);
+      bottom: rem(-338px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      left: rem(-490px);
+      bottom: rem(-330px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: rem(540px);
+      left: rem(-248px);
+      bottom: rem(-258px);
+    }
+  }
+
+  &__text {
+    @include font-size(20px, 27px);
+    @include make-spacer(mb, 3);
+
+    font-weight: var(--medium);
+    max-width: rem(500px);
+  }
+
+  &__user {
+    margin-top: rem(100px);
+
+    @include media-breakpoint-down(xs) {
+      margin-top: rem(48px);
+    }
   }
 
   &--left {
@@ -117,6 +149,24 @@
           margin-left:0;
           margin-right: rem(16px);
           padding-right: rem(16px);
+        }
+      }
+
+      &__list {
+        position: relative;
+        padding-left: 207px;
+
+        @include media-breakpoint-down(md) {
+          padding-left: 330px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          padding-left: 170px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          padding-left: 24px;
+          padding-bottom: 240px;
         }
       }
     }

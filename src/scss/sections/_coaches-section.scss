@@ -1,0 +1,103 @@
+@use '../config' as *;
+
+.coaches-section {
+  position: relative;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    padding-left: rem(120px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 0;
+  }
+
+  &__decor {
+    position: absolute;
+    top: rem(-500px);
+    right: rem(-60px);
+    width: rem(800px);
+    z-index: -1;
+
+    @include media-breakpoint-up(xl) {
+      top: rem(-440px);
+      right: 0;
+      width: rem(680px);
+    }
+
+    @include media-breakpoint-down(md) {
+      top: rem(-130px);
+      right: rem(-60px);
+      width: rem(490px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      right: rem(-130px);
+    }
+  }
+
+  &__title {
+    @include make-spacer(mt, 0);
+    @include make-spacer(mb, 4);
+    @include font-size(30px, 35px);
+
+    max-width: 70%;
+    font-weight: var(--bold);
+    text-transform: lowercase;
+    letter-spacing: -1px;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 100%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include make-spacer(mb, 2);
+      @include font-size(25px, 30px);
+    }
+  }
+
+  &__subtitle {
+    @include font-size(16px, 23px);
+    @include make-spacer(mb, 0)
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, rem(300px));
+    grid-column-gap: rem(130px);
+    grid-row-gap: rem(90px);
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(2, rem(400px));
+    }
+
+    @include media-breakpoint-down(md) {
+      grid-column-gap: rem(70px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-row-gap: rem(70px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      grid-template-columns: 1fr;
+      padding-right: rem(30px);
+    }
+  }
+
+  &__content {
+    margin-top: rem(100px);
+
+    @include media-breakpoint-up(xl) {
+      margin-top: rem(80px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(80px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: rem(40px);
+    }
+  }
+}

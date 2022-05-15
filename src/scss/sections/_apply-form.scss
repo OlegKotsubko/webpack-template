@@ -1,0 +1,56 @@
+@use '../config' as *;
+
+.apply-form {
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    background-image: var(--gradient-2);
+    padding: rem(70px) rem(110px) rem(100px);
+    border-radius: rem(25px);
+
+    @include media-breakpoint-up(xl) {
+      max-width: rem(1040px);
+      margin: 0 auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-left: rem(50px);
+      padding-right: rem(50px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: rem(60px) rem(32px) rem(90px);
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    &--top {
+      top: rem(222px);
+      left: rem(-49px);
+      width: rem(103px);
+    }
+
+    &--bottom {
+      bottom: rem(47px);
+      left: rem(-379px);
+      width: rem(270px);
+    }
+  }
+
+  &__block {
+    position: relative;
+    margin-top: rem(70px);
+
+    @include media-breakpoint-down(xs) {
+      margin-top: rem(50px);
+    }
+  }
+
+  &__button {
+    margin-top: rem(30px);
+  }
+}

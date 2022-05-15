@@ -2,19 +2,29 @@ section.section
   .help-section.help-section--left
     .help-section__decor
     .help-section__container
-      picture
-        source(srcset=require('../../images/decor-color.webp') type="image/webp")
-        img(src=require('../../images/decor-color.png') alt="decor").help-section__image
       .help-section__header
         h3.title.help-section__title Founders talk
           .title__icon
             include ../../images/svg/star-6.svg
       .help-section__list
-        p.
-          There are goals, values, and personalities behind
-          each job opening and every CV.
-        p.
-          I believe there are many passionate experts who
-          are ready to guide job seekers towards their ideal occupation.
+        picture
+          source(srcset=require('../../images/decor-color.webp') type="image/webp")
+          img(src=require('../../images/decor-color.png') alt="decor").help-section__image
+        p.help-section__text.
+          There are goals, values, and personalities behind each job
+          opening and every CV.
+        p.help-section__text.
+          I believe there are many passionate experts who are ready to guide
+           job seekers towards their ideal occupation.
+        .help-section__user
+          client
+            .client__header
+              .client__avatar
+                img(src="https://i.pravatar.cc/196").img
+              .client__name
+                p Name
+                p Surname
+
+
 
     .help-section__decor

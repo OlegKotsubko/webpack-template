@@ -18,18 +18,15 @@
     justify-content: space-between;
     align-items: center;
     gap: rem(8px);
-    padding: rem(16px) 0;
     height: var(--header-height);
 
     @include media-breakpoint-down(sm) {
       grid-template-columns: rem(166px) 1fr rem(166px);
       grid-column-gap: rem(24px);
-      padding: rem(24px) 0;
     }
 
     @include media-breakpoint-down(xs) {
       grid-template-columns: rem(40px) 1fr rem(90px);
-      padding: rem(8px) 0;
     }
   }
 
@@ -76,10 +73,6 @@
 
     &:active {
       background-color: var(--pink-03);
-    }
-
-    @include media-breakpoint-down(sm) {
-      width: rem(96px);
     }
 
     @include media-breakpoint-down(xs) {

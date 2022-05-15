@@ -111,6 +111,13 @@
     min-height: rem(65px);
   }
 
+  &--form {
+    @include font-size(20px);
+
+    min-height: rem(70px);
+    border-radius: rem(16px);
+  }
+
   &--fluid {
     width: 100%;
   }

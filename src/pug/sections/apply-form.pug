@@ -1,0 +1,30 @@
+section.section.apply-form
+  .container
+    .apply-form__content
+      h4.title apply to competenz lab coach team
+        .title__icon
+          include ../../images/svg/star-2.svg
+      picture
+        source(srcset=require('../../images/fd1.webp') type="image/webp")
+        img(src=require('../../images/fd1.png') alt="decor").apply-form__decor.apply-form__decor--top
+      picture
+        source(srcset=require('../../images/fd1.webp') type="image/webp")
+        img(src=require('../../images/fd1.png') alt="decor").apply-form__decor.apply-form__decor--bottom
+      form.apply-form__block
+        .input.u-mb-24
+          label.input__label(for="fn") Full name*
+          input.input__item(type="text" id="fn" placeholder="Type your full name")
+          span.input__error Error message
+        .input
+          label.input__label(for="em") Email*
+          input.input__item(type="email" id="em" placeholder="Type your email")
+          span.input__error Error message
+        .checkbox.u-mb-24
+          input(type="checkbox" id="i2").checkbox__item
+          label(for="i2").checkbox__label
+            span.checkbox__text.
+              By checking this box you confirm that you have read
+              and agree our
+              <a href="#" class="checkbox__link"><b>Privacy Policy</b></a>
+              and <a href="#" class="checkbox__link"><b>Terms of Service</b></a>
+        button(type="submit").button.button--dark.button--fluid.button--form.apply-form__button Join the coaches team
