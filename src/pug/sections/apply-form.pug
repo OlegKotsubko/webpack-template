@@ -1,6 +1,16 @@
 section.section.apply-form
   .container
-    .apply-form__content
+    #form-success.apply-form__wrapper(style="display: none")
+      .possibility-section
+        .possibility-section__body(style="background-color: var(--white)")
+          picture
+            source(srcset=require('../../images/pos.webp') type="image/webp")
+            img(src=require('../../images/pos.png') alt="decor").possibility-section__decor
+          .possibility-section__content
+            .apply-form__success
+              p.title Your request has been sent successfully
+              p.u-mt-48 Detailed information will be sent to your e-mail.
+    .apply-form__content#form-block
       h4.title apply to competenz lab coach team
         .title__icon
           include ../../images/svg/star-2.svg
@@ -10,21 +20,22 @@ section.section.apply-form
       picture
         source(srcset=require('../../images/fd1.webp') type="image/webp")
         img(src=require('../../images/fd1.png') alt="decor").apply-form__decor.apply-form__decor--bottom
-      form.apply-form__block
+      form#form.apply-form__block
         .input.u-mb-24
-          label.input__label(for="fn") Full name*
-          input.input__item(type="text" id="fn" placeholder="Type your full name")
-          span.input__error Error message
+          label.input__label(for="name") Full name*
+          input.input__item(type="text" id="name" placeholder="Type your full name")
+          span.input__error.js-input-error
         .input
-          label.input__label(for="em") Email*
-          input.input__item(type="email" id="em" placeholder="Type your email")
-          span.input__error Error message
+          label.input__label(for="email") Email*
+          input.input__item(type="email" id="email" placeholder="Type your email")
+          span.input__error.js-input-error
         .checkbox.u-mb-24
-          input(type="checkbox" id="i2").checkbox__item
-          label(for="i2").checkbox__label
+          input(type="checkbox" id="checkbox").checkbox__item
+          label(for="checkbox").checkbox__label
             span.checkbox__text.
               By checking this box you confirm that you have read
               and agree our
               <a href="#" class="checkbox__link"><b>Privacy Policy</b></a>
               and <a href="#" class="checkbox__link"><b>Terms of Service</b></a>
-        button(type="submit").button.button--dark.button--fluid.button--form.apply-form__button Join the coaches team
+          span.input__error.js-input-error
+        button#submit(type="submit").button.button--dark.button--fluid.button--form.apply-form__button Join the coaches team

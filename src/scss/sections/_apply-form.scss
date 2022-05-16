@@ -4,6 +4,20 @@
   position: relative;
   overflow: hidden;
 
+
+  &__success {
+    @include flex(center, $direction:column);
+
+    min-height: rem(500px);
+    max-width: rem(700px);
+  }
+
+  &__wrapper {
+    background-image: var(--gradient-2);
+    padding: rem(60px);
+    border-radius: rem(25px);
+  }
+
   &__content {
     position: relative;
     background-image: var(--gradient-2);
@@ -38,6 +52,10 @@
       bottom: rem(47px);
       left: rem(-379px);
       width: rem(270px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
     }
   }
 

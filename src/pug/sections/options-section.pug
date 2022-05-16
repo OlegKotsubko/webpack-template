@@ -1,15 +1,15 @@
 section.section.options-section
   .options-section__content
     .container
-      h3.title Get even more options with CompetenzeLab:
+      h3.title.js-on-scroll-animation.default-animation Get even more options with CompetenzeLab:
     .options-section__grid
       picture
         source(srcset=require('../../images/options-section-decor.webp') type="image/webp")
-        img(src=require('../../images/options-section-decor.png') alt="decor").options-section__decor
+        img(src=require('../../images/options-section-decor.png') alt="decor").options-section__decor.js-on-scroll-animation.default-animation
       .container
         .options
           .options__grid
-            .options__item
+            .options__item.js-on-scroll-animation.default-animation.animation-delay-1
               p.options__title free
               .options__accordion
                 .accordion.js-accordion
@@ -23,10 +23,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
-                             architecto atque blanditiis facere incidunt maiores possimus, quibusdam
-                             quisquam similique vero voluptate, voluptatem.
+                            Get 3 new careers that match your skills and knowledge
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -39,11 +36,10 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            <a href="#">See the report example</a>
               .options__button
                 a(href="#").button.button--primary.button--fluid.button--md Try it for free
-            .options__item.active
+            .options__item.is-active.js-on-scroll-animation.default-animation.animation-delay-2
               p.options__title silver
               .options__accordion
                 .accordion.js-accordion
@@ -57,10 +53,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
-                             architecto atque blanditiis facere incidunt maiores possimus, quibusdam
-                             quisquam similique vero voluptate, voluptatem.
+                            Unlimited careers that match your skills and knowledge
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -73,8 +66,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            You will get the PDF file with the set of your skills and career matches
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -86,12 +78,11 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            Unlimited list of suitable courses that can help you to change your current position.
 
                   hr.accordion__divider
                   .accordion__item
-                    button.accordion__trigger.js-accordion-trigger
+                    button.accordion__trigger
                       .accordion__title Development plan
                       .accordion__subtitle
                         include ../../images/svg/star-5.svg
@@ -107,7 +98,7 @@ section.section.options-section
                              deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
               .options__button
                 a(href="#").button.button--secondary.button--fluid.button--md 79.99€/month
-            .options__item
+            .options__item.js-on-scroll-animation.default-animation.animation-delay-3
               p.options__title consultation
               .options__accordion
                 .accordion.js-accordion
@@ -121,10 +112,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
-                             architecto atque blanditiis facere incidunt maiores possimus, quibusdam
-                             quisquam similique vero voluptate, voluptatem.
+                            Unlimited careers that match your skills and knowledge
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -137,8 +125,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            <a href="#">See the report example</a>
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -150,8 +137,7 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            Unlimited list of suitable courses that can help you to change your current position.
                   hr.accordion__divider
                   .accordion__item
                     button.accordion__trigger.js-accordion-trigger
@@ -163,11 +149,10 @@ section.section.options-section
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
                           .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                            Individual training with a coach
                   hr.accordion__divider
                   .accordion__item
-                    button.accordion__trigger.js-accordion-trigger
+                    button.accordion__trigger
                       .accordion__title Development plan
                       .accordion__subtitle
                         include ../../images/svg/star-5.svg
@@ -178,9 +163,7 @@ section.section.options-section
                     .accordion__body
                       .accordion__wrapper.js-accordion-content
                         .accordion__content
-                          .options-section__text.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                             deleniti ducimus incidunt itaque quisquam unde, voluptas. Aperiam
+                          .options-section__text
               .options__button
                 a(href="#").button.button--primary.button--fluid.button--md 499€/h for consultation
     .options-section__clients
@@ -189,14 +172,14 @@ section.section.options-section
           .clients__banner
             picture
               source(srcset=require('../../images/clients-section-decor.webp') type="image/webp")
-              img(src=require('../../images/clients-section-decor.png') alt="decor").clients__decor
-            .clients__count 1,000+
-            .clients__subtitle Over the past year we helped experts to find a new job
+              img(src=require('../../images/clients-section-decor.png') alt="decor").clients__decor.js-on-scroll-animation.default-animation
+            .clients__count.js-number-animation 1,000+
+            .clients__subtitle.js-on-scroll-animation.default-animation.animation-delay-2 Over the past year we helped experts to find a new job
           .clients__title
             h3.title Clients’ success
               .title__icon
                 include ../../images/svg/star-2.svg
-          .clients__slider
+          .clients__slider.js-on-scroll-animation.default-animation.animation-delay-3
             .slider.slider--pagination.slider--arrows
               .swiper
                 .swiper-wrapper
@@ -204,14 +187,16 @@ section.section.options-section
                     .client
                       .client__header
                         .client__avatar
-                          img(src="https://i.pravatar.cc/196").img
+                          picture
+                            source(srcset=require('../../images/user-res-01.webp') type="image/webp")
+                            img(src=require('../../images/user-res-01.png') alt="decor").img
                         .client__name
-                          p Name
-                          p Surname
+                          p Daniel
+                          p Smith
                       p.client__text.
-                        Competenz Lab test and several consultations with a coach helped me enter
-                         the IT industry and become a QA engineer after working as a builder
-                         for all my life. I still can’t believe it!
+                        CompetenZ Lab test and several consultations with a coach helped me
+                        enter the IT industry and become a QA engineer after working as a
+                        builder for all my life. I still can’t believe it!
                       .client__footer
                         .client__button Builder
                         include ../../images/svg/right-arrow.svg
@@ -220,63 +205,89 @@ section.section.options-section
                     .client
                       .client__header
                         .client__avatar
-                          img(src="https://i.pravatar.cc/196").img
+                          picture
+                            source(srcset=require('../../images/user-res-02.webp') type="image/webp")
+                            img(src=require('../../images/user-res-02.png') alt="decor").img
                         .client__name
-                          p Name
-                          p Surname
+                          p Alina
+                          p Bulatova
                       p.client__text.
-                        Competenz Lab test and several consultations with a coach helped me enter
-                         the IT industry and become a QA engineer after working as a builder
-                         for all my life. I still can’t believe it!
+                        After 5 years of work as a freelance psychologist, I decided to change a
+                        job and try to relocate. That’s how I found CompetenZ Lab. And then it all
+                         happened so fast - I took the test, chose to be a UI/UX designer, and in 8
+                          months, I already got a job offer and moved to the Czech Republic. Thank
+                          you so much for all you've done for me, guys!
+                      .client__footer
+                        .client__button.client__button--fill UI/UX Designer
 
                   .swiper-slide
                     .client
                       .client__header
                         .client__avatar
-                          img(src="https://i.pravatar.cc/196").img
+                          picture
+                            source(srcset=require('../../images/user-res-03.webp') type="image/webp")
+                            img(src=require('../../images/user-res-03.png') alt="decor").img
                         .client__name
-                          p Name
-                          p Surname
+                          p Alice
+                          p Williams
                       p.client__text.
-                        Competenz Lab test and several consultations with a coach helped me enter
-                         the IT industry and become a QA engineer after working as a builder
-                         for all my life. I still can’t believe it!
+                        I was always afraid to change my job as an accountant and lose stability.
+                         CompetenZ Lab helped me conquer this fear. I found out that I am an
+                         excellent strategist, and it took me only 6 months to get extra skills
+                          and a position as a junior business analyst. As a result, my income
+                          has grown twice, and I’m 100% happier!
                       .client__footer
-                        .client__button Builder
-                        include ../../images/svg/right-arrow.svg
-                        .client__button.client__button--fill QA engineer
+                        .client__button.client__button--fill Business Analyst
+
                   .swiper-slide
                     .client
                       .client__header
                         .client__avatar
-                          img(src="https://i.pravatar.cc/196").img
+                          picture
+                            source(srcset=require('../../images/user-res-04.webp') type="image/webp")
+                            img(src=require('../../images/user-res-04.png') alt="decor").img
                         .client__name
-                          p Name
-                          p Surname
+                          p Alex
+                          p Briu
                       p.client__text.
-                        Competenz Lab test and several consultations with a coach helped me enter
-                         the IT industry and become a QA engineer after working as a builder
-                         for all my life. I still can’t believe it!
+                        At a certain point in my career, I felt like I'm not progressing at
+                        the right speed anymore. It was time to make some changes.
+                        CompetenZ Lab helped me identify the right path and stay on the right course afterwards.
                       .client__footer
-                        .client__button Builder
-                        include ../../images/svg/right-arrow.svg
-                        .client__button.client__button--fill QA engineer
+                        .client__button.client__button--fill Marketing Director
                   .swiper-slide
                     .client
                       .client__header
                         .client__avatar
-                          img(src="https://i.pravatar.cc/196").img
+                          picture
+                            source(srcset=require('../../images/user-res-05.webp') type="image/webp")
+                            img(src=require('../../images/user-res-05.png') alt="decor").img
                         .client__name
-                          p Name
-                          p Surname
+                          p Nanak
+                          p Glory
                       p.client__text.
-                        Competenz Lab test and several consultations with a coach helped me enter
-                         the IT industry and become a QA engineer after working as a builder
-                         for all my life. I still can’t believe it!
+                        CompetenZ Lab was a turning point in my career.
+                        I was so lost and unhappy with my work before, but now
+                        I feel motivated and happy with a new career track.
                       .client__footer
-                        .client__button Builder
-                        include ../../images/svg/right-arrow.svg
-                        .client__button.client__button--fill QA engineer
+                        .client__button.client__button--fill Project Manager
+                  .swiper-slide
+                    .client
+                      .client__header
+                        .client__avatar
+                          picture
+                            source(srcset=require('../../images/user-res-06.webp') type="image/webp")
+                            img(src=require('../../images/user-res-06.png') alt="decor").img
+                        .client__name
+                          p Charles
+                          p Dobignes
+                      p.client__text.
+                        Previously, I was working in the hospitality industry,
+                         and the COVID-19 crisis got me laid off. But with the
+                         CompetenZ Lab career plan, I was able to kickstart my
+                         career in tech just within 2 months.
+                      .client__footer
+                        .client__button.client__button--fill Digital Marketer
               .swiper-pagination
               .swiper-button-prev
               .swiper-button-next

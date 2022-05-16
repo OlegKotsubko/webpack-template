@@ -25,7 +25,7 @@
   &__trigger {
     @include reset-button;
     @include flex(center, $direction:column);
-    @include make-spacer(pr, 4);
+    @include make-spacer(pr, 3);
 
     position: relative;
     width: 100%;

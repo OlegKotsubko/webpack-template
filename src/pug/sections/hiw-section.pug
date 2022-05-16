@@ -4,7 +4,7 @@ section.section.hiw-section
       .title__icon
         include ../../images/svg/star-2.svg
     .hiw-section__content
-      .tab.js-tab
+      .tab.js-tab.js-on-scroll-animation.default-animation
         .tab__header
           button(type="button" data-target="tab-1").tab__trigger.js-tab-trigger.is-active Onboarding
           button(type="button" data-target="tab-2").tab__trigger.js-tab-trigger Profile informations
@@ -13,7 +13,7 @@ section.section.hiw-section
             .tab__icon
               include ../../images/svg/star-3.svg
 
-        .hiw-section__body
+        .hiw-section__body.js-on-scroll-animation.default-animation
           .tab__item
             button(type="button" data-target="tab-1").tab__title.js-tab-trigger.is-active Onboarding
             .tab__content.js-tab-item#tab-1.is-active.hiw-section__item

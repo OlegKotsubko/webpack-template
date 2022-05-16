@@ -13,6 +13,10 @@
     display: block;
     height: rem(40px);
     position: relative;
+
+    svg {
+      @include size(100%);
+    }
   }
 
   &__grid {
