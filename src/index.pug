@@ -3,5 +3,19 @@ extends pug/layouts/_layout
 block content
   main
     .container
-      include ./images/svg/site.svg
-      include ./images/svg/phone.svg
+      .slider
+        .swiper-button-prev.
+          prev
+        .swiper-button-next.
+          next
+        .swiper
+          .swiper-wrapper
+            .swiper-slide
+              include ./images/svg/site.svg
+            .swiper-slide
+              include ./images/svg/phone.svg
+            .swiper-slide
+              include ./images/svg/site.svg
+            .swiper-slide
+              include ./images/svg/phone.svg
+

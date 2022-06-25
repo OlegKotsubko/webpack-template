@@ -1,20 +1,5 @@
 @use '../config' as *;
 
-@font-face {
-  font-family: 'DrukCyrMedium';
-  src: url('../fonts/DrukCyr-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'DrukCyrHeavy';
-  src: url('../fonts/DrukCyr-Heavy.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'DrukCyrBold';
-  src: url('../fonts/DrukCyr-Bold.ttf') format('truetype');
-}
-
 * {
   box-sizing: border-box;
 }
@@ -37,10 +22,6 @@ body {
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
 }
-
-//
-// Headings
-//
 
 button {
   @include reset-button;
