@@ -45,13 +45,11 @@ const hero = () => {
     .from(lineOne, {
       opacity: 0,
       y: 24,
-      z: -5,
       duration: 1.3
     }, 'key+=0.6')
     .from(lineTwo, {
       opacity: 0,
       y: 24,
-      z: -2,
       duration: 1.3
     }, 'key+=0.8')
 
