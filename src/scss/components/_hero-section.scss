@@ -1,0 +1,156 @@
+@use '../config' as *;
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 200px;
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 100px;
+  }
+
+  &__title {
+    margin: 0 0 34px;
+    font-weight: 400;
+    font-size: 66px;
+    line-height: 72px;
+    max-width: 456px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 102px;
+      line-height: 110px;
+      max-width: 660px;
+      margin: 0 0 70px;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 30px;
+    background: linear-gradient(0deg, #FF155D 0.01%, #FF4B3F 17.19%, #FF7428 52.09%, #FF9715 78.13%, #FF8E1A 100%);
+    border-radius: 32px;
+    height: 56px;
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--white);
+    text-decoration: none;
+
+    &:hover {
+      background: linear-gradient(353.38deg, #FF155D 1.68%, #FF4B3F 27.42%, #FF7428 79.68%, #FF9715 118.67%, #FF8E1A 151.43%);
+    }
+  }
+
+  &__content {
+    min-height: calc(100vh - var(--header-height));
+    position: relative;
+    padding-top: 52px;
+    padding-bottom: 270px;
+
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 333px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-top: 70px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+
+    @include media-breakpoint-up(sm) {
+      padding-left: 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: 0;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    left: -63px;
+    bottom: 0;
+    width: 739px;
+
+    @include media-breakpoint-up(sm) {
+      left: auto;
+      right: -63px;
+      bottom: 80px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: 200px;
+    }
+  }
+
+  &__link {
+    @include flex(center, center);
+
+    border: 1px solid var(--gray-light);
+    position: absolute;
+    bottom: -150px;
+    right: -8px;
+    writing-mode: vertical-rl;
+    transform: rotateZ(180deg);
+    font-weight: var(--bold);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--white);
+    width: 32px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
+    @include media-breakpoint-up(sm) {
+      bottom: 35px;
+      right: 4px;
+    }
+  }
+
+  &__icon {
+    @include size(32px);
+    @include flex(center, center);
+
+
+    position: absolute;
+    top: 0;
+    left: -1px;
+    transform: rotateZ(-90deg);
+    margin-bottom: 20px;
+    border-left: 1px solid var(--gray-light);
+
+    svg {
+      height: 15px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+
+    &--one {
+      bottom: 166px;
+      left: 0;
+      z-index: 1;
+      transform: rotate(-1.33deg);
+
+      @include media-breakpoint-up(lg) {
+        bottom: 240px;
+      }
+    }
+
+    &--two {
+      bottom: 75px;
+      left: 0;
+      transform: rotate(2.51deg);
+
+      @include media-breakpoint-up(lg) {
+        bottom: 150px;
+      }
+    }
+  }
+}

@@ -2,14 +2,16 @@
 
 .container {
   width: 100%;
-  max-width: 1148px;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 24px;
 
-  @include media-breakpoint-down(md) {
-    padding: 0 48px;
+
+  &--wide {
+    max-width: 1280px;
   }
 
-  @include media-breakpoint-down(xs) {
-    padding: 0 16px;
+  @include media-breakpoint-up(sm) {
+    padding: 0 40px;
   }
 }

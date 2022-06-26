@@ -1,5 +1,7 @@
 @use '../config' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -10,17 +12,21 @@ body {
   @include make-spacer(my, 0);
   @include flex(flex-start, $direction: column);
 
-  background-color: var(--white);
-  min-width: 320px;
+  background-color: var(--black);
+  min-width: 375px;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: var(--line-height);
-  color: var(--black);
+  color: var(--white);
   font-family: var(--font-family);
   font-weight: var(--regular);
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
+
+  &.is-overflow-hidden {
+    overflow-y: hidden;
+  }
 }
 
 button {
@@ -29,4 +35,8 @@ button {
 
 ul {
   @include reset-list;
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,21 +1,323 @@
 extends pug/layouts/_layout
 
 block content
-  main
+  header.header#header
     .container
-      .slider
-        .swiper-button-prev.
-          prev
-        .swiper-button-next.
-          next
-        .swiper
-          .swiper-wrapper
-            .swiper-slide
-              include ./images/svg/site.svg
-            .swiper-slide
-              include ./images/svg/phone.svg
-            .swiper-slide
-              include ./images/svg/site.svg
-            .swiper-slide
-              include ./images/svg/phone.svg
+      .header__container
+        .header__logo.js-header-logo
+          include ./images/svg/logo.svg
+        .header__trigger
+          button(class="hamburger hamburger--slider header__hamburger js-menu-toggle", type="button", id="hamburger")
+            span(class="hamburger-box")
+              span(class="hamburger-inner")
+        nav.header__nav.js-header-nav
+          a(href="#").header__link Privacy Policy
+          a(href="#").header__link Terms & Conditions
+          a(href="#").header__link Contact Us
+  main
+    .hero-section.js-hero-section
+      .container
+        .hero-section__content
+          .hero-section__wrapper
+            h1.hero-section__title.js-hero-section-title  Just a click to your new style
+            a(href="#").hero-section__button.js-hero-section-button Get started
+              include ./images/svg/button-arrow.svg
+            a(href="#").hero-section__link.js-hero-section-link
+              span.hero-section__icon
+                include ./images/svg/button-arrow.svg
+              | Download Peruka app
+          picture
+            source(srcset=require('./images/hero.webp') type="image/webp")
+            img(src=require('./images/hero.png') alt="decor").hero-section__decor.js-herosection-decor
+      .hero-section__line.hero-section__line--one.js-hero-section-line-one
+        include ./pug/components/line
+      .hero-section__line.hero-section__line--two.js-hero-section-line-two
+        include ./pug/components/line-blue
 
+    .info-section.js-info-section
+      .container
+        .info-section__grid
+          .info-section__left
+            img(src=require('./images/ggg.gif')).info-section__gif
+            picture
+              source(srcset=require('./images/woman.webp') type="image/webp")
+              img(src=require('./images/woman.png') alt="woman").info-section__image
+            .info-section__mask.info-section__mask--1.js-info-section-mask
+              include ./images/svg/mask-1.svg
+            .info-section__mask.info-section__mask--2.js-info-section-mask
+              include ./images/svg/mask-2.svg
+            .info-section__mask.info-section__mask--3.js-info-section-mask
+              include ./images/svg/mask-3.svg
+          .info-section__rigth
+            p.info-section__subtitle Explore
+            h3.info-section__text.
+              Test out your dream lookwith your dream cut, see how you’d look with anything
+              from a blue buzzcut to a blonde blowout.
+            .info-section__footer
+              .info-section__iconset
+                include ./images/svg/iconset.svg
+              .info-section__bottom.
+                We have more than 30 filters for each gender, race etc.
+
+    .logo-section.js-logo-section
+      .logo-section__wrapper
+        .logo-section__image
+          include ./images/svg/peruka-orange.svg
+        .logo-section__wave
+          picture
+            source(srcset=require('./images/wave.webp') type="image/webp")
+            img(src=require('./images/wave.png') alt="decor").logo-section__decor.js-logo-section-decor
+
+
+    .slider-section.js-slider-section
+      .container
+        .slider-section__content
+          .slider-section__title.js-slider-section-title Test out your dream look with your dream cut.
+          .slider-section__nav.js-slider-section-nav
+            .prev.slider-section__arrow.slider-section__arrow--prev
+              include ./images/svg/slider-arrow.svg
+            .next.slider-section__arrow.slider-section__arrow--next
+              include ./images/svg/slider-arrow.svg
+      .slider-section__wrapper
+        .slider-section__bottom
+          .slider-nav
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i1.webp') type="image/webp")
+                img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i2.webp') type="image/webp")
+                img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i3.webp') type="image/webp")
+                img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i4.webp') type="image/webp")
+                img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i5.webp') type="image/webp")
+                img(src=require('./images/i5.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i1.webp') type="image/webp")
+                img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i2.webp') type="image/webp")
+                img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i3.webp') type="image/webp")
+                img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i4.webp') type="image/webp")
+                img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i5.webp') type="image/webp")
+                img(src=require('./images/i5.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i1.webp') type="image/webp")
+                img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i2.webp') type="image/webp")
+                img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i3.webp') type="image/webp")
+                img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i4.webp') type="image/webp")
+                img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i5.webp') type="image/webp")
+                img(src=require('./images/i5.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i1.webp') type="image/webp")
+                img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i2.webp') type="image/webp")
+                img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i3.webp') type="image/webp")
+                img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i4.webp') type="image/webp")
+                img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            .slider-section__item.slider-section__item--bottom
+              picture
+                source(srcset=require('./images/i5.webp') type="image/webp")
+                img(src=require('./images/i5.png') alt="mob background").slider-section__image
+        .slider-section__top
+          picture
+            source(srcset=require('./images/back.webp') type="image/webp")
+            img(src=require('./images/back.png') alt="mob background").slider-section__decor.slider-section__decor--bottom
+          picture
+            source(srcset=require('./images/mob.webp') type="image/webp")
+            img(src=require('./images/mob.png') alt="mob background").slider-section__decor.slider-section__decor--top
+          .slider-for
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i1.webp') type="image/webp")
+                  img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i2.webp') type="image/webp")
+                  img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i3.webp') type="image/webp")
+                  img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i4.webp') type="image/webp")
+                  img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i5.webp') type="image/webp")
+                  img(src=require('./images/i5.png') alt="mob background").slider-section__image
+
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i1.webp') type="image/webp")
+                  img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i2.webp') type="image/webp")
+                  img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i3.webp') type="image/webp")
+                  img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i4.webp') type="image/webp")
+                  img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i5.webp') type="image/webp")
+                  img(src=require('./images/i5.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i1.webp') type="image/webp")
+                  img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i2.webp') type="image/webp")
+                  img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i3.webp') type="image/webp")
+                  img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i4.webp') type="image/webp")
+                  img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i5.webp') type="image/webp")
+                  img(src=require('./images/i5.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i1.webp') type="image/webp")
+                  img(src=require('./images/i1.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i2.webp') type="image/webp")
+                  img(src=require('./images/i2.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i3.webp') type="image/webp")
+                  img(src=require('./images/i3.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i4.webp') type="image/webp")
+                  img(src=require('./images/i4.png') alt="mob background").slider-section__image
+            div
+              .slider-section__item.slider-section__item--top
+                picture
+                  source(srcset=require('./images/i5.webp') type="image/webp")
+                  img(src=require('./images/i5.png') alt="mob background").slider-section__image
+        .slider-section__line
+          include ./pug/components/line-blue
+    .banner-section
+      .container.container--wide
+        .banner-section__body
+          .banner-section__images
+            picture
+              source(srcset=require('./images/m1.webp') type="image/webp")
+              img(src=require('./images/m1.png') alt="woman").banner-section__image.banner-section__image--left
+            picture
+              source(srcset=require('./images/m2.webp') type="image/webp")
+              img(src=require('./images/m2.png') alt="woman").banner-section__image.banner-section__image--right
+          .banner-section__content
+            h3.banner-section__title It might be funny!
+            p.banner-section__subtitle.
+              Test out your dream lookwith your dream cut, see how you’d
+              look with anything from a blue buzzcut to a blonde blowout.
+            .banner-section__comerce
+              a(href="#").banner-section__store
+                include ./images/svg/app-store.svg
+              a(href="#").banner-section__store
+                include ./images/svg/google-play.svg
+
+  footer.footer
+    .container
+      .footer__content
+        .footer__logo
+          include ./images/svg/logo-blue.svg
+        ul.footer__nav
+          li.footer__item
+            a(href="#").footer__link Privacy Policy
+          li.footer__item
+            a(href="#").footer__link Terms & Conditions
+          li.footer__item
+            a(href="#").footer__link Contact Us
+        p.footer__copyright © 2022 Peruka App
+
+  .mobile-navigation#mobile-navigation
+    .mobile-navigation__content
+      ul.mobile-navigation__nav
+        li.mobile-navigation__item
+          a(href="#").mobile-navigation__link Privacy Policy
+        li.mobile-navigation__item
+          a(href="#").mobile-navigation__link Terms & Conditions
+        li.mobile-navigation__item
+          a(href="#").mobile-navigation__link Contact Us
+      .mobile-navigation__comerce
+        a(href="#").mobile-navigation__store
+          include ./images/svg/app-store.svg
+        a(href="#").mobile-navigation__store
+          include ./images/svg/google-play.svg

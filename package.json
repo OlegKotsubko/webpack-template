@@ -58,7 +58,8 @@
   },
   "dependencies": {
     "gsap": "^3.10.4",
-    "swiper": "^8.2.4"
+    "jquery": "^3.6.0",
+    "slick-slider": "^1.8.2"
   },
   "browserslist": [
     "last 4 versions",

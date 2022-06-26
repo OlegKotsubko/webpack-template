@@ -1,0 +1,31 @@
+@use '../config' as *;
+
+.logo-section {
+  padding: 160px 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 360px 0;
+  }
+
+  &__image {
+    transform: rotateZ(1.25deg);
+    margin: 0 auto;
+    width: 232px;
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__wave {
+    position: absolute;
+    top: 0;
+    right: 90%;
+
+    img {
+      object-fit: contain;
+      height: 50px;
+    }
+  }
+}

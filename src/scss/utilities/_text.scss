@@ -6,20 +6,10 @@
   color: #fff;
 }
 
-.u-color-senet-red {
-  color: var(--red-darken);
-}
-
 // Text Align
 
 .u-text-center {
   text-align: center;
-
-  &-sm {
-    @include media-breakpoint-up(sm) {
-      text-align: center;
-    }
-  }
 }
 
 .u-text-left {

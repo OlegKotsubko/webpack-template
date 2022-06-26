@@ -1,9 +1,13 @@
-import Swiper from 'swiper/bundle';
 import '../scss/app.scss'
 
-const swiper = new Swiper('.swiper',{
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-})
+import menu from "./component/menu";
+import slider from "./component/slider";
+import info from "./component/info";
+import hero from "./component/hero";
+import peruka from "./component/peruka";
+
+menu();
+slider();
+info();
+hero()
+peruka()

@@ -1,0 +1,63 @@
+@use '../config' as *;
+
+.header {
+  position: relative;
+  z-index: 101;
+
+  &__container {
+    @include flex;
+
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: block;
+    width: 97px;
+
+    @include media-breakpoint-up(lg) {
+      width: 123px;
+    }
+  }
+
+  &__trigger {
+    @include flex(center, center);
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      @include flex(flex-end, center);
+
+      height: 100%;
+    }
+  }
+
+  &__link {
+    @include make-spacer(p, 4);
+    @include flex(center, center);
+    @include transition(color);
+    @include font-size(18px, 26px);
+
+    font-weight: var(--light);
+    color: var(--gray);
+    text-decoration: none;
+    height: 100%;
+
+    &:hover {
+      color: var(--white);
+    }
+  }
+
+  &__menu {
+    @include flex(center, center);
+
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+  }
+}

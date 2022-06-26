@@ -1,0 +1,110 @@
+@use '../config' as *;
+
+.info-section {
+  padding-top: 50px;
+
+  @include media-breakpoint-up(sm) {
+    padding-top: 0;
+  }
+
+  &__image {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      @include size(100%);
+
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  &__grid {
+    @include media-breakpoint-up(sm) {
+      display: grid;
+      grid-template-columns: 314px 1fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-column-gap: 90px;
+    }
+  }
+
+  &__gif {
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+  &__left {
+    @include size(314px);
+    @include flex(center, center);
+
+    margin: 0 auto 52px;
+
+    @include media-breakpoint-up(sm) {
+      margin: 50px 0 0;
+      padding: 50px;
+      position: relative;
+    }
+  }
+
+  &__subtitle,
+  &__bottom {
+    font-weight: var(--light);
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--gray);
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    font-size: 32px;
+    line-height: 44px;
+    margin: 0 0 40px;
+  }
+
+  &__iconset {
+    margin-bottom: 24px;
+  }
+
+  &__mask {
+    @include transition(opacity);
+    @include size(198px);
+
+    position: absolute;
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -6px;
+
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+
+    &--1 {
+      top: 0;
+      opacity: 0;
+    }
+
+    &--2 {
+      top: 0;
+      opacity: 0;
+    }
+
+    &--3 {
+      top: -25px;
+
+    }
+  }
+
+  &__footer {
+    @include media-breakpoint-up(lg) {
+      @include flex;
+
+      gap: 50px;
+    }
+  }
+}
