@@ -64,6 +64,11 @@
     height: 66px;
     padding: 16px 26px;
 
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
     &:not(:last-child) {
       border-bottom: 1px solid var(--gray-dark);
     }
