@@ -127,6 +127,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    user-select: none;
 
     @include media-breakpoint-up(lg) {
       width: 315px;

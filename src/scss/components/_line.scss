@@ -7,7 +7,7 @@
   background-color: #191E21;
 
   &__wrapper {
-    @include flex;
+    @include flex(center, center);
 
     position: absolute;
     top: 50%;
@@ -17,22 +17,13 @@
     gap: 56px;
 
     svg {
-      transform: rotateZ(2deg);
+      height: 100%;
+      width: 100%;
     }
   }
 
 
   &--dark {
     background-color: #121618;
-
-    .line {
-
-      &__wrapper {
-
-        svg {
-          transform: rotateZ(-2deg);
-        }
-      }
-    }
   }
 }

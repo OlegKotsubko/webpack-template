@@ -1,0 +1,22 @@
+@use '../config' as *;
+
+.preloader {
+  @include flex(center, center);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black);
+  z-index: 1000;
+
+  &__image {
+    @include size(50px);
+
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+}

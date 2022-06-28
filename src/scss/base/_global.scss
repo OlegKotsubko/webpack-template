@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,7 +29,7 @@ body {
   scroll-behavior: smooth;
 
   &.is-overflow-hidden {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
 

@@ -22,19 +22,20 @@ block content
             h1.hero-section__title.js-hero-section-title  Just a click to your new style
             a(href="#").hero-section__button.js-hero-section-button Get started
               include ./images/svg/button-arrow.svg
-            a(href="#").hero-section__link.js-hero-section-link
+            a(href="#anchor-scroll").hero-section__link.js-hero-section-link
               span.hero-section__icon
                 include ./images/svg/button-arrow.svg
               | Download Peruka app
           picture
             source(srcset=require('./images/hero.webp') type="image/webp")
             img(src=require('./images/hero.png') alt="decor").hero-section__decor.js-herosection-decor
-      .hero-section__line.hero-section__line--one.js-hero-section-line-one
-        include ./pug/components/line
       .hero-section__line.hero-section__line--two.js-hero-section-line-two
         include ./pug/components/line-blue
+      .hero-section__line.hero-section__line--one.js-hero-section-line-one
+        include ./pug/components/line
 
-    .info-section.js-info-section
+
+    .info-section.js-info-section#anchor-scroll
       .container
         .info-section__grid
           .info-section__left
@@ -272,16 +273,16 @@ block content
                   img(src=require('./images/i5.png') alt="mob background").slider-section__image
         .slider-section__line
           include ./pug/components/line-blue
-    .banner-section
+    .banner-section.js-banner
       .container.container--wide
         .banner-section__body
           .banner-section__images
             picture
               source(srcset=require('./images/m1.webp') type="image/webp")
-              img(src=require('./images/m1.png') alt="woman").banner-section__image.banner-section__image--left
+              img(src=require('./images/m1.png') alt="woman").banner-section__image.banner-section__image--left.js-banner-decor-two
             picture
               source(srcset=require('./images/m2.webp') type="image/webp")
-              img(src=require('./images/m2.png') alt="woman").banner-section__image.banner-section__image--right
+              img(src=require('./images/m2.png') alt="woman").banner-section__image.banner-section__image--right.js-banner-decor-one
           .banner-section__content
             h3.banner-section__title It might be funny!
             p.banner-section__subtitle.
@@ -321,3 +322,5 @@ block content
           include ./images/svg/app-store.svg
         a(href="#").mobile-navigation__store
           include ./images/svg/google-play.svg
+  .preloader.js-preloader
+    img(src=require('./images/ggg.gif')).preloader__image

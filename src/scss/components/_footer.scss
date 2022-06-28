@@ -31,9 +31,15 @@
   }
 
   &__link {
+    @include transition(color);
+
     color: var(--gray);
     font-size: 18px;
     line-height: 26px;
+
+    &:hover {
+      color: var(--white);
+    }
   }
 
   &__copyright {
@@ -43,6 +49,10 @@
 
     @include media-breakpoint-up(sm) {
       margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin: 0;
     }
   }
 

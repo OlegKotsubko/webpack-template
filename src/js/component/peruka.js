@@ -8,22 +8,21 @@ const peruka = () => {
   const decor = document.querySelector('.js-logo-section-decor')
 
   ScrollTrigger.matchMedia({
-    "(max-width: 767px)": function () {
+    "(max-width: 1279px)": function () {
       logo.removeAttribute('style');
       decor.removeAttribute('style');
     },
-    "(min-width: 768px)": function () {
+    "(min-width: 1280px)": function () {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: logo,
           start: "center center",
-          end: '+=1000',
-          scrub: 1.5,
+          end: '+=500',
+          scrub: true,
           pin: true,
         },
       })
-
-      tl.to(decor, { x: '200%' })
+      tl.to(decor, { x: '100%'})
     }
   })
 }

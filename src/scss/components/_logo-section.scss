@@ -2,20 +2,20 @@
 
 .logo-section {
   padding: 160px 0;
+  overflow: hidden;
 
   @include media-breakpoint-up(lg) {
     padding: 360px 0;
   }
 
   &__image {
-    transform: rotateZ(1.25deg);
     margin: 0 auto;
     width: 232px;
   }
 
   &__wrapper {
     position: relative;
-    overflow: hidden;
+
   }
 
   &__wave {
@@ -23,9 +23,23 @@
     top: 0;
     right: 90%;
 
+    @include media-breakpoint-up(lg) {
+      height: 63px;
+      top: 50%;
+      margin-top: -34px;
+      right: auto;
+      left: -100vw;
+      background-color: red;
+    }
+
     img {
-      object-fit: contain;
+      object-fit: cover;
       height: 50px;
+
+      @include media-breakpoint-up(lg) {
+        height: 63px;
+        width: 100vw;
+      }
     }
   }
 }
