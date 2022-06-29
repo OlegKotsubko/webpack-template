@@ -89,6 +89,7 @@
   }
 
   &__link {
+    @include transition(border-color);
     @include flex(center, center);
 
     border: 1px solid var(--gray-light);
@@ -105,6 +106,17 @@
     padding-top: 40px;
     padding-bottom: 10px;
 
+    &:hover {
+      border-color: var(--white);
+
+      .hero-section {
+
+        &__icon {
+          border-left-color: var(--white);
+        }
+      }
+    }
+
     @include media-breakpoint-up(sm) {
       bottom: 35px;
       right: 4px;
@@ -119,6 +131,7 @@
   }
 
   &__icon {
+    @include transition(border-color);
     @include size(32px);
     @include flex(center, center);
 

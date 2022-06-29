@@ -30,6 +30,11 @@
   }
 
   &__gif {
+    @include size(100%);
+
+    display: block;
+    object-fit: contain;
+
     @include media-breakpoint-up(sm) {
       display: none;
     }
