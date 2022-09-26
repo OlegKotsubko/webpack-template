@@ -1,0 +1,16 @@
+@use '../config' as *;
+
+.video-section {
+
+  &__body {
+    @include make-spacer(pb, 10)
+  }
+
+  &__item {
+    @include size(100%);
+
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

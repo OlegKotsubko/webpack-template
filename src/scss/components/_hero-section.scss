@@ -1,0 +1,50 @@
+@use '../config' as *;
+
+.hero-section {
+
+  &__body {
+    @include flex(center, center);
+
+    height: calc(100vh - var(--header-height));
+    min-height: calc(350px - var(--header-height));
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include font-size(32px);
+
+    text-align: center;
+  }
+
+  &__text {
+    @include make-spacer(mb, 2);
+
+    &--decorated {
+      @include make-spacer(px, 6);
+      @include make-spacer(py, 2);
+      position: relative;
+      display: inline-block;
+      color: var(--background-color);
+      font-family: AlfabetTest-Italic, sans-serif;
+    }
+  }
+
+  &__decor {
+    @include size(100%);
+
+    color: var(--text-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: -1;
+
+    svg {
+      @include size(100%);
+
+      display: block;
+      object-fit: cover;
+    }
+  }
+}

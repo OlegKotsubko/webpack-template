@@ -1,18 +1,13 @@
 @use '../config' as *;
 
 @font-face {
-  font-family: 'DrukCyrMedium';
-  src: url('../fonts/DrukCyr-Medium.ttf') format('truetype');
+  font-family: 'AlfabetTest';
+  src: url('../fonts/AlfabetTest-Regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'DrukCyrHeavy';
-  src: url('../fonts/DrukCyr-Heavy.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'DrukCyrBold';
-  src: url('../fonts/DrukCyr-Bold.ttf') format('truetype');
+  font-family: 'AlfabetTest-Italic';
+  src: url('../fonts/AlfabetTest-RegularItalic.otf') format('opentype');
 }
 
 * {
@@ -21,31 +16,39 @@
 
 body {
   @include smooth-font;
-  @include make-spacer(mx, auto);
-  @include make-spacer(my, 0);
-  @include flex(flex-start, $direction: column);
 
-  background-color: var(--white);
+  background-color: var(--background-color);
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: var(--line-height);
-  color: var(--black);
-  font-family: var(--font-family);
+  color: var(--text-color);
+  font-family: AlfabetTest, sans-serif;
   font-weight: var(--regular);
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
 }
 
-//
-// Headings
-//
+.main {
+  @include flex(flex-start, $direction: column);
+  @include make-spacer(mx, auto);
+  @include make-spacer(my, 0);
+
+  min-height: 100vh;
+}
 
 button {
   @include reset-button;
+
+  color: currentColor;
 }
 
 ul {
   @include reset-list;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
 }

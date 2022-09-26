@@ -1,0 +1,21 @@
+@use '../config' as *;
+
+.footer {
+  @include make-spacer(mt, 'auto');
+
+  &__body {
+    @include make-spacer(py, 4);
+    @include font-size(14px);
+
+    text-align: center;
+  }
+
+  &__social {
+    @include make-spacer(mb, 4)
+  }
+
+  &__logo {
+    @include flex(center, center);
+    @include make-spacer(mb, 4)
+  }
+}

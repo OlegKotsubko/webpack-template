@@ -1,5 +1,29 @@
 :root {
-  --white: #fff;
-  --black: #000;
-  --red: #FE1200;
+  --white: #D9D9D9;
+  --black: #0D0D0D;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--black);
+    --text-color: var(--white);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: var(--white);
+    --text-color: var(--black);
+  }
+}
+
+[data-theme="dark"] {
+  --background-color: var(--black);
+  --text-color: var(--white);
+}
+
+[data-theme="light"] {
+  --background-color: var(--white);
+  --text-color: var(--black);
+}
+

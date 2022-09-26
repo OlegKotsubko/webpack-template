@@ -1,0 +1,21 @@
+@use '../config' as *;
+
+.contact-section {
+
+  &__body {
+    @include make-spacer(pb, 10);
+
+    text-align: center;
+  }
+
+  &__mail {
+    @include font-size(24px);
+  }
+
+  &__subtitle {
+    @include font-size(14px);
+    @include make-spacer(mt, 2);
+
+    text-transform: uppercase;
+  }
+}

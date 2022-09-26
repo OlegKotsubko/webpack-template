@@ -2,6 +2,55 @@ extends pug/layouts/_layout
 
 block content
   main
-    .container
-      include ./images/svg/site.svg
-      include ./images/svg/phone.svg
+    .container.main
+      header.header
+        .header__body
+          .header__theme
+            button.theme.js-theme
+              span.theme__icon.theme__icon--dark
+                include ./images/svg/moon.svg
+              span.theme__icon.theme__icon--light
+                include ./images/svg/sun.svg
+
+          .header__logo
+            include ./images/svg/logo.svg
+          .header__lang
+            button En
+              include ./images/svg/arr.svg
+
+      .hero-section
+        .hero-section__body
+          h1.hero-section__title
+            .hero-section__text WE HELP
+            .hero-section__text.hero-section__text--decorated interpret
+              .hero-section__decor
+                include ./images/svg/decor.svg
+            .hero-section__text YOUR IDEAS
+            .hero-section__text through design
+
+      .video-section
+        .video-section__body
+          video.video-section__item(loop muted autoplay)
+            source(src='./videos/video.mp4')
+
+      .contact-section
+        .contact-section__body
+          a(href="mailto:designlab@techiia.com").contact-section__mail designlab@techiia.com
+          .contact-section__subtitle KEEP IN TOUCH
+
+      footer.footer
+        .footer__body
+          ul.footer__left
+            li.footer__social
+              a(href="#") Behance
+            li.footer__social
+              a(href="#") Linkedin
+            li.footer__social
+              a(href="#") Facebook
+            li.footer__social
+              a(href="#") Instagram
+          .footer__right
+            .footer__logo
+              include ./images/svg/second-logo.svg
+            .footer__rights (c) 2022 Techiia Designlab. All Rights Reserved.
+

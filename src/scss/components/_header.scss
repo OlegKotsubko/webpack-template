@@ -1,0 +1,27 @@
+@use '../config' as *;
+
+.header {
+
+  &__body {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    grid-column-gap: 16px;
+    align-items: center;
+    height: var(--header-height);
+  }
+
+  &__lang {
+    @include flex(flex-end)
+  }
+
+  &__logo {
+    @include make-spacer(mx, 'auto');
+
+    width: 134px;
+    max-width: 100%;
+
+    svg {
+      @include size(100%);
+    }
+  }
+}
