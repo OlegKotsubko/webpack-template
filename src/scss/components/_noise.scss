@@ -1,0 +1,72 @@
+@use '../config' as *;
+
+.noise {
+  @include size(100%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  &__image {
+    height: 400vh;
+    left: -200vw;
+    position: fixed;
+    top: -200vh;
+    width: 400vw;
+    background-repeat: repeat;
+    animation: grain 10s steps(10) infinite;
+    opacity: 0.2;
+
+  }
+
+  &__back {
+    @include size(100%);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+@keyframes grain {
+  0%,to {
+    transform: translate(0)
+  }
+
+  10% {
+    transform: translate(-3%,-8%)
+  }
+
+  20% {
+    transform: translate(-12%,6%)
+  }
+
+  30% {
+    transform: translate(10%,-20%)
+  }
+
+  40% {
+    transform: translate(-8%,20%)
+  }
+
+  50% {
+    transform: translate(-14%,12%)
+  }
+
+  60% {
+    transform: translate(16%,2%)
+  }
+
+  70% {
+    transform: translate(1%,13%)
+  }
+
+  80% {
+    transform: translate(4%,30%)
+  }
+
+  90% {
+    transform: translate(-7%,8%)
+  }
+}

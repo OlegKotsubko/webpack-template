@@ -32,8 +32,8 @@ const config = {
           to: "favicons"
         },
         {
-          from: "src/videos",
-          to: "videos"
+          from: "src/assets",
+          to: "assets"
         },
       ],
     }),

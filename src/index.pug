@@ -2,6 +2,10 @@ extends pug/layouts/_layout
 
 block content
   main
+    .noise
+      .noise__back(style="background-image: url(./assets/bg-black.png)")
+      .noise__image(style="background-image: url(./assets/noise-web.webp)")
+
     .container.main
       header.header
         .header__body
@@ -31,7 +35,7 @@ block content
       .video-section
         .video-section__body
           video.video-section__item(loop muted autoplay)
-            source(src='./videos/video.mp4')
+            source(src='./assets/video.mp4')
 
       .contact-section
         .contact-section__body
