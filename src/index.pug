@@ -19,8 +19,14 @@ block content
           .header__logo
             include ./images/svg/logo.svg
           .header__lang
-            button En
-              include ./images/svg/arr.svg
+
+            .js-dropdown
+              .js-dropdown-container
+                button.js-dropdown-trigger En
+                  include ./images/svg/arr.svg
+                div Text
+
+
 
       .hero-section
         .hero-section__body
