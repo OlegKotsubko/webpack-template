@@ -1,0 +1,38 @@
+@use '../config' as *;
+
+.dropdown {
+  position: relative;
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + #{rem(16px)});
+    left: 0;
+    display: none;
+
+    &.dropdown-active {
+      display: block;
+    }
+  }
+
+  &__button {
+    @include flex;
+  }
+
+  &__icon {
+    @include transition(transform);
+
+    position: relative;
+    margin-left: 10px;
+    pointer-events: none;
+  }
+
+  &.dropdown-open {
+
+    .dropdown {
+
+      &__icon {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+}

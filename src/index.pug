@@ -3,7 +3,8 @@ extends pug/layouts/_layout
 block content
   main
     .noise
-      .noise__back(style="background-image: url(./assets/bg-black.png)")
+      .noise__black(style="background-image: url(./assets/bg-black.png)")
+      .noise__light(style="background-image: url(./assets/bg-light.png)")
       .noise__image(style="background-image: url(./assets/noise-web.webp)")
 
     .container.main
@@ -16,15 +17,20 @@ block content
               span.theme__icon.theme__icon--light
                 include ./images/svg/sun.svg
 
-          .header__logo
+          .header__logo.js-header-logo
             include ./images/svg/logo.svg
           .header__lang
-
             .js-dropdown
-              .js-dropdown-container
-                button.js-dropdown-trigger En
-                  include ./images/svg/arr.svg
-                div Text
+              .dropdown.js-dropdown-container
+                button.dropdown__button.js-dropdown-trigger En
+                  .dropdown__icon
+                    include ./images/svg/arr.svg
+                .dropdown__menu.js-dropdown-menu
+                  .dropdown-list
+                    .dropdown-list__item
+                      a(href="#").dropdown-list__link En
+                    .dropdown-list__item
+                      a(href="#").dropdown-list__link Uk
 
 
 
@@ -64,3 +70,16 @@ block content
               include ./images/svg/second-logo.svg
             .footer__rights (c) 2022 Techiia Designlab. All Rights Reserved.
 
+    .preloader
+      .preloader__curtain.js-preloader-curtain
+      .preloader__char.js-preloader-item
+        include ./images/svg/p1.svg
+      .preloader__char.js-preloader-item
+        include ./images/svg/p2.svg
+      .preloader__char.js-preloader-item
+        include ./images/svg/p3.svg
+      .preloader__char.js-preloader-item
+        include ./images/svg/p4.svg
+      .js-preloader-logo
+        .preloader__icon.js-preloader-icon
+          include ./images/svg/logo.svg

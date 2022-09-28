@@ -20,12 +20,33 @@
 
   }
 
-  &__back {
+  &__balck,
+  &__light {
     @include size(100%);
 
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
+  }
+}
+
+[data-theme="dark"] {
+  .noise__black {
+    display: block;
+  }
+
+  .noise__light {
+    display: none;
+  }
+}
+
+[data-theme="light"] {
+  .noise__black {
+    display: none;
+  }
+
+  .noise__light {
+    display: block;
   }
 }
 

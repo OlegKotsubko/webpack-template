@@ -1,0 +1,20 @@
+@use '../config' as *;
+
+.dropdown-list {
+  background-color: var(--text-color);
+  padding: rem(16px);
+  border-radius: rem(16px);
+
+  &__link {
+    color: var(--background-color);
+    font-size: 14px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @include make-spacer(mb, 3);
+  }
+}

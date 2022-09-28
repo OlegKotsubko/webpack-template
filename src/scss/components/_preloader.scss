@@ -1,0 +1,35 @@
+@use '../config' as *;
+
+.preloader {
+  display: none !important;
+
+  &__char {
+    @include flex(center, center);
+    @include size(100%);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
+  }
+
+  &__icon {
+    width: 300px;
+    position: fixed;
+    margin: 14px 0 0 33px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__curtain {
+    @include size(200%);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    border-radius: 50%;
+  }
+}

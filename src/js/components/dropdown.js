@@ -18,20 +18,23 @@ const dropdown = () => {
         if(target.classList.contains("js-dropdown-trigger")) {
           e.preventDefault();
         }
-        if (target.nextElementSibling.classList.contains("dropdown-active")) {
-          target.parentElement.classList.remove("dropdown-open");
-          target.nextElementSibling.classList.remove("dropdown-active");
-        } else {
-          closeDropdown();
-          target.parentElement.classList.add("dropdown-open");
-          target.nextElementSibling.classList.add("dropdown-active");
+        if(target.nextElementSibling) {
+          if (target.nextElementSibling.classList.contains("dropdown-active")) {
+            target.parentElement.classList.remove("dropdown-open");
+            target.nextElementSibling.classList.remove("dropdown-active");
+          } else {
+            closeDropdown();
+            target.parentElement.classList.add("dropdown-open");
+            target.nextElementSibling.classList.add("dropdown-active");
+          }
         }
+
       });
     }
   });
 
   document.addEventListener("click", function (e) {
-    if (!e.target.closest(".js-dropdown")) {
+    if (!e.target.closest(".js-dropdown-container")) {
       closeDropdown();
     }
   });

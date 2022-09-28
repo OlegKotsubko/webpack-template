@@ -1,0 +1,45 @@
+@use '../config' as *;
+
+.theme {
+
+  &__icon {
+    @include size(24px);
+
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+[data-theme="light"] {
+
+  .theme {
+
+    &__icon {
+
+      &--dark {
+        display: flex;
+      }
+
+      &--light {
+        display: none;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+
+  .theme {
+
+    &__icon {
+
+      &--dark {
+        display: none;
+      }
+
+      &--light {
+        display: flex;
+      }
+    }
+  }
+}
