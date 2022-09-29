@@ -36,6 +36,10 @@ const preloader = () => {
     .to(icon, {width: 134, marginLeft: 0, top: fromTop, duration: 0.6}, 'start')
     .to(icon, {opacity: 0, duration: 1}, 'start+=1')
     .to(curtain, {top: '-100%', duration: 1}, 'start')
+
+  return {
+    tl
+  }
 }
 
 export default preloader

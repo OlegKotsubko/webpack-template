@@ -3,19 +3,49 @@
 .footer {
   @include make-spacer(mt, 'auto');
 
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+  }
+
   &__body {
     @include make-spacer(py, 4);
     @include font-size(14px);
 
     text-align: center;
+
+    @include media-breakpoint-up(md) {
+      @include flex(space-between, center);
+    }
   }
 
   &__social {
-    @include make-spacer(mb, 4)
+    @include make-spacer(mb, 4);
+    @include make-spacer(mb, 0, md);
   }
 
   &__logo {
     @include flex(center, center);
-    @include make-spacer(mb, 4)
+    @include make-spacer(mb, 4);
+    @include make-spacer(mb, 0, md);
+  }
+
+  &__left {
+    @include media-breakpoint-up(sm) {
+      @include flex(center);
+
+      gap: 29px;
+    }
+  }
+
+  &__right {
+    @include media-breakpoint-up(md) {
+      @include flex(space-between, center);
+
+      gap: 32px;
+    }
   }
 }

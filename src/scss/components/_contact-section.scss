@@ -3,13 +3,24 @@
 .contact-section {
 
   &__body {
-    @include make-spacer(pb, 10);
+    @include make-spacer(pb, 6);
+    @include make-spacer(pb, 0, md);
 
     text-align: center;
   }
 
-  &__mail {
+  &__link {
     @include font-size(24px);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(48px);
+    }
+  }
+
+  &__mail {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 35px;
+    }
   }
 
   &__subtitle {
@@ -17,5 +28,9 @@
     @include make-spacer(mt, 2);
 
     text-transform: uppercase;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(16px);
+    }
   }
 }

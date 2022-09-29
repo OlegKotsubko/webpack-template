@@ -3,7 +3,10 @@
 .video-section {
 
   &__body {
-    @include make-spacer(pb, 10)
+    @include make-spacer(pb, 10);
+    @include make-spacer(pb, 0, md);
+
+    position: relative;
   }
 
   &__item {
@@ -12,5 +15,25 @@
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  &__button {
+    @include size(50px);
+    @include absolute-center;
+    @include flex(center, center);
+
+
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--white);
+    mix-blend-mode: difference;
+
+    svg {
+      color: var(--black);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include size(100px);
+    }
   }
 }

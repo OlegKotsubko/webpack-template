@@ -7,68 +7,74 @@ block content
       .noise__light(style="background-image: url(./assets/bg-light.png)")
       .noise__image(style="background-image: url(./assets/noise-web.webp)")
 
-    .container.main
+    .main
       header.header
-        .header__body
-          .header__theme
-            button.theme.js-theme
-              span.theme__icon.theme__icon--dark
-                include ./images/svg/moon.svg
-              span.theme__icon.theme__icon--light
-                include ./images/svg/sun.svg
+        .container
+          .header__body
+            .header__theme
+              button.theme.js-theme
+                span.theme__icon.theme__icon--dark
+                  include ./images/svg/moon.svg
+                span.theme__icon.theme__icon--light
+                  include ./images/svg/sun.svg
 
-          .header__logo.js-header-logo
-            include ./images/svg/logo.svg
-          .header__lang
-            .js-dropdown
-              .dropdown.js-dropdown-container
-                button.dropdown__button.js-dropdown-trigger En
-                  .dropdown__icon
-                    include ./images/svg/arr.svg
-                .dropdown__menu.js-dropdown-menu
-                  .dropdown-list
-                    .dropdown-list__item
-                      a(href="#").dropdown-list__link En
-                    .dropdown-list__item
-                      a(href="#").dropdown-list__link Uk
+            .header__logo.js-header-logo
+              include ./images/svg/logo.svg
+            .header__lang
+              .js-dropdown
+                .dropdown.js-dropdown-container
+                  button.dropdown__button.js-dropdown-trigger En
+                    .dropdown__icon
+                      include ./images/svg/arr.svg
+                  .dropdown__menu.js-dropdown-menu
+                    .dropdown-list
+                      .dropdown-list__item
+                        a(href="#").dropdown-list__link En
+                      .dropdown-list__item
+                        a(href="#").dropdown-list__link Uk
+      .animated-section
+        #hero-section.animated-section__hero
+          .hero-section
+            .container
+              .hero-section__body
+                h1.hero-section__title
+                  .hero-section__text.js-hero-section-title-first WE HELP
+                  .hero-section__text.hero-section__text--decorated.js-hero-section-title-second interpret
+                    .hero-section__decor.js-hero-section-title-decor
+                      include ./images/svg/decor.svg
+                  .hero-section__text.js-hero-section-title-third YOUR IDEAS
+                  .hero-section__text.js-hero-section-title-fourth through design
+        #video-section.animated-section__video.video-section
+          .container
+            .video-section__body
+              button.video-section__button.js-video-section-cursor
+                include ./images/svg/play.svg
 
-
-
-      .hero-section
-        .hero-section__body
-          h1.hero-section__title
-            .hero-section__text WE HELP
-            .hero-section__text.hero-section__text--decorated interpret
-              .hero-section__decor
-                include ./images/svg/decor.svg
-            .hero-section__text YOUR IDEAS
-            .hero-section__text through design
-
-      .video-section
-        .video-section__body
-          video.video-section__item(loop muted autoplay)
-            source(src='./assets/video.mp4')
-
-      .contact-section
-        .contact-section__body
-          a(href="mailto:designlab@techiia.com").contact-section__mail designlab@techiia.com
-          .contact-section__subtitle KEEP IN TOUCH
+              video.js-video-section-item.video-section__item(loop muted autoplay)
+                source(src='./assets/video.mp4')
+        #contact-section.animated-section__contact.contact-section
+          .container
+            .contact-section__body
+              .contact-section__mail
+                a(href="mailto:designlab@techiia.com").contact-section__link designlab@techiia.com
+              .contact-section__subtitle KEEP IN TOUCH
 
       footer.footer
-        .footer__body
-          ul.footer__left
-            li.footer__social
-              a(href="#") Behance
-            li.footer__social
-              a(href="#") Linkedin
-            li.footer__social
-              a(href="#") Facebook
-            li.footer__social
-              a(href="#") Instagram
-          .footer__right
-            .footer__logo
-              include ./images/svg/second-logo.svg
-            .footer__rights (c) 2022 Techiia Designlab. All Rights Reserved.
+        .container
+          .footer__body
+            ul.footer__left
+              li.footer__social
+                a(href="#") Behance
+              li.footer__social
+                a(href="#") Linkedin
+              li.footer__social
+                a(href="#") Facebook
+              li.footer__social
+                a(href="#") Instagram
+            .footer__right
+              .footer__logo
+                include ./images/svg/second-logo.svg
+              .footer__rights (c) 2022 Techiia Designlab. All Rights Reserved.
 
     .preloader
       .preloader__curtain.js-preloader-curtain

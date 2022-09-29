@@ -1,0 +1,34 @@
+@use '../config' as *;
+
+.animated-section {
+
+  @include media-breakpoint-up(md) {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+
+    &__contact {
+      @include size(100%);
+      @include flex(center, center);
+
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    &__video {
+      position: fixed;
+      top: 104px;
+      right: -238px;
+      min-width: 610px;
+      max-width: 100%;
+      width: 40vw;
+      z-index: 2;
+    }
+  }
+}

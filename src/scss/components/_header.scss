@@ -2,6 +2,14 @@
 
 .header {
 
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+  }
+
   &__body {
     display: grid;
     grid-template-columns: 60px 1fr 60px;
@@ -17,6 +25,8 @@
   &__logo {
     @include make-spacer(mx, 'auto');
 
+    position: relative;
+    top: 8px;
     width: 134px;
     max-width: 100%;
 
