@@ -19,7 +19,12 @@
   }
 
   &__lang {
-    @include flex(flex-end)
+    @include flex(flex-end);
+
+    span {
+      pointer-events: none;
+      text-transform: capitalize;
+    }
   }
 
   &__logo {

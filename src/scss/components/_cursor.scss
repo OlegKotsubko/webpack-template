@@ -1,0 +1,23 @@
+@use '../config' as *;
+
+.cursor {
+  @include size(4px);
+
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 6;
+}
+
+[data-theme="dark"] {
+  .cursor {
+    background-color: var(--text-color);
+  }
+}
+
+[data-theme="light"] {
+  .cursor {
+    background-color: var(--background-color);
+  }
+}
+

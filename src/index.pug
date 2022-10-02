@@ -23,69 +23,79 @@ block content
             .header__lang
               .js-dropdown
                 .dropdown.js-dropdown-container
-                  button.dropdown__button.js-dropdown-trigger En
+                  button.dropdown__button.js-dropdown-trigger
+                    span.js-lang-country  En
                     .dropdown__icon
                       include ./images/svg/arr.svg
                   .dropdown__menu.js-dropdown-menu
                     .dropdown-list
                       .dropdown-list__item
-                        a(href="#").dropdown-list__link En
+                        button(type="button" data-lang="en").dropdown-list__link.js-lang-country-trigger En
                       .dropdown-list__item
-                        a(href="#").dropdown-list__link Uk
-      .animated-section
+                        button(type="button" data-lang="uk").dropdown-list__link.js-lang-country-trigger Uk
+      .animated-section.js-animated-section
         #hero-section.animated-section__hero
           .hero-section
             .container
               .hero-section__body
                 h1.hero-section__title
-                  .hero-section__text.js-hero-section-title-first WE HELP
-                  .hero-section__text.hero-section__text--decorated.js-hero-section-title-second interpret
+                  .hero-section__text.js-hero-section-title-first.js-lang(data-hero-first) WE HELP
+                  .hero-section__text.hero-section__text--decorated.js-hero-section-title-second
+                    span(data-hero-second) interpret
                     .hero-section__decor.js-hero-section-title-decor
                       include ./images/svg/decor.svg
-                  .hero-section__text.js-hero-section-title-third YOUR IDEAS
-                  .hero-section__text.js-hero-section-title-fourth through design
+                  .hero-section__text.js-hero-section-title-third(data-hero-third) YOUR IDEAS
+                  .hero-section__text.js-hero-section-title-fourth(data-hero-fourth) through design
         #video-section.animated-section__video.video-section
           .container
-            .video-section__body
-              button.video-section__button.js-video-section-cursor
-                include ./images/svg/play.svg
-
+            .video-section__body#video-section-content
               video.js-video-section-item.video-section__item(loop muted autoplay)
                 source(src='./assets/video.mp4')
+              button.video-section__button.paused.js-video-section-cursor
+                span
+                  include ./images/svg/play.svg
+                span
+                  include ./images/svg/cross.svg
         #contact-section.animated-section__contact.contact-section
           .container
             .contact-section__body
               .contact-section__mail
                 a(href="mailto:designlab@techiia.com").contact-section__link designlab@techiia.com
-              .contact-section__subtitle KEEP IN TOUCH
+                .contact-section__subtitle(data-contact-first) KEEP IN TOUCH
 
       footer.footer
         .container
           .footer__body
             ul.footer__left
               li.footer__social
-                a(href="#") Behance
+                a(href="#") BH
               li.footer__social
-                a(href="#") Linkedin
+                a(href="#") LN
               li.footer__social
-                a(href="#") Facebook
+                a(href="#") FB
               li.footer__social
-                a(href="#") Instagram
+                a(href="#") IG
             .footer__right
               .footer__logo
                 include ./images/svg/second-logo.svg
-              .footer__rights (c) 2022 Techiia Designlab. All Rights Reserved.
+              .footer__rights (c) 2022 Techiia Designlab.
+                span(data-footer-copy)  All Rights Reserved.
 
     .preloader
       .preloader__curtain.js-preloader-curtain
       .preloader__char.js-preloader-item
-        include ./images/svg/p1.svg
+        .preloader__wrapper
+          include ./images/svg/p1.svg
       .preloader__char.js-preloader-item
-        include ./images/svg/p2.svg
+        .preloader__wrapper
+          include ./images/svg/p2.svg
       .preloader__char.js-preloader-item
-        include ./images/svg/p3.svg
+        .preloader__wrapper
+          include ./images/svg/p3.svg
       .preloader__char.js-preloader-item
-        include ./images/svg/p4.svg
+        .preloader__wrapper
+          include ./images/svg/p4.svg
       .js-preloader-logo
         .preloader__icon.js-preloader-icon
           include ./images/svg/logo.svg
+    .cursor.js-cursor

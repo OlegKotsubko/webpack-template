@@ -29,6 +29,11 @@ body {
   font-weight: var(--regular);
   font-feature-settings: 'pnum' on, 'lnum' on;
   scroll-behavior: smooth;
+  cursor: none;
+
+  &.overflow-is-hidden {
+    overflow: hidden !important;
+  }
 }
 
 .main {

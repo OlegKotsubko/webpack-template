@@ -1,7 +1,6 @@
 @use '../config' as *;
 
 .preloader {
-  //display: none !important;
 
   &__char {
     @include flex(center, center);
@@ -10,8 +9,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--background-color);
     z-index: 5;
+  }
+
+  &__wrapper {
+    @include flex(center, center);
+    @include size(100px);
+
+    background-color: var(--background-color);
   }
 
   &__icon {

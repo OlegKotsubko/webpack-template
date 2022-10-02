@@ -2,6 +2,7 @@
 
 :root {
   --header-height: #{rem(90px)};
+  --foote-height: #{rem(80px)};
 
   @include media-breakpoint-up(md) {
     --header-height: #{rem(100px)};

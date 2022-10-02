@@ -34,11 +34,9 @@
   }
 
   &__left {
-    @include media-breakpoint-up(sm) {
-      @include flex(center);
+    @include flex(center);
 
-      gap: 29px;
-    }
+    gap: 29px;
   }
 
   &__right {
