@@ -19,6 +19,14 @@ const scrollAnimate = (tl) => {
   ScrollTrigger.matchMedia({
     "(max-width: 1024px)": function () {
       console.log('mobile')
+      t1.removeAttribute('style')
+      t2.removeAttribute('style')
+      t3.removeAttribute('style')
+      t4.removeAttribute('style')
+      container.removeAttribute('style')
+      video.removeAttribute('style')
+      videoContent.removeAttribute('style')
+      playButton.classList.add('active')
     },
     "(min-width: 1024px)": function () {
       tl
@@ -42,9 +50,6 @@ const scrollAnimate = (tl) => {
         x: -100,
         duration: 1.1,
       }, 'start+=1.1')
-        .add(() => {
-          document.body.classList.remove('overflow-is-hidden')
-        })
 
       gsap.timeline({
         scrollTrigger: {
@@ -85,9 +90,6 @@ const scrollAnimate = (tl) => {
         yPercent: -70,
         width: '40%',
       })
-        .add(() => {
-
-        })
     }
   })
 }
