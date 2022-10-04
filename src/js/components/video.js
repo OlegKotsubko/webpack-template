@@ -40,6 +40,14 @@ const video = () => {
     }
     window.addEventListener('mousemove', handleCursor);
 
+    function removeVideo() {
+      cloneVideo.pause()
+      cloneVideo.remove()
+      cloneButton.remove()
+    }
+
+    cloneVideo.addEventListener("webkitendfullscreen", removeVideo, false);
+
     cloneButton.addEventListener('click', function closeVideo() {
       tl
         .to(cloneButton, {
@@ -50,9 +58,9 @@ const video = () => {
           opacity: 0,
           scale: 0.9,
           onComplete: () => {
-            cloneVideo.remove()
-            cloneButton.remove()
+            removeVideo()
             cloneButton.removeEventListener('click', closeVideo)
+            cloneVideo.removeEventListener('webkitendfullscreen', closeVideo);
             window.removeEventListener('mousemove', handleCursor);
             document.body.classList.remove('overflow-is-hidden')
           }
