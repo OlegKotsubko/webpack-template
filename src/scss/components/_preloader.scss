@@ -17,6 +17,12 @@
     @include size(100px);
 
     background-color: var(--background-color);
+
+    position: relative;
+
+    svg {
+      @include absolute-center;
+    }
   }
 
   &__icon {

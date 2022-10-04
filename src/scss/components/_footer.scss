@@ -31,12 +31,26 @@
     @include flex(center, center);
     @include make-spacer(mb, 4);
     @include make-spacer(mb, 0, md);
+
+    svg g {
+      @include transition(opacity);
+    }
+
+    &:hover {
+      svg g {
+        opacity: 1;
+      }
+    }
   }
 
   &__left {
     @include flex(center);
 
     gap: 29px;
+
+    @include media-breakpoint-up(md) {
+      gap: 50px;
+    }
   }
 
   &__right {

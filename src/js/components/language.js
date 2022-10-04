@@ -31,7 +31,7 @@ const copyright = {
 
 const language = () => {
   const triggers = document.querySelectorAll('.js-lang-country-trigger')
-  const title = document.querySelector('.js-lang-country')
+  const titles = document.querySelectorAll('.js-lang-country')
   const root = document.documentElement
 
   triggers.forEach(trigger => {
@@ -39,7 +39,7 @@ const language = () => {
       const lang = this.dataset.lang
       root.setAttribute('lang', lang)
       root.click()
-      title.innerHTML = lang
+      titles.forEach(title => title.innerHTML = lang)
 
       Object.entries(copyright[lang]).forEach(([key, value]) => {
         if(!!(value && typeof value === "object" && !Array.isArray(value))) {

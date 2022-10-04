@@ -26,30 +26,30 @@ const scrollAnimate = (tl) => {
       container.removeAttribute('style')
       video.removeAttribute('style')
       videoContent.removeAttribute('style')
-      playButton.classList.add('active')
     },
     "(min-width: 1024px)": function () {
+      playButton.classList.add('active')
       tl
         .from(t1, {
         opacity: 0,
-        x: 24,
+        x: 56,
         duration: 0.3,
-      }, 'start+=0.7')
+      }, 'start+=0.4')
       .from(t2, {
         opacity: 0,
-        x: -24,
+        x: -72,
         duration: 0.6,
-      }, 'start+=0.9')
+      }, 'start+=0.6')
       tl.from(t3, {
         opacity: 0,
-        x: 148,
+        x: 120,
         duration: 1,
-      }, 'start+=0.9')
+      }, 'start+=0.8')
       .from(t4, {
         opacity: 0,
         x: -100,
         duration: 1.1,
-      }, 'start+=1.1')
+      }, 'start+=1')
 
       gsap.timeline({
         scrollTrigger: {
@@ -76,13 +76,6 @@ const scrollAnimate = (tl) => {
           scrub: 0,
           start: `top top-=${video.offsetLeft - window.innerWidth}`,
           end: `+=${video.offsetWidth}`,
-          onUpdate: (self) => {
-            if(self.progress === 1) {
-              playButton.classList.add('active')
-            } else {
-              playButton.classList.remove('active')
-            }
-          }
         }
       })
       .from(videoContent, {

@@ -1,0 +1,33 @@
+@use '../config' as *;
+
+.link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    display: block;
+  }
+
+  > :last-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+  }
+
+  @include media-breakpoint-up(md) {
+    &:hover {
+      span {
+        @include transition(transform);
+      }
+      span:last-child {
+        transform: translateY(0);
+      }
+      span:first-child {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}

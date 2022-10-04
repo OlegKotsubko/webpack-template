@@ -1,13 +1,19 @@
 @use '../config' as *;
 
 .cursor {
-  @include size(4px);
+  display: none;
 
-  position: fixed;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  z-index: 6;
+  @include media-breakpoint-up(md) {
+    @include size(4px);
+
+    position: fixed;
+    display: block;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 6;
+  }
 }
+
 
 [data-theme="dark"] {
   .cursor {

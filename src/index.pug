@@ -14,9 +14,17 @@ block content
             .header__theme
               button.theme.js-theme
                 span.theme__icon.theme__icon--dark
-                  include ./images/svg/moon.svg
+                  .link
+                    span
+                      include ./images/svg/moon.svg
+                    span
+                      include ./images/svg/moon.svg
                 span.theme__icon.theme__icon--light
-                  include ./images/svg/sun.svg
+                  .link
+                    span
+                      include ./images/svg/sun.svg
+                    span
+                      include ./images/svg/sun.svg
 
             .header__logo.js-header-logo
               include ./images/svg/logo.svg
@@ -24,7 +32,9 @@ block content
               .js-dropdown
                 .dropdown.js-dropdown-container
                   button.dropdown__button.js-dropdown-trigger
-                    span.js-lang-country  En
+                    .link
+                      span.js-lang-country  En
+                      span.js-lang-country  En
                     .dropdown__icon
                       include ./images/svg/arr.svg
                   .dropdown__menu.js-dropdown-menu
@@ -68,15 +78,23 @@ block content
           .footer__body
             ul.footer__left
               li.footer__social
-                a(href="#") BH
+                a(href="#").link
+                  span  BH
+                  span  BH
               li.footer__social
-                a(href="#") LN
+                a(href="#").link
+                  span LN
+                  span LN
               li.footer__social
-                a(href="#") FB
+                a(href="#").link
+                  span  FB
+                  span  FB
               li.footer__social
-                a(href="#") IG
+                a(href="#").link
+                  span IG
+                  span IG
             .footer__right
-              .footer__logo
+              a(href="https://techiia.com/").footer__logo
                 include ./images/svg/second-logo.svg
               .footer__rights (c) 2022 Techiia Designlab.
                 span(data-footer-copy)  All Rights Reserved.
@@ -95,7 +113,7 @@ block content
       .preloader__char.js-preloader-item
         .preloader__wrapper
           include ./images/svg/p4.svg
-      .js-preloader-logo
+      .preloader__char.js-preloader-logo
         .preloader__icon.js-preloader-icon
           include ./images/svg/logo.svg
     .cursor.js-cursor

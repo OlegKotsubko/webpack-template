@@ -5,6 +5,7 @@ const preloader = () => {
   const curtain = document.querySelector('.js-preloader-curtain')
   const logo = document.querySelector('.js-preloader-logo')
   const icon = logo.querySelector('.js-preloader-icon')
+  const chars = icon.querySelectorAll('svg path')
 
   const headerLogo = document.querySelector('.js-header-logo')
   const fromTop = headerLogo.offsetTop + 2
@@ -12,30 +13,23 @@ const preloader = () => {
   const tl = gsap.timeline()
 
   tl
-    .fromTo(items, {
+    .addLabel('start')
+    .from(items, {
       opacity: 0,
-    },{
-      opacity: 1,
       stagger: 0.6,
     })
-    .fromTo(logo, {
-      opacity: 0,
-    },{
-      opacity: 1,
-      duration: 0.4
-    })
-    .set(items, {
+    .to(items, {
       opacity: 0,
       zIndex: -1,
       duration: 0,
     })
-    .set(logo, {
-      background: 'transparent',
-      duration: 0.4
+    .from(chars, {
+      opacity: 0,
+      stagger: 0.08,
     })
-    .to(icon, {width: 134, marginLeft: 0, top: fromTop, duration: 0.6}, 'start')
-    .to(icon, {opacity: 0, duration: 1}, 'start+=1')
-    .to(curtain, {top: '-100%', duration: 1}, 'start')
+    .to(icon, {width: 134, marginLeft: 0, top: fromTop, duration: 0.6})
+    .to(curtain, {top: '-100%', duration: 0.6})
+    .set(logo, {visibility: 'hidden'})
     .add(() => {
       document.body.classList.remove('overflow-is-hidden')
     })
