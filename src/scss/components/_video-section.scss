@@ -22,15 +22,24 @@
 
   &__button {
     @include size(70px);
-    @include absolute-center;
     @include flex(center, center);
 
 
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-top: -35px;
     border-radius: 50%;
     overflow: hidden;
     background-color: var(--white);
     mix-blend-mode: difference;
     z-index: 4;
+
+    &.focus {
+      color: white;
+      background-color: black;
+      transition: all 0.2s;
+    }
 
     &.paused {
       > span:first-child {
@@ -56,6 +65,8 @@
 
     @include media-breakpoint-up(md) {
       @include size(100px);
+
+      margin-top: -50px;
     }
   }
 }

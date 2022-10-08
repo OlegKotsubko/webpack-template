@@ -53,6 +53,14 @@ button {
   color: currentColor;
 }
 
+button, a {
+  &:hover {
+    @include media-breakpoint-up(md) {
+      cursor: none;
+    }
+  }
+}
+
 ul {
   @include reset-list;
 }

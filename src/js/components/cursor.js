@@ -3,7 +3,7 @@ const cursor = () => {
 
   const handleCursor = (e) => {
     const { clientX: x, clientY: y } = e;
-    cursor.style.cssText =`left: ${x}px; top: ${y}px;`;
+    cursor.style.cssText =`left: ${x - (cursor.offsetWidth / 2)}px; top: ${y - (cursor.offsetHeight / 2)}px;`;
   }
 
   window.addEventListener('mousemove', handleCursor);

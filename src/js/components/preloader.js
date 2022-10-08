@@ -19,15 +19,18 @@ const preloader = () => {
       stagger: 0.6,
     })
     .to(items, {
+      left: -33,
+      duration: 0.4,
+    })
+    .set(items, {
       opacity: 0,
       zIndex: -1,
-      duration: 0,
     })
     .from(chars, {
       opacity: 0,
       stagger: 0.08,
     })
-    .to(icon, {width: 134, marginLeft: 0, top: fromTop, duration: 0.6})
+    .to(icon, {width: 134, top: fromTop, duration: 0.6})
     .to(curtain, {top: '-100%', duration: 0.6})
     .set(logo, {visibility: 'hidden'})
     .add(() => {

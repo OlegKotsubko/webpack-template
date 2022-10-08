@@ -4,12 +4,13 @@
   display: none;
 
   @include media-breakpoint-up(md) {
-    @include size(4px);
+    @include size(10px);
 
     position: fixed;
     display: block;
     pointer-events: none;
     mix-blend-mode: difference;
+    border-radius: 50%;
     z-index: 6;
   }
 }

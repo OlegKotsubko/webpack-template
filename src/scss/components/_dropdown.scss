@@ -19,8 +19,6 @@
   }
 
   &__icon {
-    @include transition(transform);
-
     position: relative;
     margin-left: 10px;
     pointer-events: none;
