@@ -6,8 +6,12 @@
   &__menu {
     position: absolute;
     top: calc(100% + #{rem(16px)});
-    left: 0;
+    left: -16px;
     display: none;
+
+    @include media-breakpoint-up(md) {
+      left: 0;
+    }
 
     &.dropdown-active {
       display: block;
@@ -19,9 +23,14 @@
   }
 
   &__icon {
-    position: relative;
-    margin-left: 10px;
-    pointer-events: none;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      position: relative;
+      margin-left: 10px;
+      pointer-events: none;
+    }
   }
 
   &.dropdown-open {

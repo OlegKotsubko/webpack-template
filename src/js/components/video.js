@@ -1,70 +1,30 @@
 import gsap from 'gsap'
+import magnet from './magnet';
 
-const lerp = (current, target, factor) =>
-  current * (1 - factor) + target * factor;
-
-const calculateDistance = (x1, y1, x2, y2) => {
-  return Math.hypot(x1 - x2, y1 - y2);
-};
-
-let mousePosition = { x: 0, y: 0 };
-
-function magneticObject(domElement, triggerArea) {
-  let boundingClientRect = domElement.getBoundingClientRect();
-  const interpolationFactor = 0.8;
-
-  const lerpingData = {
-    x: { current: 0, target: 0 },
-    y: { current: 0, target: 0 },
-  };
-  window.addEventListener("resize", () => {
-    boundingClientRect = domElement.getBoundingClientRect();
-  });
-
-  const distanceFromMouseToCenter = calculateDistance(
-    mousePosition.x,
-    mousePosition.y,
-    boundingClientRect.left + boundingClientRect.width / 2,
-    boundingClientRect.top + boundingClientRect.height / 2
-  );
-
-  let targetHolder = { x: 0, y: 0 };
-
-  if (distanceFromMouseToCenter < triggerArea) {
-    targetHolder.x = (mousePosition.x - (boundingClientRect.left + boundingClientRect.width / 2)) * 0.2;
-    targetHolder.y = (mousePosition.y - (boundingClientRect.top + boundingClientRect.height / 2)) * 0.2;
-  }
-
-  lerpingData["x"].target = targetHolder.x;
-  lerpingData["y"].target = targetHolder.y;
-
-  for (const item in lerpingData) {
-    lerpingData[item].current = lerp(lerpingData[item].current, lerpingData[item].target, interpolationFactor);
-  }
-
-
-  gsap.to(domElement, {
-    x: lerpingData.x.current,
-    y: lerpingData.y.current
-  })
-
-  return lerpingData
-}
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const video = () => {
   const button = document.querySelector('.js-video-section-cursor')
   const video = document.querySelector('.js-video-section-item')
   const cursor = document.querySelector('.js-cursor');
+  let mousePosition = { x: 0, y: 0 }
 
-  window.addEventListener("mousemove", (e) => {
+  function updateMousePosition(e) {
     mousePosition.x = e.pageX;
     mousePosition.y = e.pageY;
 
-    magneticObject(button, window.innerWidth / 2)
-  });
+    magnet(button, window.innerWidth / 2, mousePosition)
+  }
 
-
+  ScrollTrigger.matchMedia({
+    "(max-width: 1023px)": function () {
+      window.removeEventListener("mousemove", updateMousePosition);
+      button.removeAttribute('style')
+    },
+    "(min-width: 1024px)": function () {
+      window.addEventListener("mousemove", updateMousePosition);
+    }
+  })
 
   button.addEventListener('click', function () {
     const cloneVideo = video.cloneNode(true)
@@ -80,7 +40,6 @@ const video = () => {
     cloneVideo.style.left = `${left}px`
     cloneVideo.style.width = `${width}px`
     cloneVideo.style.height = `${height}px`
-
 
     tl
       .set(cloneButton, {
@@ -156,7 +115,6 @@ const video = () => {
           }
         })
     })
-
   })
 }
 

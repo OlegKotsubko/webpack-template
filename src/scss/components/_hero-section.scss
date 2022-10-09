@@ -5,8 +5,7 @@
   &__body {
     @include flex(center, center);
 
-    height: calc(100vh - var(--header-height));
-    min-height: calc(350px - var(--header-height));
+    min-height: calc(570px - var(--header-height));
     text-transform: uppercase;
 
     @include media-breakpoint-up(md) {

@@ -18,8 +18,7 @@ const scrollAnimate = (tl) => {
   const button = document.querySelector('.js-video-section-cursor')
 
   ScrollTrigger.matchMedia({
-    "(max-width: 1024px)": function () {
-      console.log('mobile')
+    "(max-width: 1023px)": function () {
       t1.removeAttribute('style')
       t2.removeAttribute('style')
       t3.removeAttribute('style')
