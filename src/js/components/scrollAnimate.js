@@ -55,14 +55,8 @@ const scrollAnimate = (tl) => {
         scrollTrigger: {
           trigger: main,
           start: "0% 0%",
-          end: `+=${container.scrollWidth - window.innerWidth}`,
-          scrub: 1,
-          snap: {
-            snapTo: 1 / 2,
-            duration: { min: 0.22, max: 1 },
-            delay: 0,
-            ease: "sine.inOut",
-          },
+          end: `+=${container.scrollWidth}`,
+          scrub: .6,
           pin: true,
           onUpdate: () => {
             button.style.pointerEvents = 'none'
@@ -79,15 +73,15 @@ const scrollAnimate = (tl) => {
       gsap.timeline({
         scrollTrigger: {
           trigger: video,
-          scrub: 0,
+          scrub: true,
           start: `top top-=${video.offsetLeft - window.innerWidth}`,
           end: `+=${video.offsetWidth}`,
         }
       })
       .from(videoContent, {
         xPercent: -130,
-        yPercent: -40,
         width: '40%',
+        marginBottom: '15%',
       })
     }
   })
