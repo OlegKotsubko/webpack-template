@@ -15,8 +15,6 @@ const scrollAnimate = (tl) => {
   const t3 = hero.querySelector('.js-hero-section-title-third')
   const t4 = hero.querySelector('.js-hero-section-title-fourth')
 
-  const button = document.querySelector('.js-video-section-cursor')
-
   ScrollTrigger.matchMedia({
     "(max-width: 1023px)": function () {
       t1.removeAttribute('style')
@@ -53,17 +51,10 @@ const scrollAnimate = (tl) => {
 
       gsap.timeline({
         scrollTrigger: {
-          trigger: main,
           start: "0% 0%",
           end: `+=${container.scrollWidth}`,
-          scrub: .6,
-          pin: true,
-          onUpdate: () => {
-            button.style.pointerEvents = 'none'
-            setTimeout(() => {
-              button.style.pointerEvents = 'all'
-            }, 1)
-          },
+          scrub: true,
+          pin: main,
         }
       }).to(container, {
         xPercent: -100 * (container.children.length - 1),

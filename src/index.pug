@@ -33,16 +33,16 @@ block content
                 .dropdown.js-dropdown-container
                   button.dropdown__button.js-dropdown-trigger
                     span.link
-                      span.js-lang-country  En
-                      span.js-lang-country  En
+                      span.js-lang-country  ENG
+                      span.js-lang-country  ENG
                     .dropdown__icon
                       include ./images/svg/arr.svg
                   .dropdown__menu.js-dropdown-menu
                     .dropdown-list
                       .dropdown-list__item
-                        button(type="button" data-lang="en").dropdown-list__link.js-lang-country-trigger En
+                        button(type="button" data-lang="en").dropdown-list__link.js-lang-country-trigger ENG
                       .dropdown-list__item
-                        button(type="button" data-lang="uk").dropdown-list__link.js-lang-country-trigger Uk
+                        button(type="button" data-lang="uk").dropdown-list__link.js-lang-country-trigger УКР
       .animated-section.js-animated-section
         #hero-section.animated-section__hero
           .hero-section
@@ -59,8 +59,8 @@ block content
         #video-section.animated-section__video.video-section
           .container
             .video-section__body#video-section-content
-              video.js-video-section-item.video-section__item(loop muted autoplay playsinline)
-                source(src='./assets/video.mp4')
+              #video-player.video-section__item
+                iframe(src="https://player.vimeo.com/video/761921220?h=90c15e2eaa")
               button.video-section__button.paused.js-video-section-cursor
                 span
                   include ./images/svg/play.svg
@@ -113,6 +113,15 @@ block content
       .preloader__char.js-preloader-item
         .preloader__wrapper
           include ./images/svg/p4.svg
+      .preloader__char.js-preloader-item
+        .preloader__wrapper
+          include ./images/svg/p5.svg
+      .preloader__char.js-preloader-item
+        .preloader__wrapper
+          include ./images/svg/p6.svg
+      .preloader__char.js-preloader-item
+        .preloader__wrapper
+          include ./images/svg/p7.svg
       .preloader__char.js-preloader-logo
         .preloader__icon.js-preloader-icon
           include ./images/svg/logo.svg

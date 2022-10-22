@@ -57,7 +57,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "gsap": "^3.11.2"
+    "gsap": "^3.11.2",
+    "plyr": "^3.7.2"
   },
   "browserslist": [
     "last 4 versions",

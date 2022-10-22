@@ -15,10 +15,10 @@ const copyright = {
   },
   uk: {
     hero: {
-      first: 'Ми допоможемо',
-      second: 'перетворити',
+      first: 'ми допомагаємо',
+      second: 'інтерпретувати',
       third: 'ваші ідеі',
-      fourth: 'у дизайн',
+      fourth: 'мовою дизайну',
     },
     contact: {
       first: 'на зв\'язку'

@@ -8,7 +8,7 @@ const preloader = () => {
   const chars = icon.querySelectorAll('svg path')
 
   const headerLogo = document.querySelector('.js-header-logo')
-  const fromTop = headerLogo.offsetTop + 2
+  const fromTop = headerLogo.offsetTop + 14
 
   const tl = gsap.timeline()
 
@@ -19,16 +19,16 @@ const preloader = () => {
       stagger: 0.6,
     })
     .to(items, {
-      left: -33,
+      left: -35,
       duration: 0.4,
-    })
-    .set(items, {
-      opacity: 0,
-      zIndex: -1,
     })
     .from(chars, {
       opacity: 0,
       stagger: 0.08,
+    })
+    .set(items, {
+      opacity: 0,
+      zIndex: -1,
     })
     .to(icon, {width: 134, top: fromTop, duration: 0.6})
     .to(curtain, {top: '-100%', duration: 0.6})
