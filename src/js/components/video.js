@@ -18,6 +18,7 @@ const video = () => {
 
   player.muted = true
   player.autoplay = true
+  player.resetOnEnd = true
 
   function updateMousePosition(e) {
     mousePosition.x = e.pageX;
@@ -37,85 +38,99 @@ const video = () => {
   })
 
   button.addEventListener('click', function () {
-    const tl = gsap.timeline()
-    const {top, left, height, width} = video.getBoundingClientRect()
-    const cloneButton = button.cloneNode(true)
 
-    document.body.appendChild(cloneButton)
-    document.body.classList.add('overflow-is-hidden')
-    cloneButton.classList.remove('paused')
+    ScrollTrigger.matchMedia({
+      "(max-width: 1023px)": function () {
+        if (player.muted) {
+          button.classList.remove('paused')
+          player.muted = false
+        } else {
+          button.classList.add('paused')
+          player.muted = true
+        }
+      },
+      "(min-width: 1024px)": function () {
+        const tl = gsap.timeline()
+        const {top, left, height, width} = video.getBoundingClientRect()
+        const cloneButton = button.cloneNode(true)
 
-    player.muted = false
+        document.body.appendChild(cloneButton)
+        document.body.classList.add('overflow-is-hidden')
+        cloneButton.classList.remove('paused')
 
-    const memoContentPlace = content.style.transform
-    const memoSectionPlace = section.style.transform
-    content.style.transform = 'none'
-    section.style.transform = 'none'
+        player.muted = false
 
-    tl
-      .set(cloneButton, {
-        position: 'fixed',
-        opacity: 0,
-        zIndex: '6'
-      })
-      .set(video, {
-        position: 'fixed',
-        top: `${top}px`,
-        left: `${left}px`,
-        width:`${width}px`,
-        height:`${height}px`,
-        objectFit: 'cover',
-        zIndex: '4'
-      })
-      .to(video, {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-        duration: 0.6
-      })
-      .to(cloneButton, {
-        opacity: 1,
-        duration: 0.6
-      })
+        const memoContentPlace = content.style.transform
+        const memoSectionPlace = section.style.transform
+        content.style.transform = 'none'
+        section.style.transform = 'none'
 
-    const handleCursor = (e) => {
-      const { clientX: x, clientY: y } = e;
+        tl
+          .set(cloneButton, {
+            position: 'fixed',
+            opacity: 0,
+            zIndex: '6'
+          })
+          .set(video, {
+            position: 'fixed',
+            top: `${top}px`,
+            left: `${left}px`,
+            width:`${width}px`,
+            height:`${height}px`,
+            objectFit: 'cover',
+            zIndex: '4'
+          })
+          .to(video, {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            duration: 0.6
+          })
+          .to(cloneButton, {
+            opacity: 1,
+            duration: 0.6
+          })
 
-      cursor.style.display = 'none'
-      cloneButton.style.margin = '0'
+        const handleCursor = (e) => {
+          const { clientX: x, clientY: y } = e;
 
-      cloneButton.style.transform = 'none'
-      cloneButton.style.left =`${x - (cloneButton.offsetWidth / 2)}px`;
-      cloneButton.style.top =`${y - (cloneButton.offsetHeight / 2)}px`;
-    }
+          cursor.style.display = 'none'
+          cloneButton.style.margin = '0'
 
-    window.addEventListener('mousemove', handleCursor);
+          cloneButton.style.transform = 'none'
+          cloneButton.style.left =`${x - (cloneButton.offsetWidth / 2)}px`;
+          cloneButton.style.top =`${y - (cloneButton.offsetHeight / 2)}px`;
+        }
 
-    cloneButton.addEventListener('click', function closeVideo() {
-      player.muted = true
-      tl
-        .to(cloneButton, {
-          opacity: 0,
-          scale: 0.9
+        window.addEventListener('mousemove', handleCursor);
+
+        cloneButton.addEventListener('click', function closeVideo() {
+          player.muted = true
+          tl
+            .to(cloneButton, {
+              opacity: 0,
+              scale: 0.9
+            })
+            .to(video, {
+              top: `${top}px`,
+              left: `${left}px`,
+              width:`${width}px`,
+              height:`${height}px`,
+              duration: 0.6,
+              onComplete: () => {
+                content.style.transform = memoContentPlace
+                section.style.transform = memoSectionPlace
+                cloneButton.removeEventListener('click', closeVideo)
+                window.removeEventListener('mousemove', handleCursor);
+                document.body.classList.remove('overflow-is-hidden')
+                cursor.style.display = 'block'
+                cloneButton.remove()
+                video.removeAttribute('style')
+              }
+            })
         })
-        .to(video, {
-          top: `${top}px`,
-          left: `${left}px`,
-          width:`${width}px`,
-          height:`${height}px`,
-          duration: 0.6,
-          onComplete: () => {
-            content.style.transform = memoContentPlace
-            section.style.transform = memoSectionPlace
-            cloneButton.removeEventListener('click', closeVideo)
-            window.removeEventListener('mousemove', handleCursor);
-            document.body.classList.remove('overflow-is-hidden')
-            cursor.style.display = 'block'
-            cloneButton.remove()
-            video.removeAttribute('style')
-          }
-        })
+      }
     })
   })
 }

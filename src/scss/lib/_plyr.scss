@@ -975,12 +975,6 @@ a.plyr__control {
   width: 100%
 }
 
-.plyr--full-ui .plyr__video-embed > .plyr__video-embed__container {
-  padding-bottom: 240%;
-  position: relative;
-  transform: translateY(-38.28125%)
-}
-
 .plyr--video .plyr__controls {
   background: linear-gradient(transparent, rgba(0, 0, 0, .75));
   background: var(--plyr-video-controls-background, linear-gradient(transparent, rgba(0, 0, 0, .75)));
