@@ -25,7 +25,6 @@ const scrollAnimate = () => {
         }
       }).to(container, {
         xPercent: -100 * (container.children.length - 1),
-        ease: "none"
       })
 
       gsap.timeline({

@@ -14,6 +14,14 @@ const video = () => {
   player.muted = true
   player.autoplay = true
 
+  player.on('enterfullscreen', (event) => {
+    player.muted = false
+  });
+
+  player.on('exitfullscreen', (event) => {
+    player.muted = true
+  });
+
   function updateMousePosition(e) {
     mousePosition.x = e.pageX;
     mousePosition.y = e.pageY;
@@ -32,9 +40,7 @@ const video = () => {
   })
 
   button.addEventListener('click', function () {
-    player.togglePlay()
     player.fullscreen.toggle()
-    player.muted = false
   })
 }
 
