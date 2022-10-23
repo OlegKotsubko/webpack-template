@@ -2,19 +2,40 @@
 
 .dropdown {
   position: relative;
+  cursor: pointer;
+
+  &:hover {
+
+    .dropdown {
+
+      &__menu {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &__icon {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
 
   &__menu {
+    @include transition(#{opacity, visibility});
+
     position: absolute;
     top: calc(100% + #{rem(16px)});
-    left: -16px;
-    display: none;
+    left: rem(-16px);
+    opacity: 0;
+    visibility: hidden;
 
-    @include media-breakpoint-up(md) {
+    &::before {
+      width: 100%;
+      height: rem(16px);
+      position: absolute;
+      top: rem(-16px);
       left: 0;
-    }
-
-    &.dropdown-active {
       display: block;
+      content: "";
     }
   }
 
@@ -28,18 +49,8 @@
     @include media-breakpoint-up(md) {
       display: block;
       position: relative;
-      margin-left: 10px;
+      margin-left: rem(10px);
       pointer-events: none;
-    }
-  }
-
-  &.dropdown-open {
-
-    .dropdown {
-
-      &__icon {
-        transform: rotateZ(180deg);
-      }
     }
   }
 }

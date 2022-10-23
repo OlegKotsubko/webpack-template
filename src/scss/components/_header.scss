@@ -20,10 +20,14 @@
 
   &__lang {
     @include flex(flex-end);
+  }
 
-    span {
-      pointer-events: none;
-      text-transform: capitalize;
+  &__link {
+    width: rem(33px);
+
+    > :last-child {
+      left: auto;
+      right: 0;
     }
   }
 
@@ -31,7 +35,6 @@
     @include make-spacer(mx, 'auto');
 
     position: relative;
-    top: 8px;
     width: 134px;
     max-width: 100%;
 

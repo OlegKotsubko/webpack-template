@@ -32,17 +32,17 @@ block content
               .js-dropdown
                 .dropdown.js-dropdown-container
                   button.dropdown__button.js-dropdown-trigger
-                    span.link
+                    span.link.header__link
                       span.js-lang-country  ENG
                       span.js-lang-country  ENG
                     .dropdown__icon
                       include ./images/svg/arr.svg
                   .dropdown__menu.js-dropdown-menu
-                    .dropdown-list
-                      .dropdown-list__item
-                        button(type="button" data-lang="en").dropdown-list__link.js-lang-country-trigger ENG
-                      .dropdown-list__item
-                        button(type="button" data-lang="uk").dropdown-list__link.js-lang-country-trigger УКР
+                    ul.dropdown-list
+                      li.dropdown-list__item
+                        button(type="button" data-lang="ENG").dropdown-list__link.js-lang-country-trigger.is-active ENG
+                      li.dropdown-list__item
+                        button(type="button" data-lang="УКР").dropdown-list__link.js-lang-country-trigger УКР
       .animated-section.js-animated-section
         #hero-section.animated-section__hero
           .hero-section
@@ -54,13 +54,14 @@ block content
                     span(data-hero-second) interpret
                     .hero-section__decor.js-hero-section-title-decor
                       include ./images/svg/decor.svg
+                      include ./images/svg/decor2.svg
                   .hero-section__text.js-hero-section-title-third(data-hero-third) YOUR IDEAS
                   .hero-section__text.js-hero-section-title-fourth(data-hero-fourth) through design
         #video-section.animated-section__video.video-section
           .container
             .video-section__body#video-section-content
               #video-player.video-section__item
-                iframe(src="https://player.vimeo.com/video/761921220?h=90c15e2eaa")
+                iframe(src="https://player.vimeo.com/video/761921220?h=90c15e2eaa" loading="lazy")
               button.video-section__button.paused.js-video-section-cursor
                 span
                   include ./images/svg/play.svg

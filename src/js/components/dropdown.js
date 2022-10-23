@@ -13,7 +13,7 @@ const dropdown = () => {
 
   document.querySelectorAll(".js-dropdown").forEach((dropDown) => {
     if (dropDown.classList.contains("js-dropdown")) {
-      dropDown.addEventListener("click", function (e) {
+      dropDown.addEventListener("mouseover", function (e) {
         const {target} = e;
         if(target.classList.contains("js-dropdown-trigger")) {
           e.preventDefault();

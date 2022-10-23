@@ -1,5 +1,5 @@
 const copyright = {
-  en: {
+  'ENG': {
     hero: {
       first: 'WE HELP',
       second: 'interpret',
@@ -13,7 +13,7 @@ const copyright = {
       copy: 'All Rights Reserved.'
     }
   },
-  uk: {
+  'УКР': {
     hero: {
       first: 'ми допомагаємо',
       second: 'інтерпретувати',
@@ -34,8 +34,16 @@ const language = () => {
   const titles = document.querySelectorAll('.js-lang-country')
   const root = document.documentElement
 
+  const resetTriggers = () => {
+    triggers.forEach(trigger => {
+      trigger.classList.remove('is-active')
+    })
+  }
+
   triggers.forEach(trigger => {
     trigger.addEventListener('click', function (){
+      resetTriggers()
+      trigger.classList.add('is-active')
       const lang = this.dataset.lang
       root.setAttribute('lang', lang)
       root.click()

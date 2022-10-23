@@ -1,16 +1,16 @@
-import dropdown from "./components/dropdown";
 import preloader from "./components/preloader"
 import theme from "./components/theme"
 import scrollAnimate from "./components/scrollAnimate";
 import language from "./components/language";
 import cursor from "./components/cursor";
 import video from "./components/video";
+import heroSectionAnimate from "./components/heroSectionAnimate";
 
-dropdown()
 theme()
 
 const {tl} = preloader()
-scrollAnimate(tl)
+heroSectionAnimate(tl)
+scrollAnimate()
 
 language();
 cursor();

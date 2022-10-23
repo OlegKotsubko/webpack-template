@@ -24,7 +24,7 @@
   }
 
   &__text {
-    @include font-size(32px);
+    @include font-size(24px);
     @include make-spacer(mb, 2);
     @include make-spacer(mb, 0, sm);
 
@@ -40,8 +40,8 @@
       }
     }
 
-    @include media-breakpoint-up(md) {
-      @include font-size(78px, 74px);
+    @include media-breakpoint-up(lg) {
+      @include font-size(68px);
 
       letter-spacing: 0.05em;
 
@@ -84,8 +84,43 @@
     svg {
       @include size(100%);
 
-      display: block;
+      display: none;
       object-fit: cover;
+    }
+  }
+}
+
+[lang="ENG"] {
+
+  .hero-section {
+
+    &__decor > svg:first-child {
+      display: block;
+    }
+  }
+}
+
+
+[lang="УКР"] {
+
+  .hero-section {
+
+    &__title {
+      padding-left: rem(30px);
+    }
+
+    &__decor > svg:last-child {
+      display: block;
+    }
+
+    &__text {
+
+      &--decorated {
+
+        @include media-breakpoint-up(md) {
+          right: rem(-60px);
+        }
+      }
     }
   }
 }
