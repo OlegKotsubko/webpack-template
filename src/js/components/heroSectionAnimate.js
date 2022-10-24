@@ -30,16 +30,37 @@ const heroSectionAnimate = (tl) => {
           x: -72,
           duration: 0.6,
         }, 'start')
-      tl.from(t3, {
-        opacity: 0,
-        x: 120,
-        duration: 1,
-      }, 'start+=0.2')
+        .from(t3, {
+          opacity: 0,
+          x: 120,
+          duration: 1,
+        }, 'start+=0.2')
         .from(t4, {
           opacity: 0,
           x: -100,
           duration: 1.1,
         }, 'start+=0.4')
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: hero,
+          scrub: 0.8,
+          start: `top top`,
+          end: `+=${hero.offsetWidth}`,
+        }
+      }).addLabel('start')
+        .to(t1, {
+          xPercent: -80,
+        }, 'start')
+        .to(t2, {
+          xPercent: -30,
+        }, 'start')
+        .to(t3, {
+          xPercent: -60,
+        }, 'start')
+        .to(t4, {
+          xPercent: -90,
+        }, 'start')
     }
   })
 }
