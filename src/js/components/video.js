@@ -1,6 +1,6 @@
 import {gsap} from "gsap"
-import Plyr from 'plyr'
 import magnet from './magnet'
+import Player from '@vimeo/player'
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,15 +10,9 @@ const video = () => {
   const content = document.getElementById('video-section-content')
   const cursor = document.querySelector('.js-cursor');
   const section = document.querySelector('.js-animated-section');
-  let mousePosition = { x: 0, y: 0 }
+  const mousePosition = { x: 0, y: 0 }
 
-  const player = new Plyr('#video-player', {
-    controls: [],
-  });
-
-  player.muted = true
-  player.autoplay = true
-  player.resetOnEnd = true
+  const player = new Player(video);
 
   function updateMousePosition(e) {
     mousePosition.x = e.pageX;
@@ -41,13 +35,15 @@ const video = () => {
 
     ScrollTrigger.matchMedia({
       "(max-width: 1023px)": function () {
-        if (player.muted) {
-          button.classList.remove('paused')
-          player.muted = false
-        } else {
-          button.classList.add('paused')
-          player.muted = true
-        }
+        player.getVolume().then((volume) => {
+          if(volume) {
+            button.classList.add('paused')
+            player.setVolume(0)
+          } else {
+            button.classList.remove('paused')
+            player.setVolume(1)
+          }
+        })
       },
       "(min-width: 1024px)": function () {
         const tl = gsap.timeline()
@@ -58,7 +54,7 @@ const video = () => {
         document.body.classList.add('overflow-is-hidden')
         cloneButton.classList.remove('paused')
 
-        player.muted = false
+        player.setVolume(1)
 
         const memoContentPlace = content.style.transform
         const memoSectionPlace = section.style.transform
@@ -106,7 +102,7 @@ const video = () => {
         window.addEventListener('mousemove', handleCursor);
 
         cloneButton.addEventListener('click', function closeVideo() {
-          player.muted = true
+          player.setVolume(0)
           tl
             .to(cloneButton, {
               opacity: 0,
