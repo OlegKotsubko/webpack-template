@@ -5,7 +5,7 @@ const preloader = () => {
   const curtain = document.querySelector('.js-preloader-curtain')
   const logo = document.querySelector('.js-preloader-logo')
   const icon = logo.querySelector('.js-preloader-icon')
-  const chars = icon.querySelectorAll('svg path')
+  const chars = icon.querySelectorAll('svg g')
 
   const headerLogo = document.querySelector('.js-header-logo')
   const fromTop = headerLogo.offsetTop + 14
@@ -18,17 +18,17 @@ const preloader = () => {
       opacity: 0,
       stagger: 0.6,
     })
-    .to(items, {
-      left: -35,
-      duration: 0.4,
-    })
-    .from(chars, {
-      opacity: 0,
-      stagger: 0.08,
-    })
     .set(items, {
       opacity: 0,
       zIndex: -1,
+    })
+    .from(chars[0], {
+      opacity: 0,
+      x: 24,
+    })
+    .from(chars[1], {
+      opacity: 0,
+      x: -24,
     })
     .to(icon, {width: 134, top: fromTop, duration: 0.6})
     .to(curtain, {top: '-100%', duration: 0.6})

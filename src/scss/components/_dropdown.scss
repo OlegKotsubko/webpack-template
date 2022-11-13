@@ -4,6 +4,10 @@
   position: relative;
   cursor: pointer;
 
+  @include media-breakpoint-up(sm) {
+    cursor: none;
+  }
+
   &:hover {
 
     .dropdown {

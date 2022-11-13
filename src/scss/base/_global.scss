@@ -54,8 +54,10 @@ button {
 }
 
 button, a {
-  &:hover {
-    @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(md) {
+    cursor: none;
+
+    &:hover {
       cursor: none;
     }
   }

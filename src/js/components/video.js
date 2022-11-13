@@ -5,12 +5,18 @@ import Player from '@vimeo/player'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const video = () => {
-  const button = document.querySelector('.js-video-section-cursor')
+  const tl = gsap.timeline()
+  const button = document.getElementById('video-play-button')
   const video = document.getElementById('video-player')
+  const wrapper = document.getElementById('video-section-wrapper')
   const content = document.getElementById('video-section-content')
+  const hero = document.getElementById('hero-section')
   const cursor = document.querySelector('.js-cursor');
   const section = document.querySelector('.js-animated-section');
   const mousePosition = { x: 0, y: 0 }
+  const videoProps = {}
+  let contentPosition
+  let sectionPosition
 
   const player = new Player(video);
 
@@ -21,113 +27,153 @@ const video = () => {
     magnet(button, 300, mousePosition)
   }
 
+  function wrapperMouseLeaveHandler() {
+    window.addEventListener("mousemove", updateMousePosition);
+    cursor.style.display = 'block'
+
+    gsap.to(button, {
+      marginTop: '-120px',
+      top: '100%',
+      left: '20%'
+    })
+  }
+
+  function wrapperMouseOverHandler() {
+    window.removeEventListener("mousemove", updateMousePosition);
+    cursor.style.display = 'none'
+  }
+
+  function toggleMobPlayer() {
+    player.getVolume().then((volume) => {
+      if(volume) {
+        button.classList.add('paused')
+        player.setVolume(0)
+      } else {
+        button.classList.remove('paused')
+        player.setVolume(1)
+      }
+    })
+  }
+
+  function wrapperMouseMoveHandler(e) {
+    const {left, top} = e.target.getBoundingClientRect()
+    const x = e.clientX - left - (button.offsetWidth / 2)
+    const y = e.clientY - top - (button.offsetWidth / 2)
+    gsap.to(button, {
+      marginTop: 0,
+      top: y,
+      left: x,
+      duration: 0.3
+    })
+  }
+
+  function wrapperClickHandler() {
+    this.classList.toggle('play')
+
+    if(content.style.transform !== 'none' &&  section.style.transform !== 'none') {
+      contentPosition = content.style.transform
+      sectionPosition = section.style.transform
+    }
+
+    const {left, top, width, height} = this.getBoundingClientRect()
+
+    if (left !== 0 && top !== 0) {
+      videoProps.x = left
+      videoProps.y = top
+      videoProps.w = width
+      videoProps.h = height
+      videoProps.maxH = video.style.maxHeight
+    }
+
+    if (this.classList.contains('play')) {
+      tl
+        .set(hero, {
+          opacity: 0
+        })
+        .add(() => {
+          player.setVolume(1)
+          button.classList.remove('paused')
+          content.style.transform = 'none'
+          section.style.transform = 'none'
+          document.body.classList.add('overflow-is-hidden')
+        })
+        .set(this, {
+          position: 'fixed',
+          left: left,
+          top: top,
+          width: width,
+          height: height,
+          background: '#000',
+          zIndex: 4,
+        })
+        .set(video, {
+          maxHeight: '100%'
+        })
+        .set(button, {
+          position: 'fixed',
+          zIndex: 5,
+        })
+        .to(this, {
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '100%',
+          padding: 0
+        })
+
+    } else {
+      const {x, y, w, h, maxH} = videoProps
+      tl
+        .set(this, {
+          background: 'transparent',
+        })
+        .set(button, {
+          position: 'absolute'
+        })
+        .set(video, {
+          maxHeight: maxH,
+        })
+        .to(this, {
+          left: x,
+          top: y,
+          width: w,
+          height: h,
+          padding: 70,
+          onComplete: () => {
+            player.setVolume(0)
+            content.style.transform = contentPosition
+            section.style.transform = sectionPosition
+            this.removeAttribute('style')
+            button.classList.add('paused')
+            document.body.classList.remove('overflow-is-hidden')
+          }
+        })
+        .to(hero, {
+          opacity: 1
+        })
+    }
+  }
+
   ScrollTrigger.matchMedia({
     "(max-width: 1023px)": function () {
       window.removeEventListener("mousemove", updateMousePosition);
+      wrapper.removeEventListener('mouseleave', wrapperMouseLeaveHandler)
+      wrapper.removeEventListener('mouseover', wrapperMouseOverHandler)
+      wrapper.removeEventListener('mousemove', wrapperMouseMoveHandler)
+      wrapper.removeEventListener('click', wrapperClickHandler)
+
+      button.addEventListener('click', toggleMobPlayer)
       button.removeAttribute('style')
     },
     "(min-width: 1024px)": function () {
+      button.removeEventListener('click', toggleMobPlayer)
+
       window.addEventListener("mousemove", updateMousePosition);
+      wrapper.addEventListener('mouseover', wrapperMouseOverHandler)
+      wrapper.addEventListener('mouseleave', wrapperMouseLeaveHandler)
+      wrapper.addEventListener('mousemove', wrapperMouseMoveHandler)
+      wrapper.addEventListener('click', wrapperClickHandler)
     }
-  })
-
-  button.addEventListener('click', function () {
-
-    ScrollTrigger.matchMedia({
-      "(max-width: 1023px)": function () {
-        player.getVolume().then((volume) => {
-          if(volume) {
-            button.classList.add('paused')
-            player.setVolume(0)
-          } else {
-            button.classList.remove('paused')
-            player.setVolume(1)
-          }
-        })
-      },
-      "(min-width: 1024px)": function () {
-        const tl = gsap.timeline()
-        const {top, left, height, width} = video.getBoundingClientRect()
-        const cloneButton = button.cloneNode(true)
-
-        document.body.appendChild(cloneButton)
-        document.body.classList.add('overflow-is-hidden')
-        cloneButton.classList.remove('paused')
-
-        player.setVolume(1)
-
-        const memoContentPlace = content.style.transform
-        const memoSectionPlace = section.style.transform
-        content.style.transform = 'none'
-        section.style.transform = 'none'
-
-        tl
-          .set(cloneButton, {
-            position: 'fixed',
-            opacity: 0,
-            zIndex: '6'
-          })
-          .set(video, {
-            position: 'fixed',
-            top: `${top}px`,
-            left: `${left}px`,
-            width:`${width}px`,
-            height:`${height}px`,
-            objectFit: 'cover',
-            zIndex: '4'
-          })
-          .to(video, {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight,
-            duration: 0.6
-          })
-          .to(cloneButton, {
-            opacity: 1,
-            duration: 0.6
-          })
-
-        const handleCursor = (e) => {
-          const { clientX: x, clientY: y } = e;
-
-          cursor.style.display = 'none'
-          cloneButton.style.margin = '0'
-
-          cloneButton.style.transform = 'none'
-          cloneButton.style.left =`${x - (cloneButton.offsetWidth / 2)}px`;
-          cloneButton.style.top =`${y - (cloneButton.offsetHeight / 2)}px`;
-        }
-
-        window.addEventListener('mousemove', handleCursor);
-
-        cloneButton.addEventListener('click', function closeVideo() {
-          player.setVolume(0)
-          tl
-            .to(cloneButton, {
-              opacity: 0,
-              scale: 0.9
-            })
-            .to(video, {
-              top: `${top}px`,
-              left: `${left}px`,
-              width:`${width}px`,
-              height:`${height}px`,
-              duration: 0.6,
-              onComplete: () => {
-                content.style.transform = memoContentPlace
-                section.style.transform = memoSectionPlace
-                cloneButton.removeEventListener('click', closeVideo)
-                window.removeEventListener('mousemove', handleCursor);
-                document.body.classList.remove('overflow-is-hidden')
-                cursor.style.display = 'block'
-                cloneButton.remove()
-                video.removeAttribute('style')
-              }
-            })
-        })
-      }
-    })
   })
 }
 

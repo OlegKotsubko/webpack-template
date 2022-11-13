@@ -36,9 +36,9 @@ const scrollAnimate = () => {
         }
       })
       .from(videoContent, {
-        xPercent: -130,
-        width: '40%',
-        marginBottom: '15%',
+        xPercent: -110,
+        width: '45%',
+        yPercent: -5,
       })
     }
   })

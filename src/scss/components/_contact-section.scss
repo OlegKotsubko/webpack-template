@@ -3,7 +3,9 @@
 .contact-section {
 
   &__body {
-    @include make-spacer(pb, 6);
+    @include make-spacer(pt, 12);
+    @include make-spacer(pt, 0, md);
+    @include make-spacer(pb, 18);
     @include make-spacer(pb, 0, md);
 
     text-align: center;
