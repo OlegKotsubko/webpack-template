@@ -27,9 +27,12 @@
     transform: translateX(-50%);
     left: 50%;
 
+    @include media-breakpoint-up(sm) {
+      width: auto;
+    }
+
     @include media-breakpoint-up(md) {
       position: static;
-      width: auto;
       transform: none;
       left: auto;
       padding: 70px;
@@ -43,7 +46,10 @@
     max-width: 100%;
     pointer-events: none;
     aspect-ratio: 16/9;
-    max-height: calc(100vh - var(--header-height) - var(--foote-height));
+
+    @include media-breakpoint-up(md) {
+      max-height: calc(100vh - var(--header-height) - var(--foote-height));
+    }
   }
 
   &__button {
