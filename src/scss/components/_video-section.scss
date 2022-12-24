@@ -53,13 +53,20 @@
 
     position: absolute;
     top: 100%;
-    left: 20%;
-    margin-top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -8px;
     border-radius: 50%;
     overflow: hidden;
     background-color: var(--white);
     mix-blend-mode: difference;
     z-index: 4;
+
+    @include media-breakpoint-up(md) {
+      margin-top: -35px;
+      left: 20%;
+      transform: none;
+    }
 
     &.focus {
       color: white;

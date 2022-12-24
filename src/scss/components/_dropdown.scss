@@ -31,16 +31,6 @@
     left: rem(-16px);
     opacity: 0;
     visibility: hidden;
-
-    &::before {
-      width: 100%;
-      height: rem(16px);
-      position: absolute;
-      top: rem(-16px);
-      left: 0;
-      display: block;
-      content: "";
-    }
   }
 
   &__button {

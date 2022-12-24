@@ -15,16 +15,18 @@ block content
               button.theme.js-theme
                 span.theme__icon.theme__icon--dark
                   .link
-                    span
-                      include ./images/svg/moon.svg
-                    span
-                      include ./images/svg/moon.svg
+                    span.link__wrapper
+                      span
+                        include ./images/svg/moon.svg
+                      span
+                        include ./images/svg/moon.svg
                 span.theme__icon.theme__icon--light
                   .link
-                    span
-                      include ./images/svg/sun.svg
-                    span
-                      include ./images/svg/sun.svg
+                    span.link__wrapper
+                      span
+                        include ./images/svg/sun.svg
+                      span
+                        include ./images/svg/sun.svg
 
             .header__logo.js-header-logo
               include ./images/svg/logo.svg
@@ -33,8 +35,9 @@ block content
                 .dropdown.js-dropdown-container
                   button.dropdown__button.js-dropdown-trigger
                     span.link.header__link
-                      span.js-lang-country  ENG
-                      span.js-lang-country  ENG
+                      span.link__wrapper
+                        span.js-lang-country  ENG
+                        span.js-lang-country  ENG
                     .dropdown__icon
                       include ./images/svg/arr.svg
                   .dropdown__menu.js-dropdown-menu
@@ -66,6 +69,7 @@ block content
                   loading="lazy"
                   allowfullscreen
                   frameBorder="0"
+                  allow="autoplay"
                 )
               button.video-section__button.paused#video-play-button
                 span
@@ -85,16 +89,19 @@ block content
             ul.footer__left
               li.footer__social
                 a(href="https://www.behance.net/techiia").link
-                  span  BH
-                  span  BH
+                  span.link__wrapper
+                    span  BH
+                    span  BH
               li.footer__social
                 a(href="https://www.facebook.com/techiiadesignlab").link
-                  span  FB
-                  span  FB
+                  span.link__wrapper
+                    span  FB
+                    span  FB
               li.footer__social
                 a(href="https://www.instagram.com/techiiadesignlab/").link
-                  span IG
-                  span IG
+                  span.link__wrapper
+                    span IG
+                    span IG
             .footer__right
               a(href="https://techiia.com/").footer__logo
                 include ./images/svg/second-logo.svg
