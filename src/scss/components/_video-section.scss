@@ -35,7 +35,7 @@
       position: static;
       transform: none;
       left: auto;
-      padding: 70px;
+      padding: 16px;
     }
   }
 
@@ -68,12 +68,6 @@
     mix-blend-mode: difference;
     z-index: 4;
 
-    @include media-breakpoint-up(md) {
-      margin-top: -35px;
-      left: 20%;
-      transform: none;
-    }
-
     &.focus {
       color: white;
       background-color: black;
@@ -105,7 +99,11 @@
     @include media-breakpoint-up(md) {
       @include size(100px);
 
-      margin-top: -120px;
+      margin-top: 0;
+      margin-left: -8px;
+      left: 0;
+      top: 50%;
+      transform: translateX(0) translateY(-50%);
       pointer-events: none;
     }
   }

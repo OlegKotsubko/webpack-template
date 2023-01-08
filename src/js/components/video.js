@@ -17,6 +17,7 @@ const video = () => {
   const videoProps = {}
   let contentPosition
   let sectionPosition
+  let clonedButton
 
   const player = new Player(video);
 
@@ -31,16 +32,35 @@ const video = () => {
     window.addEventListener("mousemove", updateMousePosition);
     cursor.style.display = 'block'
 
-    gsap.to(button, {
-      marginTop: '-120px',
-      top: '100%',
-      left: '20%'
-    })
+    gsap.timeline()
+      .to(clonedButton, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: function () {
+          clonedButton.remove()
+        }
+      })
+      .to(button, {
+        opacity: 1,
+        duration: 0.2,
+      })
   }
 
   function wrapperMouseOverHandler() {
     window.removeEventListener("mousemove", updateMousePosition);
     cursor.style.display = 'none'
+
+    clonedButton = button.cloneNode(true)
+    clonedButton.style.opacity = '0'
+    content.appendChild(clonedButton)
+
+    gsap.timeline()
+      .to(button, {
+        opacity: 0,
+        duration: 0.2,
+      }).to(clonedButton, {
+        opacity: 1
+    })
   }
 
   function toggleMobPlayer() {
@@ -59,11 +79,11 @@ const video = () => {
     const {left, top} = e.target.getBoundingClientRect()
     const x = e.clientX - left - (button.offsetWidth / 2)
     const y = e.clientY - top - (button.offsetWidth / 2)
-    gsap.to(button, {
+
+    gsap.set(clonedButton, {
       marginTop: 0,
       top: y,
       left: x,
-      duration: 0.3
     })
   }
 
@@ -92,7 +112,7 @@ const video = () => {
         })
         .add(() => {
           player.setVolume(1)
-          button.classList.remove('paused')
+          clonedButton.classList.remove('paused')
           content.style.transform = 'none'
           section.style.transform = 'none'
           document.body.classList.add('overflow-is-hidden')
@@ -109,7 +129,7 @@ const video = () => {
         .set(video, {
           maxHeight: '100%'
         })
-        .set(button, {
+        .set(clonedButton, {
           position: 'fixed',
           zIndex: 5,
         })
@@ -127,7 +147,7 @@ const video = () => {
         .set(this, {
           background: 'transparent',
         })
-        .set(button, {
+        .set(clonedButton, {
           position: 'absolute'
         })
         .set(video, {
@@ -138,13 +158,13 @@ const video = () => {
           top: y,
           width: w,
           height: h,
-          padding: 70,
+          padding: 16,
           onComplete: () => {
             player.setVolume(0)
             content.style.transform = contentPosition
             section.style.transform = sectionPosition
             this.removeAttribute('style')
-            button.classList.add('paused')
+            clonedButton.classList.add('paused')
             document.body.classList.remove('overflow-is-hidden')
           }
         })
