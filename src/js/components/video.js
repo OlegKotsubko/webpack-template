@@ -64,13 +64,16 @@ const video = () => {
   }
 
   function toggleMobPlayer() {
-    player.getVolume().then((volume) => {
-      if(volume) {
-        button.classList.add('paused')
-        player.setVolume(0)
-      } else {
-        button.classList.remove('paused')
+    player.getFullscreen().then(function(fullscreen) {
+      if(!fullscreen) {
+        player.play()
+        player.setMuted(false)
         player.setVolume(1)
+        player.requestFullscreen()
+      } else {
+        player.play()
+        player.setMuted(true)
+        player.exitFullscreen()
       }
     })
   }
@@ -183,10 +186,11 @@ const video = () => {
       wrapper.removeEventListener('click', wrapperClickHandler)
 
       button.addEventListener('click', toggleMobPlayer)
-      button.removeAttribute('style')
+      wrapper.addEventListener('click', toggleMobPlayer)
     },
     "(min-width: 1024px)": function () {
       button.removeEventListener('click', toggleMobPlayer)
+      wrapper.removeEventListener('click', toggleMobPlayer)
 
       window.addEventListener("mousemove", updateMousePosition);
       wrapper.addEventListener('mouseover', wrapperMouseOverHandler)
