@@ -33,13 +33,7 @@ const video = () => {
     cursor.style.display = 'block'
 
     gsap.timeline()
-      .to(clonedButton, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: function () {
-          clonedButton.remove()
-        }
-      })
+      .add(() => clonedButton.remove())
       .to(button, {
         opacity: 1,
         duration: 0.2,
